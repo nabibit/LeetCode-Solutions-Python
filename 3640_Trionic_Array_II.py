@@ -15,21 +15,15 @@ class Solution:
         if n < 4:
             return 0
         
-        # We intialize out state arrays with -infinity because the maximum sum
-        # might be negative (if all numbers are negative)
-        # inc1: Max sum ending at index i during the First Ascent
-        # dec: Max sum ending at index i during the Descent
-        # inc2: Max sum ending at index i during the Final Ascent
-        inc1_sum = [float('-inf')] * n
-        inc1_len = [0] * n
+        # "prev" variables hold the state of index i - 1
+        # We initialize them as if we are standing at index 0
+        prev_inc1_sum = nums[0] # The sum of the first ascent ending at index 0
+        prev_inc1_len = 1 # The length is 1 because it includes the first element
 
-        dec_sum = [float('-inf')] * n
-        dec_len = [0] * n
+        prev_dec_sum = float('-inf') # No descent can end at index 0
+        prev_dec_len = 0 
 
-        inc2_sum = [float('-inf')] * n
-        # Base Case: The first element starts our first ascent
-        inc1_sum[0] = nums[0]
-        inc1_len[0] = 1
+        prev_inc2_sum = float('-inf') # No final ascent can end at index 0
 
         # We start the global max at -infinity to ensure we don't accidentally return 0
         # if the actual best answer is a negative number (e.g., -4)
@@ -39,10 +33,25 @@ class Solution:
             curr = nums[i]
             prev = nums [i-1]
 
+            # Temporary variables to calculate the new state for index i based on the previous state at index i-1
+            # We must store results in temporary variable first
+            # If we updated "prev_" directly, we would lose the history
+            # needed for other calculations at the same index
+
+            # Default: If not extending, reset to just the current element (resting)
+            curr_inc1_sum = curr
+            curr_inc1_len = 1
+
+            
+            # Default: If not valid, stays -inf
+            curr_dec_sum = float('-inf')
+            curr_dec_len = 0
+            curr_inc2_sum = float('-inf')
+
             # First Ascent: UP
             if curr > prev:
                 # Option A: Extend the current climb
-                extend_sum = inc1_sum[i-1] + curr
+                extend_sum = prev_inc1_sum + curr
 
                 # Option B: Start a Fresh climb here
                 # This is crucial for handling negative prefixes
@@ -50,49 +59,56 @@ class Solution:
                 fresh_sum = prev + curr
                 
                 if fresh_sum > extend_sum:
-                    inc1_sum[i] = fresh_sum
-                    inc1_len[i] = 2 # Length is 2 because we used (prev, curr)
+                    curr_inc1_sum = fresh_sum
+                    curr_inc1_len = 2 # Length is 2 because we used (prev, curr)
 
                 else:
-                    inc1_sum[i] = extend_sum
-                    inc1_len[i] = inc1_len[i-1] + 1
-
-            else:
-                # If we are not increasing, we just reset the potential start here
-                inc1_sum[i] = curr
-                inc1_len[i] = 1
+                    curr_inc1_sum = extend_sum
+                    curr_inc1_len = prev_inc1_len + 1
+                
+                # If curr <= prev, curr_inc1 defaults to "curr" (rested) defined above, so we don't need an else case here
 
             # Descent: DOWN
             if curr < prev:
                 # Try to extend an existing descent
-                if dec_sum[i-1] != float('-inf'):
-                    dec_sum[i] = dec_sum[i-1] + curr
-                    dec_len[i] = dec_len[i-1] + 1
+                if prev_dec_sum != float('-inf'):
+                    curr_dec_sum = prev_dec_sum + curr
+                    curr_dec_len = prev_dec_len + 1
+                else:
+                    curr_dec_sum = float('-inf')
+                    curr_dec_len = 0
 
                 # Try to start a new descent from a valid Peak
                 # To be a valid peak, the ascent must have had at least 2 steps
-                if inc1_len[i-1] >= 2:
-                    pnd = inc1_sum[i-1] + curr
-                    if pnd > dec_sum[i]:
-                        dec_sum[i] = pnd
-                        dec_len[i] = 2
+                if prev_inc1_len >= 2:
+                    pnd = prev_inc1_sum + curr
+                    if pnd > curr_dec_sum:
+                        curr_dec_sum = pnd
+                        curr_dec_len = 2
 
             # Final Ascent: UP
             if curr > prev:
-                # Try tp extend an existing final ascent
-                if inc2_sum[i-1] != float('-inf'):
-                    inc2_sum[i] = inc2_sum[i-1] + curr
+                # Try to extend an existing final ascent
+                if prev_inc2_sum != float('-inf'):
+                    curr_inc2_sum = prev_inc2_sum + curr
 
                 # try to start the final ascent from a valid Valley
                 # To be a valid valley, the descent must have had at least 2 steps
-                if dec_len[i-1] >= 2:
-                    pnf = dec_sum[i-1] + curr
-                    if pnf > inc2_sum[i]:
-                        inc2_sum[i] = pnf
+                if prev_dec_len >= 2:
+                    pnf = prev_dec_sum + curr
+                    if pnf > curr_inc2_sum:
+                        curr_inc2_sum = pnf
 
             # We check if the current completed shape is the best we've seen so far
-            if inc2_sum[i] > global_max:
-                global_max = inc2_sum[i]
+            if curr_inc2_sum > global_max:
+                global_max = curr_inc2_sum
+
+            # The Handover
+            # Now that all calculations for index i are done, 
+            # we update the "prev_" variables to be the current state for the next iteration
+            prev_inc1_sum , prev_inc1_len = curr_inc1_sum, curr_inc1_len
+            prev_dec_sum, prev_dec_len = curr_dec_sum, curr_dec_len
+            prev_inc2_sum = curr_inc2_sum
 
         # If global_max is still -inf, it means no valid trionic array was found
         # Otherwise, we convert it to an int and return it
