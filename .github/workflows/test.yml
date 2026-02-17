@@ -1,0 +1,28 @@
+name: Run LeetCode Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, '3.10', '3.11']
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Display Python version
+      run: python -c "import sys; print(sys.version)"
+    - name: Run all solution tests
+      run: |
+        # Find all Python files and execute them
+        # (each file has its own test cases under if __name__ == "__main__")
+        find . -name "*.py" -not -path "./.github/*" -exec python {} \;
