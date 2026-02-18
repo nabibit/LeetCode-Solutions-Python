@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-13-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-14-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -49,6 +49,7 @@ LeetCode-Solutions-Python/
 | 3634 | [Minimum Removals to Balance Array](./Arrays/3634_Minimum_Removals_to_Balance.py) | Medium | Two Pointers + Sorting | O(n log n) | O(1) |
 | 3637 | [Trionic Array I](./Arrays/3637_Trionic_Array_I.py) | Easy | Linear Scan (Pattern Recognition) | O(n) | O(1) |
 | 3640 | [Trionic Array II](./Arrays/3640_Trionic_Array_II.py) | Hard | Dynamic Programming (State Machine) | O(n) | O(n) |
+| 3719 | [Longest Balanced Subarray I](./Arrays/3719_Longest_Balanced_Subarray_I.py) | Medium | Brute Force (All Subarrays)| O(n²) | O(n) |
 
 ### [Strings](./Strings/)
 
@@ -103,11 +104,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 13 
+Total Problems: 14 
 
 Easy: 7  
 
-Medium: 4  
+Medium: 5  
 
 Hard: 2  
 
@@ -117,16 +118,18 @@ Last updated: Daily
 
 ## 💡 Key Algorithms Used
 
-| Algorithm | Problems |
-|------------|----------|
-| Sliding Window | 3013, 3634 |
-| Prefix Sum/Diff | 3714 |
-| Heaps (Priority Queue) | 3013 |
-| Dynamic Programming | 799, 3640 |
-| Bit Manipulation | 67, 190, 401, 693 |
-| Backtracking | 401 |
-
----
+| Technique                              | Problem Numbers        |
+|----------------------------------------|------------------------|
+| Greedy + Sorting                      | 3010                   |
+| Sliding Window + Two Heaps            | 3013                   |
+| Two Pointers + Sorting                | 3634                   |
+| Simulation / Modular Arithmetic       | 3379                   |
+| Linear Scan / Pattern Recognition     | 3637                   |
+| Dynamic Programming / State Machine   | 799, 3640              |
+| Brute Force (All Subarrays/Substrings)| 3713, 3719             |
+| Prefix Sum / Difference Map           | 3714                   |
+| Bit Manipulation                      | 67, 190, 693           |
+| Backtracking / Bit Counting           | 401                    |
 
 ## 📝 Solution Highlights
 
@@ -139,6 +142,8 @@ Last updated: Daily
 **401. Binary Watch**: Uses backtracking with pruning to explore only valid time combinations, avoiding unnecessary checks.  
 
 **693. Binary Number with Alternating Bits**: Uses a clever bitwise trick: XOR the number with its right shift; if the result is all ones, the bits alternate. Then checks if (x & (x + 1)) == 0 to confirm all bits are set.
+
+**Brute Force Approaches 3713. Longest Balanced Substring I & 3719. Longest Balanced Subarray I**: Both demonstrate straightforward brute‑force solutions by checking all substrings/subarrays. While not optimal, they serve as clear baselines and illustrate the problem constraints.
 
 ### Complex Logic
 
