@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-12-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-13-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -69,6 +69,7 @@ LeetCode-Solutions-Python/
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
 | 190 | [Reverse Bits](./BitManipulation/0190_Reverse_Bits.py) | Easy | Divide & Conquer (Bitwise Merge) | O(1) | O(1) |
+| 693 | [Binary Number with Alternating Bits](./BitManipulation/0693_Binary_Number_with_Alternating_Bits.py) | Easy | Bit Manipulation (XOR & Check) | O(1) | O(1) |
 
 ### [DynamicProgramming](./DynamicProgramming/)
 
@@ -102,9 +103,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 12  
+Total Problems: 13 
 
-Easy: 6  
+Easy: 7  
 
 Medium: 4  
 
@@ -122,7 +123,7 @@ Last updated: Daily
 | Prefix Sum/Diff | 3714 |
 | Heaps (Priority Queue) | 3013 |
 | Dynamic Programming | 799, 3640 |
-| Bit Manipulation | 67, 190, 401 |
+| Bit Manipulation | 67, 190, 401, 693 |
 | Backtracking | 401 |
 
 ---
@@ -136,6 +137,8 @@ Last updated: Daily
 **3714. Longest Balanced Substring II**: Optimizes a string problem from O(n²) to O(n) by tracking prefix differences in a hash map.  
 
 **401. Binary Watch**: Uses backtracking with pruning to explore only valid time combinations, avoiding unnecessary checks.  
+
+**693. Binary Number with Alternating Bits**: Uses a clever bitwise trick: XOR the number with its right shift; if the result is all ones, the bits alternate. Then checks if (x & (x + 1)) == 0 to confirm all bits are set.
 
 ### Complex Logic
 
