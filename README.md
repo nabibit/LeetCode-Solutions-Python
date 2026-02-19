@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-14-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-15-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -56,6 +56,7 @@ LeetCode-Solutions-Python/
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
 | 67 | [Add Binary](./Strings/0067_Add_Binary.py) | Easy | Bit Manipulation (Simulation) | O(n + m) | O(max(n,m)) |
+| 696 | [Count Binary Substrings](./Strings/0696_Count_Binary_Substrings.py) | Easy | Linear Scan (Group Counting) | O(n) |	O(1) |
 | 3713 | [Longest Balanced Substring I](./Strings/3713_Longest_Balanced_Substring_I.py) | Medium | Brute Force (All Substrings) | O(n²) | O(1) |
 | 3714 | [Longest Balanced Substring II](./Strings/3714_Longest_Balanced_Substring_II.py) | Medium | Prefix Difference Map | O(n) | O(n) |
 
@@ -104,9 +105,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 14 
+Total Problems: 15 
 
-Easy: 7  
+Easy: 8 
 
 Medium: 5  
 
@@ -124,7 +125,7 @@ Last updated: Daily
 | Sliding Window + Two Heaps            | 3013                   |
 | Two Pointers + Sorting                | 3634                   |
 | Simulation / Modular Arithmetic       | 3379                   |
-| Linear Scan / Pattern Recognition     | 3637                   |
+| Linear Scan / Pattern Recognition     | 3637, 696                   |
 | Dynamic Programming / State Machine   | 799, 3640              |
 | Brute Force (All Subarrays/Substrings)| 3713, 3719             |
 | Prefix Sum / Difference Map           | 3714                   |
@@ -136,6 +137,8 @@ Last updated: Daily
 ### Efficient Implementations
 
 **67. Add Binary**: Simulates a hardware adder using XOR and AND operations, handling carry-overs efficiently.  
+
+**696. Count Binary Substrings**: Uses a single pass to group consecutive identical characters, then sums the minimum of adjacent group lengths—an O(n) time, O(1) space solution.
 
 **3714. Longest Balanced Substring II**: Optimizes a string problem from O(n²) to O(n) by tracking prefix differences in a hash map.  
 
