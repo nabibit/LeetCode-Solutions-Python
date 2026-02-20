@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-16-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-17-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -50,6 +50,7 @@ LeetCode-Solutions-Python/
 | 3637 | [Trionic Array I](./Arrays/3637_Trionic_Array_I.py) | Easy | Linear Scan (Pattern Recognition) | O(n) | O(1) |
 | 3640 | [Trionic Array II](./Arrays/3640_Trionic_Array_II.py) | Hard | Dynamic Programming (State Machine) | O(n) | O(n) |
 | 3719 | [Longest Balanced Subarray I](./Arrays/3719_Longest_Balanced_Subarray_I.py) | Medium | Brute Force (All Subarrays)| O(n²) | O(n) |
+| 3721 | [Longest Balanced Subarray II](./Arrays/3721_Longest_Balanced_Subarray_II.py) | Hard | Segment Tree + Prefix Sums | O(n log n) | O(n) |
 
 ### [Strings](./Strings/)
 
@@ -112,7 +113,7 @@ Easy: 8
 
 Medium: 5  
 
-Hard: 3  
+Hard: 4  
 
 Last updated: Daily  
 
@@ -133,6 +134,7 @@ Last updated: Daily
 | Bit Manipulation                      | 67, 190, 693           |
 | Backtracking / Bit Counting           | 401                    |
 | Recursion + String Sorting             | 761
+| Segment Tree / Lazy Propagation        | 3721                   |
 
 ## 📝 Solution Highlights
 
@@ -157,6 +159,8 @@ Last updated: Daily
 **3640. Trionic Array II**: Uses a state machine approach to track multiple DP states (ascent, descent, final ascent) simultaneously, optimizing for scenarios with negative numbers.  
 
 **761. Special Binary String**: A beautiful algorithmic trick that treats special binary strings exactly like valid parentheses. Uses recursion to peel back the "brackets", sort the inner independent blocks, and glue them back together for the lexicographically largest result.
+
+**3721. Longest Balanced Subarray II**: A serious step up from Version I. Uses a Segment Tree with lazy propagation and prefix sums to efficiently manage and query huge array ranges in O(n log n) time.
 
 ---
 
