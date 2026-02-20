@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-15-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-16-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -57,6 +57,7 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 67 | [Add Binary](./Strings/0067_Add_Binary.py) | Easy | Bit Manipulation (Simulation) | O(n + m) | O(max(n,m)) |
 | 696 | [Count Binary Substrings](./Strings/0696_Count_Binary_Substrings.py) | Easy | Linear Scan (Group Counting) | O(n) |	O(1) |
+| 761 | [Special Binary String](./Strings/0761_Special_Binary_String.py) | Hard | Recursion + Sorting | O(n²) | O(n) |
 | 3713 | [Longest Balanced Substring I](./Strings/3713_Longest_Balanced_Substring_I.py) | Medium | Brute Force (All Substrings) | O(n²) | O(1) |
 | 3714 | [Longest Balanced Substring II](./Strings/3714_Longest_Balanced_Substring_II.py) | Medium | Prefix Difference Map | O(n) | O(n) |
 
@@ -105,13 +106,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 15 
+Total Problems: 16 
 
 Easy: 8 
 
 Medium: 5  
 
-Hard: 2  
+Hard: 3  
 
 Last updated: Daily  
 
@@ -131,6 +132,7 @@ Last updated: Daily
 | Prefix Sum / Difference Map           | 3714                   |
 | Bit Manipulation                      | 67, 190, 693           |
 | Backtracking / Bit Counting           | 401                    |
+| Recursion + String Sorting             | 761
 
 ## 📝 Solution Highlights
 
@@ -138,7 +140,7 @@ Last updated: Daily
 
 **67. Add Binary**: Simulates a hardware adder using XOR and AND operations, handling carry-overs efficiently.  
 
-**696. Count Binary Substrings**: Uses a single pass to group consecutive identical characters, then sums the minimum of adjacent group lengths—an O(n) time, O(1) space solution.
+**696. Count Binary Substrings**: Uses a single pass to group consecutive identical characters, then sums the minimum of adjacent group lengths - an O(n) time, O(1) space solution.
 
 **3714. Longest Balanced Substring II**: Optimizes a string problem from O(n²) to O(n) by tracking prefix differences in a hash map.  
 
@@ -153,6 +155,8 @@ Last updated: Daily
 **3013. Divide Array... Min Cost II**: A Hard problem tackled using a Dual Heap (Min/Max) approach to maintain a sliding window of the smallest k elements efficiently.  
 
 **3640. Trionic Array II**: Uses a state machine approach to track multiple DP states (ascent, descent, final ascent) simultaneously, optimizing for scenarios with negative numbers.  
+
+**761. Special Binary String**: A beautiful algorithmic trick that treats special binary strings exactly like valid parentheses. Uses recursion to peel back the "brackets", sort the inner independent blocks, and glue them back together for the lexicographically largest result.
 
 ---
 
