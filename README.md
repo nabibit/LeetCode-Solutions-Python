@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-17-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-18-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -74,6 +74,7 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 190 | [Reverse Bits](./BitManipulation/0190_Reverse_Bits.py) | Easy | Divide & Conquer (Bitwise Merge) | O(1) | O(1) |
 | 693 | [Binary Number with Alternating Bits](./BitManipulation/0693_Binary_Number_with_Alternating_Bits.py) | Easy | Bit Manipulation (XOR & Check) | O(1) | O(1) |
+| 762 | [Prime Number of Set Bits in Binary Representation](./BitManipulation/0762_Prime_Number_of_Set_Bits_in_Binary_Representation.py) | Easy | Bit Manipulation + Fast Prime Set | O(n) | O(1) |
 
 ### [DynamicProgramming](./DynamicProgramming/)
 
@@ -107,9 +108,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 16 
+Total Problems: 18 
 
-Easy: 8 
+Easy: 9 
 
 Medium: 5  
 
@@ -131,7 +132,7 @@ Last updated: Daily
 | Dynamic Programming / State Machine   | 799, 3640              |
 | Brute Force (All Subarrays/Substrings)| 3713, 3719             |
 | Prefix Sum / Difference Map           | 3714                   |
-| Bit Manipulation                      | 67, 190, 693           |
+| Bit Manipulation                      | 67, 190, 693, 762           |
 | Backtracking / Bit Counting           | 401                    |
 | Recursion + String Sorting             | 761
 | Segment Tree / Lazy Propagation        | 3721                   |
@@ -151,6 +152,8 @@ Last updated: Daily
 **693. Binary Number with Alternating Bits**: Uses a clever bitwise trick: XOR the number with its right shift; if the result is all ones, the bits alternate. Then checks if (x & (x + 1)) == 0 to confirm all bits are set.
 
 **Brute Force Approaches 3713. Longest Balanced Substring I & 3719. Longest Balanced Subarray I**: Both demonstrate straightforward brute‑force solutions by checking all substrings/subarrays. While not optimal, they serve as clear baselines and illustrate the problem constraints.
+
+**762. Prime Number of Set Bits**: Leverages Python's highly optimized `.bit_count()` method and a hardcoded O(1) lookup set for primes up to 20, avoiding complex math checks on the fly and keeping the solution blazing fast.
 
 ### Complex Logic
 
