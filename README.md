@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-18-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-19-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -32,7 +32,11 @@ LeetCode-Solutions-Python/
 
 ├── DynamicProgramming/ # DP & Simulation
 
-├── Strings/ # String processing
+├── Strings/             # String processing
+
+├── Trees/               # BST operations & Traversals
+
+└── README.md
 
 └── README.md
 
@@ -82,6 +86,12 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 799 | [Champagne Tower](./DynamicProgramming/0799_Champagne_Tower.py) | Medium | Simulation + DP (In-place) | O(R²) | O(R) |
 
+### [Trees](./Trees/)
+
+| # | Problem | Difficulty | Approach | Time | Space |
+|---|---------|------------|----------|------|-------|
+| 1382 | [Balance a Binary Search Tree](./Trees/1382_Balance_a_Binary_Search_Tree.py) | Medium | In-Order Traversal + Divide & Conquer | O(n) | O(n) |
+
 ## 🎯 Problem Solving Approach
 
 Each solution file follows a consistent structure to ensure readability and maintainability:
@@ -108,11 +118,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 18 
+Total Problems: 19 
 
 Easy: 9 
 
-Medium: 5  
+Medium: 6  
 
 Hard: 4  
 
@@ -136,6 +146,8 @@ Last updated: Daily
 | Backtracking / Bit Counting           | 401                    |
 | Recursion + String Sorting             | 761
 | Segment Tree / Lazy Propagation        | 3721                   |
+| In-Order Traversal                     | 1382                   |
+| Divide & Conquer (Trees)               | 1382                   |
 
 ## 📝 Solution Highlights
 
@@ -164,6 +176,9 @@ Last updated: Daily
 **761. Special Binary String**: A beautiful algorithmic trick that treats special binary strings exactly like valid parentheses. Uses recursion to peel back the "brackets", sort the inner independent blocks, and glue them back together for the lexicographically largest result.
 
 **3721. Longest Balanced Subarray II**: A serious step up from Version I. Uses a Segment Tree with lazy propagation and prefix sums to efficiently manage and query huge array ranges in O(n log n) time.
+
+### Tree Operations
+**1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
 
 ---
 
