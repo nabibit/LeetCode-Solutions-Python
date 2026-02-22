@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-19-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-20-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -79,6 +79,7 @@ LeetCode-Solutions-Python/
 | 190 | [Reverse Bits](./BitManipulation/0190_Reverse_Bits.py) | Easy | Divide & Conquer (Bitwise Merge) | O(1) | O(1) |
 | 693 | [Binary Number with Alternating Bits](./BitManipulation/0693_Binary_Number_with_Alternating_Bits.py) | Easy | Bit Manipulation (XOR & Check) | O(1) | O(1) |
 | 762 | [Prime Number of Set Bits in Binary Representation](./BitManipulation/0762_Prime_Number_of_Set_Bits_in_Binary_Representation.py) | Easy | Bit Manipulation + Fast Prime Set | O(n) | O(1) |
+| 868 | [Binary Gap](./BitManipulation/0868_Binary_Gap.py) | Easy | Bitwise Shift & Masking | O(log n) | O(1) |
 
 ### [DynamicProgramming](./DynamicProgramming/)
 
@@ -118,9 +119,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 19 
+Total Problems: 20 
 
-Easy: 9 
+Easy: 10 
 
 Medium: 6  
 
@@ -142,7 +143,7 @@ Last updated: Daily
 | Dynamic Programming / State Machine   | 799, 3640              |
 | Brute Force (All Subarrays/Substrings)| 3713, 3719             |
 | Prefix Sum / Difference Map           | 3714                   |
-| Bit Manipulation                      | 67, 190, 693, 762           |
+| Bit Manipulation                      | 67, 190, 693, 762, 868           |
 | Backtracking / Bit Counting           | 401                    |
 | Recursion + String Sorting             | 761
 | Segment Tree / Lazy Propagation        | 3721                   |
