@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-20-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-21-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -19,6 +19,8 @@ A curated collection of LeetCode problems solved in Python, with a focus on **cl
 | O(n²) | Quadratic | Nested loops / All substrings |
 | O(R²) | Quadratic (rows) | Pyramid simulation |
 | O(C(n, k)) | Combinatorial | Backtracking valid combinations |
+| O(n * k) | Multiplicative | Sliding window with string slicing |
+| O(2^k) | Exponential | All binary combinations of length k |
 
 ## 📁 Repository Structure
 
@@ -63,6 +65,7 @@ LeetCode-Solutions-Python/
 | 67 | [Add Binary](./Strings/0067_Add_Binary.py) | Easy | Bit Manipulation (Simulation) | O(n + m) | O(max(n,m)) |
 | 696 | [Count Binary Substrings](./Strings/0696_Count_Binary_Substrings.py) | Easy | Linear Scan (Group Counting) | O(n) |	O(1) |
 | 761 | [Special Binary String](./Strings/0761_Special_Binary_String.py) | Hard | Recursion + Sorting | O(n²) | O(n) |
+| 1461 | [Check If a String Contains All Binary Codes](./Strings/1461_Check_If_String_Contains_All_Binary_Codes.py) | Medium | Sliding Window Set / Rolling Hash | O(N) | O(N*K) |
 | 3713 | [Longest Balanced Substring I](./Strings/3713_Longest_Balanced_Substring_I.py) | Medium | Brute Force (All Substrings) | O(n²) | O(1) |
 | 3714 | [Longest Balanced Substring II](./Strings/3714_Longest_Balanced_Substring_II.py) | Medium | Prefix Difference Map | O(n) | O(n) |
 
@@ -119,11 +122,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 20 
+Total Problems: 21 
 
 Easy: 10 
 
-Medium: 6  
+Medium: 7 
 
 Hard: 4  
 
@@ -143,12 +146,14 @@ Last updated: Daily
 | Dynamic Programming / State Machine   | 799, 3640              |
 | Brute Force (All Subarrays/Substrings)| 3713, 3719             |
 | Prefix Sum / Difference Map           | 3714                   |
-| Bit Manipulation                      | 67, 190, 693, 762, 868           |
+| Bit Manipulation                      | 67, 190, 693, 762, 868, 1461           |
 | Backtracking / Bit Counting           | 401                    |
 | Recursion + String Sorting             | 761
 | Segment Tree / Lazy Propagation        | 3721                   |
 | In-Order Traversal                     | 1382                   |
 | Divide & Conquer (Trees)               | 1382                   |
+| Sliding Window                        | 1461                         |
+| Rolling Hash                          | 1461                         |
 
 ## 📝 Solution Highlights
 
@@ -167,6 +172,8 @@ Last updated: Daily
 **Brute Force Approaches 3713. Longest Balanced Substring I & 3719. Longest Balanced Subarray I**: Both demonstrate straightforward brute‑force solutions by checking all substrings/subarrays. While not optimal, they serve as clear baselines and illustrate the problem constraints.
 
 **762. Prime Number of Set Bits**: Leverages Python's highly optimized `.bit_count()` method and a hardcoded O(1) lookup set for primes up to 20, avoiding complex math checks on the fly and keeping the solution blazing fast.
+
+**1461. Check If a String Contains All Binary Codes**: Showcases the progression from a standard O(N*K) sliding window Hash Set to a bare-metal O(2^K) Rolling Hash. By using bitwise shifts to update the window and a `bytearray` as a boolean checklist, it reduces a potential 100MB string allocation down to a 1MB footprint.
 
 ### Complex Logic
 
