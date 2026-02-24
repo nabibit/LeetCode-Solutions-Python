@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-21-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-22-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -37,8 +37,6 @@ LeetCode-Solutions-Python/
 ├── Strings/             # String processing
 
 ├── Trees/               # BST operations & Traversals
-
-└── README.md
 
 └── README.md
 
@@ -94,6 +92,7 @@ LeetCode-Solutions-Python/
 
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
+| 1022 | [Sum of Root To Leaf Binary Numbers](./Trees/1022_Sum_of_Root_To_Leaf_Binary_Numbers.py) | Easy | DFS & Bitwise Shift | O(N) | O(H) |
 | 1382 | [Balance a Binary Search Tree](./Trees/1382_Balance_a_Binary_Search_Tree.py) | Medium | In-Order Traversal + Divide & Conquer | O(n) | O(n) |
 
 ## 🎯 Problem Solving Approach
@@ -122,9 +121,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 21 
+Total Problems: 22 
 
-Easy: 10 
+Easy: 11 
 
 Medium: 7 
 
@@ -134,26 +133,18 @@ Last updated: Daily
 
 ---
 
-## 💡 Key Algorithms Used
+# 💡 Algorithm Technique Map
 
-| Technique                              | Problem Numbers        |
-|----------------------------------------|------------------------|
-| Greedy + Sorting                      | 3010                   |
-| Sliding Window + Two Heaps            | 3013                   |
-| Two Pointers + Sorting                | 3634                   |
-| Simulation / Modular Arithmetic       | 3379                   |
-| Linear Scan / Pattern Recognition     | 3637, 696                   |
-| Dynamic Programming / State Machine   | 799, 3640              |
-| Brute Force (All Subarrays/Substrings)| 3713, 3719             |
-| Prefix Sum / Difference Map           | 3714                   |
-| Bit Manipulation                      | 67, 190, 693, 762, 868, 1461           |
-| Backtracking / Bit Counting           | 401                    |
-| Recursion + String Sorting             | 761
-| Segment Tree / Lazy Propagation        | 3721                   |
-| In-Order Traversal                     | 1382                   |
-| Divide & Conquer (Trees)               | 1382                   |
-| Sliding Window                        | 1461                         |
-| Rolling Hash                          | 1461                         |
+| Core Category              | Problems |
+|----------------------------|----------|
+| Greedy / Sorting           | 3010, 3634 |
+| Sliding Window             | 1461, 3013 |
+| Bit Manipulation           | 67, 190, 693, 762, 868, 401 |
+| DFS / Trees                | 110, 1022, 1382 |
+| Dynamic Programming        | 799, 3640 |
+| Prefix / Range Queries     | 3714, 3721 |
+| Simulation / Linear Scan   | 3379, 3637, 696 |
+| Brute Force / Recursion    | 3713, 3719, 761 |
 
 ## 📝 Solution Highlights
 
