@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-22-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-23-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -81,6 +81,7 @@ LeetCode-Solutions-Python/
 | 693 | [Binary Number with Alternating Bits](./BitManipulation/0693_Binary_Number_with_Alternating_Bits.py) | Easy | Bit Manipulation (XOR & Check) | O(1) | O(1) |
 | 762 | [Prime Number of Set Bits in Binary Representation](./BitManipulation/0762_Prime_Number_of_Set_Bits_in_Binary_Representation.py) | Easy | Bit Manipulation + Fast Prime Set | O(n) | O(1) |
 | 868 | [Binary Gap](./BitManipulation/0868_Binary_Gap.py) | Easy | Bitwise Shift & Masking | O(log n) | O(1) |
+| 1356 | [Sort Integers by The Number of 1 Bits](./BitManipulation/1356_Sort_Integers_by_The_Number_of_1_Bits.py) | Easy | Custom Sort & Bit Count | O(N log N) | O(1) |
 
 ### [DynamicProgramming](./DynamicProgramming/)
 
@@ -121,9 +122,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 22 
+Total Problems: 23 
 
-Easy: 11 
+Easy: 12 
 
 Medium: 7 
 
@@ -139,7 +140,7 @@ Last updated: Daily
 |----------------------------|----------|
 | Greedy / Sorting           | 3010, 3634 |
 | Sliding Window             | 1461, 3013 |
-| Bit Manipulation           | 67, 190, 693, 762, 868, 401 |
+| Bit Manipulation           | 67, 190, 693, 762, 868, 401, 1356 |
 | DFS / Trees                | 110, 1022, 1382 |
 | Dynamic Programming        | 799, 3640 |
 | Prefix / Range Queries     | 3714, 3721 |
