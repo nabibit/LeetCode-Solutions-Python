@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-26-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-27-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -64,6 +64,7 @@ LeetCode-Solutions-Python/
 | 696 | [Count Binary Substrings](./Strings/0696_Count_Binary_Substrings.py) | Easy | Linear Scan (Group Counting) | O(n) |	O(1) |
 | 761 | [Special Binary String](./Strings/0761_Special_Binary_String.py) | Hard | Recursion + Sorting | O(n²) | O(n) |
 | 1461 | [Check If a String Contains All Binary Codes](./Strings/1461_Check_If_String_Contains_All_Binary_Codes.py) | Medium | Sliding Window Set / Rolling Hash | O(N) | O(N*K) |
+| 1689 | [Partitioning Into Minimum Number Of Deci-Binary Numbers](./Strings/1689_Partitioning_into_Minimum_number_Of_Deci-Binary_Numbers.py) | Medium | Greedy (Max Digit Search) | O(n) | O(1) |
 | 3713 | [Longest Balanced Substring I](./Strings/3713_Longest_Balanced_Substring_I.py) | Medium | Brute Force (All Substrings) | O(n²) | O(1) |
 | 3714 | [Longest Balanced Substring II](./Strings/3714_Longest_Balanced_Substring_II.py) | Medium | Prefix Difference Map | O(n) | O(n) |
 
@@ -125,11 +126,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 26 
+Total Problems: 27 
 
 Easy: 12 
 
-Medium: 9 
+Medium: 10 
 
 Hard: 5  
 
@@ -141,7 +142,7 @@ Last updated: Daily
 
 | Core Category              | Problems |
 |----------------------------|----------|
-| Greedy / Sorting           | 3010, 3634 |
+| Greedy / Sorting           | 1689, 3010, 3634 |
 | Sliding Window             | 1461, 3013 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1356, 1404, 1680, 3666 |
 | DFS / Trees                | 1022, 1382 |
