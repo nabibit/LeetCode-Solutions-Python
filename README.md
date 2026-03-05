@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-30-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-31-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -68,6 +68,7 @@ LeetCode-Solutions-Python/
 | 1461 | [Check If a String Contains All Binary Codes](./Strings/1461_Check_If_String_Contains_All_Binary_Codes.py) | Medium | Sliding Window Set / Rolling Hash | O(N) | O(N*K) |
 | 1545 | [Find Kth Bit in Nth Binary String](./Strings/1545_Find_Kth_Bit_in_Nth_Binary_String.py) | Medium | Divide & Conquer (Recursion) | O(N) | O(N) |
 | 1689 | [Partitioning Into Minimum Number Of Deci-Binary Numbers](./Strings/1689_Partitioning_into_Minimum_number_Of_Deci-Binary_Numbers.py) | Medium | Greedy (Max Digit Search) | O(n) | O(1) |
+| 1758 | [Minimum Changes To Make Alternating Binary String](./Strings/1758_Minimum_Changes_To_Make_Alternating_Binary_String.py) | Easy | Symmetric Pattern Counting | O(n) | O(1) |
 | 3713 | [Longest Balanced Substring I](./Strings/3713_Longest_Balanced_Substring_I.py) | Medium | Brute Force (All Substrings) | O(n²) | O(1) |
 | 3714 | [Longest Balanced Substring II](./Strings/3714_Longest_Balanced_Substring_II.py) | Medium | Prefix Difference Map | O(n) | O(n) |
 
@@ -129,9 +130,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 30 
+Total Problems: 31 
 
-Easy: 13 
+Easy: 14 
 
 Medium: 12 
 
@@ -151,7 +152,7 @@ Last updated: Daily
 | DFS / Trees                | 1022, 1382 |
 | Dynamic Programming        | 799, 3640 |
 | Prefix / Range Queries     | 3714, 3721 |
-| Simulation / Linear Scan   | 696, 1582, 3379, 3637 |
+| Simulation / Linear Scan   | 696, 1582, 1758, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 
 ## 📝 Solution Highlights
