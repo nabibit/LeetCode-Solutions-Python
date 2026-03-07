@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-32-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-33-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -70,6 +70,7 @@ LeetCode-Solutions-Python/
 | 1689 | [Partitioning Into Minimum Number Of Deci-Binary Numbers](./Strings/1689_Partitioning_into_Minimum_number_Of_Deci-Binary_Numbers.py) | Medium | Greedy (Max Digit Search) | O(n) | O(1) |
 | 1758 | [Minimum Changes To Make Alternating Binary String](./Strings/1758_Minimum_Changes_To_Make_Alternating_Binary_String.py) | Easy | Symmetric Pattern Counting | O(n) | O(1) |
 | 1784 | [Check if Binary String Has at Most One Segment of Ones](./Strings/1784_Check_if_Binary_String_Has_at_Most_One_Segment_of_Ones.py) | Easy | Linear Scan State Tracking | O(n) | O(1) |
+| 1888 | [Minimum Number of Flips to Make the Binary String Alternating](./Strings/1888_Minimum_Number_of_Flips_to_Make_the_Binary_String_Alternating.py) | Medium | Sliding Window (Virtual Doubling) | O(N) | O(1) |
 | 3713 | [Longest Balanced Substring I](./Strings/3713_Longest_Balanced_Substring_I.py) | Medium | Brute Force (All Substrings) | O(n²) | O(1) |
 | 3714 | [Longest Balanced Substring II](./Strings/3714_Longest_Balanced_Substring_II.py) | Medium | Prefix Difference Map | O(n) | O(n) |
 
@@ -131,11 +132,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 32 
+Total Problems: 33 
 
 Easy: 15 
 
-Medium: 12 
+Medium: 13 
 
 Hard: 5  
 
@@ -148,7 +149,7 @@ Last updated: Daily
 | Core Category              | Problems |
 |----------------------------|----------|
 | Greedy / Sorting           | 1536, 1689, 3010, 3634 |
-| Sliding Window             | 1461, 3013 |
+| Sliding Window             | 1461,c1888, 3013 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1356, 1404, 1680, 3666 |
 | DFS / Trees                | 1022, 1382 |
 | Dynamic Programming        | 799, 3640 |
@@ -176,6 +177,11 @@ Last updated: Daily
 
 **1461. Check If a String Contains All Binary Codes**: Showcases the progression from a standard O(N*K) sliding window Hash Set to a bare-metal O(2^K) Rolling Hash. By using bitwise shifts to update the window and a `bytearray` as a boolean checklist, it reduces a potential 100MB string allocation down to a 1MB footprint.
 
+
+**1758. Minimum Changes To Make Alternating Binary String**: Avoids simulating both possible alternating string patterns by using mathematical symmetry: if Pattern A requires `x` flips, Pattern B mathematically requires exactly `N - x` flips. 
+
+**1689. Partitioning Into Minimum Number Of Deci-Binary Numbers**: Reduces a seemingly complex dynamic programming problem into a pure $O(N)$ Greedy scan by realizing the number of required deci-binary layers is simply equal to the maximum single digit found within the string.
+
 ### Complex Logic
 
 **3013. Divide Array... Min Cost II**: A Hard problem tackled using a Dual Heap (Min/Max) approach to maintain a sliding window of the smallest k elements efficiently.  
@@ -185,6 +191,12 @@ Last updated: Daily
 **761. Special Binary String**: A beautiful algorithmic trick that treats special binary strings exactly like valid parentheses. Uses recursion to peel back the "brackets", sort the inner independent blocks, and glue them back together for the lexicographically largest result.
 
 **3721. Longest Balanced Subarray II**: A serious step up from Version I. Uses a Segment Tree with lazy propagation and prefix sums to efficiently manage and query huge array ranges in O(n log n) time.
+
+**3666. Minimum Operations to Equalize Binary String**: A Biweekly Contest Hard problem. Bypasses strict Time Limit Exceeded (TLE) errors in a BFS state-space search by utilizing a `SortedList` and tracking zero-count parities, dropping the lookup time to $O(\log N)$.
+
+**1545. Find Kth Bit in Nth Binary String**: Avoids generating a massive, million-character binary string by treating the sequence generation as a mirror. Uses $O(N)$ recursive Divide & Conquer to mathematically track the position through mirrored and inverted halves.
+
+**1888. Minimum Number of Flips to Make the Binary String Alternating**: Solves a complex cyclic-shift problem using a Sliding Window. Instead of physically reallocating memory to shift characters or doubling the string (`s + s`), it achieves $O(1)$ auxiliary space by using modulo arithmetic (`i % n`) to create a "virtual" doubled string.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
