@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-33-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-34-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -71,6 +71,7 @@ LeetCode-Solutions-Python/
 | 1758 | [Minimum Changes To Make Alternating Binary String](./Strings/1758_Minimum_Changes_To_Make_Alternating_Binary_String.py) | Easy | Symmetric Pattern Counting | O(n) | O(1) |
 | 1784 | [Check if Binary String Has at Most One Segment of Ones](./Strings/1784_Check_if_Binary_String_Has_at_Most_One_Segment_of_Ones.py) | Easy | Linear Scan State Tracking | O(n) | O(1) |
 | 1888 | [Minimum Number of Flips to Make the Binary String Alternating](./Strings/1888_Minimum_Number_of_Flips_to_Make_the_Binary_String_Alternating.py) | Medium | Sliding Window (Virtual Doubling) | O(N) | O(1) |
+| 1980 | [Find Unique Binary String](./Strings/1980_Find_Unique_Binary_String.py) | Medium | Cantor's Diagonalization | O(N) | O(N) |
 | 3713 | [Longest Balanced Substring I](./Strings/3713_Longest_Balanced_Substring_I.py) | Medium | Brute Force (All Substrings) | O(n²) | O(1) |
 | 3714 | [Longest Balanced Substring II](./Strings/3714_Longest_Balanced_Substring_II.py) | Medium | Prefix Difference Map | O(n) | O(n) |
 
@@ -132,11 +133,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 33 
+Total Problems: 34 
 
 Easy: 15 
 
-Medium: 13 
+Medium: 14 
 
 Hard: 5  
 
@@ -154,7 +155,7 @@ Last updated: Daily
 | DFS / Trees                | 1022, 1382 |
 | Dynamic Programming        | 799, 3640 |
 | Prefix / Range Queries     | 3714, 3721 |
-| Simulation / Linear Scan   | 696, 1582, 1758, 1784, 3379, 3637 |
+| Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 
 ## 📝 Solution Highlights
@@ -197,6 +198,8 @@ Last updated: Daily
 **1545. Find Kth Bit in Nth Binary String**: Avoids generating a massive, million-character binary string by treating the sequence generation as a mirror. Uses $O(N)$ recursive Divide & Conquer to mathematically track the position through mirrored and inverted halves.
 
 **1888. Minimum Number of Flips to Make the Binary String Alternating**: Solves a complex cyclic-shift problem using a Sliding Window. Instead of physically reallocating memory to shift characters or doubling the string (`s + s`), it achieves $O(1)$ auxiliary space by using modulo arithmetic (`i % n`) to create a "virtual" doubled string.
+
+**1980. Find Unique Binary String**: Showcases a brilliant implementation of Cantor's Diagonalization argument. Instead of generating and searching through a massive O(2^N) state space, it constructs a guaranteed unique string in strict O(N) time by simply flipping the i-th bit of the i-th string, mathematically proving uniqueness without a single collision check.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
