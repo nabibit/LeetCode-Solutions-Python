@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-34-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-35-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -99,6 +99,7 @@ LeetCode-Solutions-Python/
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
 | 799 | [Champagne Tower](./DynamicProgramming/0799_Champagne_Tower.py) | Medium | Simulation + DP (In-place) | O(R²) | O(R) |
+| 3129 | [Find All Possible Stable Binary Arrays I](./DynamicProgramming/3129_Find_All_Posible_Stable_Binary_Arrays_I.py) | Medium | DP with Invalid State Subtraction | O(Z * O) | O(Z * O) |
 
 ### [Trees](./Trees/)
 
@@ -133,11 +134,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 34 
+Total Problems: 35 
 
 Easy: 15 
 
-Medium: 14 
+Medium: 15 
 
 Hard: 5  
 
@@ -153,7 +154,7 @@ Last updated: Daily
 | Sliding Window             | 1461,c1888, 3013 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1356, 1404, 1680, 3666 |
 | DFS / Trees                | 1022, 1382 |
-| Dynamic Programming        | 799, 3640 |
+| Dynamic Programming        | 799, 3129, 3640 |
 | Prefix / Range Queries     | 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
@@ -200,6 +201,8 @@ Last updated: Daily
 **1888. Minimum Number of Flips to Make the Binary String Alternating**: Solves a complex cyclic-shift problem using a Sliding Window. Instead of physically reallocating memory to shift characters or doubling the string (`s + s`), it achieves $O(1)$ auxiliary space by using modulo arithmetic (`i % n`) to create a "virtual" doubled string.
 
 **1980. Find Unique Binary String**: Showcases a brilliant implementation of Cantor's Diagonalization argument. Instead of generating and searching through a massive O(2^N) state space, it constructs a guaranteed unique string in strict O(N) time by simply flipping the i-th bit of the i-th string, mathematically proving uniqueness without a single collision check.
+
+**3129. Find All Possible Stable Binary Arrays I**: Optimizes a complex combinatorial problem down to an $O(Z \times O)$ time complexity using bottom-up Dynamic Programming. Instead of using an inner loop to validate block sizes, it achieves $O(1)$ state transitions by mathematically subtracting the exact number of invalid sequences that just exceeded the consecutive character `limit`.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
