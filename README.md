@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-36-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-37-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -89,6 +89,7 @@ LeetCode-Solutions-Python/
 | 693 | [Binary Number with Alternating Bits](./BitManipulation/0693_Binary_Number_with_Alternating_Bits.py) | Easy | Bit Manipulation (XOR & Check) | O(1) | O(1) |
 | 762 | [Prime Number of Set Bits in Binary Representation](./BitManipulation/0762_Prime_Number_of_Set_Bits_in_Binary_Representation.py) | Easy | Bit Manipulation + Fast Prime Set | O(n) | O(1) |
 | 868 | [Binary Gap](./BitManipulation/0868_Binary_Gap.py) | Easy | Bitwise Shift & Masking | O(log n) | O(1) |
+| 1009 | [Complement of Base 10 Integer](./BitManipulation/1009_Complement_of_Base_10_Integer.py) | Easy | Bitmask & XOR | O(1) | O(1) |
 | 1356 | [Sort Integers by The Number of 1 Bits](./BitManipulation/1356_Sort_Integers_by_The_Number_of_1_Bits.py) | Easy | Custom Sort & Bit Count | O(N log N) | O(1) |
 | 1404 | [Number of Steps to Reduce a Number in Binary Representation to One](./BitManipulation/1404_Number_of_Steps_to_Reduce_a_Number_in_Binary_Representation_to_One.py) | Medium | Right-to-Left Carry Tracking | O(N) | O(1) |
 | 1680 | [Concatenation of Consecutive Binary Numbers](./BitManipulation/1680_Concatenation_of_Consecutive_Binary_Numbers.py) | Medium | Bitwise Shift & Modulo | O(N) | O(1) |
@@ -135,9 +136,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 36 
+Total Problems: 37 
 
-Easy: 15 
+Easy: 16 
 
 Medium: 15 
 
@@ -153,7 +154,7 @@ Last updated: Daily
 |----------------------------|----------|
 | Greedy / Sorting           | 1536, 1689, 3010, 3634 |
 | Sliding Window             | 1461,c1888, 3013 |
-| Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1356, 1404, 1680, 3666 |
+| Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 3666 |
 | DFS / Trees                | 1022, 1382 |
 | Dynamic Programming        | 799, 3129, 3130, 3640 |
 | Prefix / Range Queries     | 3714, 3721 |
