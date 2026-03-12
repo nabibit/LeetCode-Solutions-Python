@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-37-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-38-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -37,6 +37,8 @@ LeetCode-Solutions-Python/
 ├── Strings/             # String processing
 
 ├── Trees/               # BST operations & Traversals
+
+├── Graphs/              # DSU, Kruskal's, & Binary Search
 
 └── README.md
 
@@ -110,6 +112,12 @@ LeetCode-Solutions-Python/
 | 1022 | [Sum of Root To Leaf Binary Numbers](./Trees/1022_Sum_of_Root_To_Leaf_Binary_Numbers.py) | Easy | DFS & Bitwise Shift | O(N) | O(H) |
 | 1382 | [Balance a Binary Search Tree](./Trees/1382_Balance_a_Binary_Search_Tree.py) | Medium | In-Order Traversal + Divide & Conquer | O(n) | O(n) |
 
+### [Graphs](./Graphs/)
+
+| # | Problem | Difficulty | Approach | Time | Space |
+|---|---------|------------|----------|------|-------|
+| 3600 | [Maximize Spanning Tree Stability with Upgrades](./Graphs/3600._Maximize_Spanning_Tree_Stability_with_Uprades.py) | Hard | Binary Search on Answer + Kruskal's (DSU) | O(E log M) | O(V + E) |
+
 ## 🎯 Problem Solving Approach
 
 Each solution file follows a consistent structure to ensure readability and maintainability:
@@ -136,13 +144,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 37 
+Total Problems: 38 
 
 Easy: 16 
 
 Medium: 15 
 
-Hard: 6  
+Hard: 7  
 
 Last updated: Daily  
 
@@ -153,13 +161,14 @@ Last updated: Daily
 | Core Category              | Problems |
 |----------------------------|----------|
 | Greedy / Sorting           | 1536, 1689, 3010, 3634 |
-| Sliding Window             | 1461,c1888, 3013 |
+| Sliding Window             | 1461, 1888, 3013 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 3666 |
 | DFS / Trees                | 1022, 1382 |
 | Dynamic Programming        | 799, 3129, 3130, 3640 |
 | Prefix / Range Queries     | 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
+| Graphs    | 3600 |
 
 ## 📝 Solution Highlights
 
@@ -210,6 +219,9 @@ Last updated: Daily
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
+
+### Graph Operations
+**3600. Maximize Spanning Tree Stability with Upgrades**: Combines Binary Search on the Answer with Kruskal's Algorithm. Instead of building a complex dynamic tree, it efficiently validates a target "stability" score by constructing a Spanning Tree using a Disjoint Set Union (DSU) and optimally budgeting edge upgrades.
 
 ---
 
