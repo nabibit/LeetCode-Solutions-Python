@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-38-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-39-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -83,6 +83,12 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 401 | [Binary Watch](./Backtracking/0401_Binary_Watch.py) | Easy | Backtracking / Bit Counting | O(C(10, k)) | O(k) |
 
+### [BinarySearch](./BinarySearch/)
+
+| # | Problem | Difficulty | Approach | Time | Space |
+|---|---------|------------|----------|------|-------|
+| 3296 | [Minimum Number of Seconds to Make Mountain Height Zero](./BinarySearch/3296_Min_Seconds_Mountain_Zero.py) | Medium | Binary Search on Answer + Quadratic Formula | O(N log M) | O(1) |
+
 ### [BitManipulation](./BitManipulation/)
 
 | # | Problem | Difficulty | Approach | Time | Space |
@@ -144,11 +150,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 38 
+Total Problems: 39 
 
 Easy: 16 
 
-Medium: 15 
+Medium: 16 
 
 Hard: 7  
 
@@ -169,6 +175,7 @@ Last updated: Daily
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 3600 |
+| Binary Search on Answer    | 3600, 3296 |
 
 ## 📝 Solution Highlights
 
