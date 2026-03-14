@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-39-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-40-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -82,6 +82,7 @@ LeetCode-Solutions-Python/
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
 | 401 | [Binary Watch](./Backtracking/0401_Binary_Watch.py) | Easy | Backtracking / Bit Counting | O(C(10, k)) | O(k) |
+| 1415 | [The k-th Lexicographical String of All Happy Strings of Length n](./Backtracking/1415_The_kth_Lexicographical_String_of_All_Happy_Strings.py) | Medium | Combinatorial Math / Decision Tree | O(N) | O(N) |
 
 ### [BinarySearch](./BinarySearch/)
 
@@ -150,11 +151,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 39 
+Total Problems: 40 
 
 Easy: 16 
 
-Medium: 16 
+Medium: 17 
 
 Hard: 7  
 
@@ -176,6 +177,7 @@ Last updated: Daily
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 3600 |
 | Binary Search on Answer    | 3600, 3296 |
+| Backtracking / Decision Tree | 401, 1415 |
 
 ## 📝 Solution Highlights
 
@@ -221,6 +223,8 @@ Last updated: Daily
 **1980. Find Unique Binary String**: Showcases a brilliant implementation of Cantor's Diagonalization argument. Instead of generating and searching through a massive O(2^N) state space, it constructs a guaranteed unique string in strict O(N) time by simply flipping the i-th bit of the i-th string, mathematically proving uniqueness without a single collision check.
 
 **3129. Find All Possible Stable Binary Arrays I**: Optimizes a complex combinatorial problem down to an $O(Z \times O)$ time complexity using bottom-up Dynamic Programming. Instead of using an inner loop to validate block sizes, it achieves $O(1)$ state transitions by mathematically subtracting the exact number of invalid sequences that just exceeded the consecutive character `limit`.
+
+**1415. The k-th Lexicographical String of All Happy Strings of Length n**: Bypasses the standard $O(2^N)$ backtracking generation by using Combinatorics. It calculates the exact branch of the decision tree the $k$-th string resides in at every character position, effectively predicting the entire path in strict $O(N)$ time.
 
 **3130. Find All Possible Stable Binary Arrays II**: Scales the mathematical state subtraction logic to handle Hard constraints (over 1,000,000 DP states). By decoupling a heavy 3D matrix into two independent 2D arrays (`dp0` and `dp1`), this architectural tweak drastically reduces Python's memory allocation overhead and pointer-chasing latency, allowing the algorithm to comfortably beat strict Time Limit Exceeded (TLE) constraints.
 
