@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-40-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-41-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -125,6 +125,12 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 3600 | [Maximize Spanning Tree Stability with Upgrades](./Graphs/3600._Maximize_Spanning_Tree_Stability_with_Uprades.py) | Hard | Binary Search on Answer + Kruskal's (DSU) | O(E log M) | O(V + E) |
 
+### [Math](./Math/)
+
+| # | Problem | Difficulty | Approach | Time | Space |
+|---|---------|------------|----------|------|-------|
+| 1622 | [Fancy Sequence](./Math/1622_Fancy_Sequence.py) | Hard | Modular Inverse (Fermat's Little Theorem) | O(1)* | O(N) |
+
 ## 🎯 Problem Solving Approach
 
 Each solution file follows a consistent structure to ensure readability and maintainability:
@@ -151,13 +157,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 40 
+Total Problems: 41 
 
 Easy: 16 
 
 Medium: 17 
 
-Hard: 7  
+Hard: 8  
 
 Last updated: Daily  
 
@@ -178,6 +184,7 @@ Last updated: Daily
 | Graphs    | 3600 |
 | Binary Search on Answer    | 3600, 3296 |
 | Backtracking / Decision Tree | 401, 1415 |
+| Math / Modular Arithmetic  | 1622 |
 
 ## 📝 Solution Highlights
 
@@ -227,6 +234,8 @@ Last updated: Daily
 **1415. The k-th Lexicographical String of All Happy Strings of Length n**: Bypasses the standard $O(2^N)$ backtracking generation by using Combinatorics. It calculates the exact branch of the decision tree the $k$-th string resides in at every character position, effectively predicting the entire path in strict $O(N)$ time.
 
 **3130. Find All Possible Stable Binary Arrays II**: Scales the mathematical state subtraction logic to handle Hard constraints (over 1,000,000 DP states). By decoupling a heavy 3D matrix into two independent 2D arrays (`dp0` and `dp1`), this architectural tweak drastically reduces Python's memory allocation overhead and pointer-chasing latency, allowing the algorithm to comfortably beat strict Time Limit Exceeded (TLE) constraints.
+
+**1622. Fancy Sequence**: Bypasses the need for a heavy Segment Tree with lazy propagation by leveraging Affine Transformations ($y = mx + c$) and Fermat's Little Theorem. Instead of updating $10^5$ array elements on every API call, it modifies the global state in $O(1)$ time, applying a modular inverse to "pre-shrink" newly appended values so they correctly align with future global transformations.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
