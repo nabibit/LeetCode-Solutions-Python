@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-41-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-42-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -11,16 +11,21 @@ A curated collection of LeetCode problems solved in Python, with a focus on **cl
 
 | Notation | Meaning | Example |
 |----------|---------|---------|
-| O(1) | Constant time | Hash table lookup / Bitwise ops |
-| O(log n) | Logarithmic | Binary search / Heap ops |
-| O(n) | Linear | Single pass through array |
-| O(n + m) | Linear sum | Iterating through two separate inputs |
-| O(n log n) | Linearithmic | Efficient sorting (Timsort) |
+| O(1) | Constant | Hash table lookup / Bitwise ops / Math |
+| O(log n) | Logarithmic | Binary search / Single Heap ops |
+| O(n) | Linear | Single pass through array/string |
+| O(n + m) | Linear Sum | Iterating through two separate inputs |
+| O(max(n, m)) | Max Linear | Processing the longer of two inputs |
+| O(n log n) | Linearithmic | Efficient sorting / Segment Trees |
 | O(n²) | Quadratic | Nested loops / All substrings |
-| O(R²) | Quadratic (rows) | Pyramid simulation |
+| O(n * m) | Multiplicative | 2D Grid traversal / State-space DP (e.g., O(Z * O)) |
+| O(V + E) | Graph Linear | DFS/BFS traversing Vertices and Edges |
+| O(E log M) | Graph Logarithmic | Kruskal's Algorithm / Binary Search on Edges |
 | O(C(n, k)) | Combinatorial | Backtracking valid combinations |
-| O(n * k) | Multiplicative | Sliding window with string slicing |
 | O(2^k) | Exponential | All binary combinations of length k |
+| O(H) | Tree Height | Space complexity for recursive Call Stack |
+| O(U) | Unique Elements | Space complexity for Hash Sets |
+
 
 ## 📁 Repository Structure
 
@@ -51,6 +56,7 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 1536 | [Minimum Swaps to Arrange a Binary Grid](./Arrays/1536_Minimum_Swaps_to_Arrange_a_Binary_Grid.py) | Medium | Greedy (Pop/Insert Simulation) | O(N²) | O(N) |
 | 1582 | [Special Positions in a Binary Matrix](./Arrays/1582_Special_Positions_in_a_Binary_Matrix.py) | Easy | Matrix Precomputation | O(M * N) | O(M + N) |
+| 1878 | [Get Biggest Three Rhombus Sums in a Grid](./Arrays/1878_Get_Biggest_Three_Rhombus_Sums.py) | Medium | Boundary Simulation | O(M*N*min(M,N)) | O(U) |
 | 3010 | [Divide an Array Into Subarrays With Minimum Cost I](./Arrays/3010_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_I.py) | Easy | Greedy + Sorting | O(n log n) | O(n) |
 | 3013 | [Divide an Array Into Subarrays With Minimum Cost II](./Arrays/3013_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_II.py) | Hard | Sliding Window + Two Heaps | O(n log d) | O(n) |
 | 3379 | [Transformed Array](./Arrays/3379_Transformed_Array.py) | Easy | Simulation (Modular Arithmetic) | O(n) | O(n) |
@@ -109,7 +115,7 @@ LeetCode-Solutions-Python/
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
 | 799 | [Champagne Tower](./DynamicProgramming/0799_Champagne_Tower.py) | Medium | Simulation + DP (In-place) | O(R²) | O(R) |
-| 3129 | [Find All Possible Stable Binary Arrays I](./DynamicProgramming/3129_Find_All_Posible_Stable_Binary_Arrays_I.py) | Medium | DP with Invalid State Subtraction | O(Z * O) | O(Z * O) |
+| 3129 | [Find All Possible Stable Binary Arrays I](./DynamicProgramming/3129_Find_All_Possible_Stable_Binary_Arrays_I.py) | Medium | DP with Invalid State Subtraction | O(Z * O) | O(Z * O) |
 | 3130 | [Find All Possible Stable Binary Arrays II](./DynamicProgramming/3130_Find_All_Possible_Stable_Binary_Arrays_II.py) | Hard | DP with Invalid State Subtraction | O(Z * O) | O(Z * O) |
 
 ### [Trees](./Trees/)
@@ -157,11 +163,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 41 
+Total Problems: 42 
 
 Easy: 16 
 
-Medium: 17 
+Medium: 18 
 
 Hard: 8  
 
@@ -179,7 +185,7 @@ Last updated: Daily
 | DFS / Trees                | 1022, 1382 |
 | Dynamic Programming        | 799, 3129, 3130, 3640 |
 | Prefix / Range Queries     | 3714, 3721 |
-| Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1980, 3379, 3637 |
+| Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 3600 |
 | Binary Search on Answer    | 3600, 3296 |
