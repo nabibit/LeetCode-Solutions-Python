@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-42-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-44-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -29,21 +29,29 @@ A curated collection of LeetCode problems solved in Python, with a focus on **cl
 
 ## 📁 Repository Structure
 
+## 📁 Repository Structure
+
 LeetCode-Solutions-Python/
 
-├── Arrays/ # Array manipulation & Sliding Window
+├── Arrays/              # 1D Array manipulation & Sliding Window
 
-├── Backtracking/ # Recursive search & Combinations
+├── Backtracking/        # Recursive search & Combinations
 
-├── BitManipulation/ # Bitwise operations
+├── BinarySearch/        # Search space optimization & Math
 
-├── DynamicProgramming/ # DP & Simulation
+├── BitManipulation/     # Bitwise operations
+
+├── DynamicProgramming/  # DP & Simulation
+
+├── Graphs/              # DSU, Kruskal's, & Binary Search
+
+├── Math/                # Modular Arithmetic & Number Theory
+
+├── Matrix/              # 2D Grids, Traversals, & Boundary Simulation
 
 ├── Strings/             # String processing
 
 ├── Trees/               # BST operations & Traversals
-
-├── Graphs/              # DSU, Kruskal's, & Binary Search
 
 └── README.md
 
@@ -137,6 +145,13 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 1622 | [Fancy Sequence](./Math/1622_Fancy_Sequence.py) | Hard | Modular Inverse (Fermat's Little Theorem) | O(1)* | O(N) |
 
+### [Matrix](./Matrix/)
+
+| # | Problem | Difficulty | Approach | Time | Space |
+|---|---------|------------|----------|------|-------|
+| 1727 | [Largest Submatrix With Rearrangements](./Matrix/1727_Largest_Submatrix_With_Rearrangements.py) | Medium | Histogram Heights + Greedy Sorting | O(M * N log N) | O(1) |
+| 3070 | [Count Submatrices with Top-Left Element and Sum Less Than k](./Matrix/3070_Count_Submatrices_Top_Left.py) | Medium | 2D Prefix Sum + Staircase Pruning | O(M*N) | O(1) |
+
 ## 🎯 Problem Solving Approach
 
 Each solution file follows a consistent structure to ensure readability and maintainability:
@@ -163,11 +178,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 42 
+Total Problems: 44 
 
 Easy: 16 
 
-Medium: 18 
+Medium: 20 
 
 Hard: 8  
 
@@ -179,18 +194,19 @@ Last updated: Daily
 
 | Core Category              | Problems |
 |----------------------------|----------|
-| Greedy / Sorting           | 1536, 1689, 3010, 3634 |
+| Greedy / Sorting           | 1536, 1689, 1727, 3010, 3634 |
 | Sliding Window             | 1461, 1888, 3013 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 3666 |
 | DFS / Trees                | 1022, 1382 |
 | Dynamic Programming        | 799, 3129, 3130, 3640 |
-| Prefix / Range Queries     | 3714, 3721 |
+| Prefix / Range Queries     | 3070, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 3600 |
 | Binary Search on Answer    | 3600, 3296 |
 | Backtracking / Decision Tree | 401, 1415 |
 | Math / Modular Arithmetic  | 1622 |
+| Matrix / 2D Traversal      | 1582, 1727, 1878, 3070 |
 
 ## 📝 Solution Highlights
 
@@ -242,6 +258,10 @@ Last updated: Daily
 **3130. Find All Possible Stable Binary Arrays II**: Scales the mathematical state subtraction logic to handle Hard constraints (over 1,000,000 DP states). By decoupling a heavy 3D matrix into two independent 2D arrays (`dp0` and `dp1`), this architectural tweak drastically reduces Python's memory allocation overhead and pointer-chasing latency, allowing the algorithm to comfortably beat strict Time Limit Exceeded (TLE) constraints.
 
 **1622. Fancy Sequence**: Bypasses the need for a heavy Segment Tree with lazy propagation by leveraging Affine Transformations ($y = mx + c$) and Fermat's Little Theorem. Instead of updating $10^5$ array elements on every API call, it modifies the global state in $O(1)$ time, applying a modular inverse to "pre-shrink" newly appended values so they correctly align with future global transformations.
+
+**1727. Largest Submatrix With Rearrangements**: Transforms a chaotic 2D matrix rearrangement problem into a classic histogram area problem. By calculating consecutive vertical 1s in-place and greedily sorting each row's heights, it completely bypasses the need for combinatorial column shuffling, finding the optimal area in $O(M \cdot N \log N)$ time.
+
+**3070. Count Submatrices with Top-Left Element and Sum Less Than k**: Bypasses the strict $O(M \times N)$ execution time by applying a spatial "Staircase Pruning" technique to a 2D Prefix Sum. By realizing that extending a matrix across non-negative integers guarantees a monotonic increase in sum, it aggressively shrinks the column iteration boundaries the moment a sum exceeds $k$, dropping the real-world time complexity closer to $O(\text{Valid Matrices} + M)$.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
