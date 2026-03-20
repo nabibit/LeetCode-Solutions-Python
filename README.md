@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-44-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-46-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -151,6 +151,8 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 1727 | [Largest Submatrix With Rearrangements](./Matrix/1727_Largest_Submatrix_With_Rearrangements.py) | Medium | Histogram Heights + Greedy Sorting | O(M * N log N) | O(1) |
 | 3070 | [Count Submatrices with Top-Left Element and Sum Less Than k](./Matrix/3070_Count_Submatrices_Top_Left.py) | Medium | 2D Prefix Sum + Staircase Pruning | O(M*N) | O(1) |
+| 3212 | [Count Submatrices With Equal Frequency of X and Y](./Matrix/3212_Count_Submatrices_Equal_Frequency.py) | Medium | Space-Optimized 2D Prefix Sum | O(M*N) | O(N) |
+| 3567 | [Minimum Absolute Difference in Sliding Submatrix](./Matrix/3567_Min_Abs_Difference_Sliding_Submatrix.py) | Medium | Submatrix Extraction + Sorting | O(M*N*K²logK) | O(K²) |
 
 ## 🎯 Problem Solving Approach
 
@@ -178,11 +180,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 44 
+Total Problems: 46 
 
 Easy: 16 
 
-Medium: 20 
+Medium: 22 
 
 Hard: 8  
 
@@ -199,14 +201,14 @@ Last updated: Daily
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 3666 |
 | DFS / Trees                | 1022, 1382 |
 | Dynamic Programming        | 799, 3129, 3130, 3640 |
-| Prefix / Range Queries     | 3070, 3714, 3721 |
+| Prefix / Range Queries     | 3070, 3212, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 3600 |
 | Binary Search on Answer    | 3600, 3296 |
 | Backtracking / Decision Tree | 401, 1415 |
 | Math / Modular Arithmetic  | 1622 |
-| Matrix / 2D Traversal      | 1582, 1727, 1878, 3070 |
+| Matrix / 2D Traversal      | 1582, 1727, 1878, 3070, 3212, 3567 |
 
 ## 📝 Solution Highlights
 
@@ -262,6 +264,10 @@ Last updated: Daily
 **1727. Largest Submatrix With Rearrangements**: Transforms a chaotic 2D matrix rearrangement problem into a classic histogram area problem. By calculating consecutive vertical 1s in-place and greedily sorting each row's heights, it completely bypasses the need for combinatorial column shuffling, finding the optimal area in $O(M \cdot N \log N)$ time.
 
 **3070. Count Submatrices with Top-Left Element and Sum Less Than k**: Bypasses the strict $O(M \times N)$ execution time by applying a spatial "Staircase Pruning" technique to a 2D Prefix Sum. By realizing that extending a matrix across non-negative integers guarantees a monotonic increase in sum, it aggressively shrinks the column iteration boundaries the moment a sum exceeds $k$, dropping the real-world time complexity closer to $O(\text{Valid Matrices} + M)$.
+
+**3212. Count Submatrices With Equal Frequency of X and Y**: Implements a 2D Prefix Sum without allocating a full $O(M \times N)$ auxiliary matrix or mutating the input data. By tracking a running horizontal row count and cumulatively adding it to a 1D vertical column array, it successfully evaluates all top-left submatrices while minimizing the space complexity to a strict $O(N)$.
+
+**3567. Minimum Absolute Difference in Sliding Submatrix**: Demonstrates constraint-driven algorithm selection. Instead of over-engineering a complex 2D rolling window or utilizing balanced BSTs, it leverages the microscopic grid constraints ($N \le 30$) to deploy an ultra-lean $O(M \cdot N \cdot K^2 \log K)$ brute-force submatrix extraction and sorting mechanism, optimizing for real-world execution speed over theoretical asymptotic bounds.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
