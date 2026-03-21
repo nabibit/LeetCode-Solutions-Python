@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-46-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-47-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -153,6 +153,7 @@ LeetCode-Solutions-Python/
 | 3070 | [Count Submatrices with Top-Left Element and Sum Less Than k](./Matrix/3070_Count_Submatrices_Top_Left.py) | Medium | 2D Prefix Sum + Staircase Pruning | O(M*N) | O(1) |
 | 3212 | [Count Submatrices With Equal Frequency of X and Y](./Matrix/3212_Count_Submatrices_Equal_Frequency.py) | Medium | Space-Optimized 2D Prefix Sum | O(M*N) | O(N) |
 | 3567 | [Minimum Absolute Difference in Sliding Submatrix](./Matrix/3567_Min_Abs_Difference_Sliding_Submatrix.py) | Medium | Submatrix Extraction + Sorting | O(M*N*K²logK) | O(K²) |
+| 3643 | [Flip Square Submatrix Vertically](./Matrix/3643_Flip_Square_Submatrix_Vertically.py) | Easy | Two-Pointer Slice Swap | O(K²) | O(K) |
 
 ## 🎯 Problem Solving Approach
 
@@ -180,9 +181,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 46 
+Total Problems: 47 
 
-Easy: 16 
+Easy: 17 
 
 Medium: 22 
 
@@ -208,7 +209,7 @@ Last updated: Daily
 | Binary Search on Answer    | 3600, 3296 |
 | Backtracking / Decision Tree | 401, 1415 |
 | Math / Modular Arithmetic  | 1622 |
-| Matrix / 2D Traversal      | 1582, 1727, 1878, 3070, 3212, 3567 |
+| Matrix / 2D Traversal      | 1582, 1727, 1878, 3070, 3212, 3567, 3643 |
 
 ## 📝 Solution Highlights
 
@@ -234,6 +235,8 @@ Last updated: Daily
 **1758. Minimum Changes To Make Alternating Binary String**: Avoids simulating both possible alternating string patterns by using mathematical symmetry: if Pattern A requires `x` flips, Pattern B mathematically requires exactly `N - x` flips. 
 
 **1689. Partitioning Into Minimum Number Of Deci-Binary Numbers**: Reduces a seemingly complex dynamic programming problem into a pure $O(N)$ Greedy scan by realizing the number of required deci-binary layers is simply equal to the maximum single digit found within the string.
+
+**3643. Flip Square Submatrix Vertically**: Showcases idiomatic Python by utilizing slice assignment (`grid[top][y:y+k], grid[bottom][y:y+k] = ...`) combined with a two-pointer approach to reverse a targeted submatrix in-place, keeping the codebase extremely clean and avoiding the boilerplate of nested element-wise swapping loops.
 
 ### Complex Logic
 
