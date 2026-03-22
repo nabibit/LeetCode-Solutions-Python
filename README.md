@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-47-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-48-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -154,6 +154,7 @@ LeetCode-Solutions-Python/
 | 3212 | [Count Submatrices With Equal Frequency of X and Y](./Matrix/3212_Count_Submatrices_Equal_Frequency.py) | Medium | Space-Optimized 2D Prefix Sum | O(M*N) | O(N) |
 | 3567 | [Minimum Absolute Difference in Sliding Submatrix](./Matrix/3567_Min_Abs_Difference_Sliding_Submatrix.py) | Medium | Submatrix Extraction + Sorting | O(M*N*K²logK) | O(K²) |
 | 3643 | [Flip Square Submatrix Vertically](./Matrix/3643_Flip_Square_Submatrix_Vertically.py) | Easy | Two-Pointer Slice Swap | O(K²) | O(K) |
+| 1886 | [Determine Whether Matrix Can Be Obtained By Rotation](./Matrix/1886_Determine_Whether_Matrix_Can_Be_Obtained_By_Rotation.py) | Easy | In-Place Transpose + Reverse | O(N²) | O(1) |
 
 ## 🎯 Problem Solving Approach
 
@@ -181,9 +182,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 47 
+Total Problems: 48 
 
-Easy: 17 
+Easy: 18 
 
 Medium: 22 
 
@@ -209,7 +210,7 @@ Last updated: Daily
 | Binary Search on Answer    | 3600, 3296 |
 | Backtracking / Decision Tree | 401, 1415 |
 | Math / Modular Arithmetic  | 1622 |
-| Matrix / 2D Traversal      | 1582, 1727, 1878, 3070, 3212, 3567, 3643 |
+| Matrix / 2D Traversal      | 1582, 1727, 1878, 1886, 3070, 3212, 3567, 3643 |
 
 ## 📝 Solution Highlights
 
@@ -237,6 +238,8 @@ Last updated: Daily
 **1689. Partitioning Into Minimum Number Of Deci-Binary Numbers**: Reduces a seemingly complex dynamic programming problem into a pure $O(N)$ Greedy scan by realizing the number of required deci-binary layers is simply equal to the maximum single digit found within the string.
 
 **3643. Flip Square Submatrix Vertically**: Showcases idiomatic Python by utilizing slice assignment (`grid[top][y:y+k], grid[bottom][y:y+k] = ...`) combined with a two-pointer approach to reverse a targeted submatrix in-place, keeping the codebase extremely clean and avoiding the boilerplate of nested element-wise swapping loops.
+
+**1886. Determine Whether Matrix Can Be Obtained By Rotation**: Avoids complex coordinate mapping by breaking a 90-degree matrix rotation into two primitive $O(1)$ space operations: a diagonal transposition followed by a horizontal row reversal. This allows for rapid, in-place orientation checks without allocating memory for rotated copies.
 
 ### Complex Logic
 
