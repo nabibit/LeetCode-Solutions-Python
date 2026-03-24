@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-49-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-50-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -26,8 +26,6 @@ A curated collection of LeetCode problems solved in Python, with a focus on **cl
 | O(H) | Tree Height | Space complexity for recursive Call Stack |
 | O(U) | Unique Elements | Space complexity for Hash Sets |
 
-
-## 📁 Repository Structure
 
 ## 📁 Repository Structure
 
@@ -151,6 +149,7 @@ LeetCode-Solutions-Python/
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
 | 1727 | [Largest Submatrix With Rearrangements](./Matrix/1727_Largest_Submatrix_With_Rearrangements.py) | Medium | Histogram Heights + Greedy Sorting | O(M * N log N) | O(1) |
+| 2906 | [Construct Product Matrix](./Matrix/2906_Construct_Product_Matrix.py) | Medium | Prefix & Suffix Sweeps | O(N*M) | O(1)* |
 | 3070 | [Count Submatrices with Top-Left Element and Sum Less Than k](./Matrix/3070_Count_Submatrices_Top_Left.py) | Medium | 2D Prefix Sum + Staircase Pruning | O(M*N) | O(1) |
 | 3212 | [Count Submatrices With Equal Frequency of X and Y](./Matrix/3212_Count_Submatrices_Equal_Frequency.py) | Medium | Space-Optimized 2D Prefix Sum | O(M*N) | O(N) |
 | 3567 | [Minimum Absolute Difference in Sliding Submatrix](./Matrix/3567_Min_Abs_Difference_Sliding_Submatrix.py) | Medium | Submatrix Extraction + Sorting | O(M*N*K²logK) | O(K²) |
@@ -183,11 +182,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 49 
+Total Problems: 50 
 
 Easy: 18 
 
-Medium: 23 
+Medium: 24 
 
 Hard: 8  
 
@@ -204,14 +203,14 @@ Last updated: Daily
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 3666 |
 | DFS / Trees                | 1022, 1382 |
 | Dynamic Programming        | 799, 1594, 3129, 3130, 3640 |
-| Prefix / Range Queries     | 3070, 3212, 3714, 3721 |
+| Prefix / Range Queries     | 2906, 3070, 3212, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 3600 |
 | Binary Search on Answer    | 3600, 3296 |
 | Backtracking / Decision Tree | 401, 1415 |
 | Math / Modular Arithmetic  | 1622 |
-| Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 3070, 3212, 3567, 3643 |
+| Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 3070, 3212, 3567, 3643 |
 
 ## 📝 Solution Highlights
 
@@ -277,6 +276,8 @@ Last updated: Daily
 **3567. Minimum Absolute Difference in Sliding Submatrix**: Demonstrates constraint-driven algorithm selection. Instead of over-engineering a complex 2D rolling window or utilizing balanced BSTs, it leverages the microscopic grid constraints ($N \le 30$) to deploy an ultra-lean $O(M \cdot N \cdot K^2 \log K)$ brute-force submatrix extraction and sorting mechanism, optimizing for real-world execution speed over theoretical asymptotic bounds.
 
 **1594. Maximum Non Negative Product in a Matrix**: Demonstrates the failure of greedy pathfinding algorithms when dealing with negative multiplication. It uses a 2D Dynamic Programming matrix to track dual-states (`max_product`, `min_product`) at every cell, successfully maintaining the lowest negative bounds to capitalize on sign-flipping operations further down the grid.
+
+**2906. Construct Product Matrix**: Solves a 2D variation of the classic "Product Except Self" problem while navigating strict non-prime modulo constraints ($12345$). Because the modulo is non-prime, division via Modular Multiplicative Inverse is mathematically invalid. This solution elegantly bypasses the need for division entirely by flattening the matrix traversal into an $O(N \cdot M)$ two-pass algorithm, calculating running prefix and suffix products while updating the result matrix in-place for $O(1)$ auxiliary space.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
