@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-50-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-51-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -152,6 +152,7 @@ LeetCode-Solutions-Python/
 | 2906 | [Construct Product Matrix](./Matrix/2906_Construct_Product_Matrix.py) | Medium | Prefix & Suffix Sweeps | O(N*M) | O(1)* |
 | 3070 | [Count Submatrices with Top-Left Element and Sum Less Than k](./Matrix/3070_Count_Submatrices_Top_Left.py) | Medium | 2D Prefix Sum + Staircase Pruning | O(M*N) | O(1) |
 | 3212 | [Count Submatrices With Equal Frequency of X and Y](./Matrix/3212_Count_Submatrices_Equal_Frequency.py) | Medium | Space-Optimized 2D Prefix Sum | O(M*N) | O(N) |
+| 3546 | [Equal Sum Grid Partition I](./Matrix/3546_Equal_Sum_Grid_Partition_I.py) | Medium | 1D Spatial Projection + Prefix Sum | O(M*N) | O(M+N) |
 | 3567 | [Minimum Absolute Difference in Sliding Submatrix](./Matrix/3567_Min_Abs_Difference_Sliding_Submatrix.py) | Medium | Submatrix Extraction + Sorting | O(M*N*K²logK) | O(K²) |
 | 3643 | [Flip Square Submatrix Vertically](./Matrix/3643_Flip_Square_Submatrix_Vertically.py) | Easy | Two-Pointer Slice Swap | O(K²) | O(K) |
 | 1886 | [Determine Whether Matrix Can Be Obtained By Rotation](./Matrix/1886_Determine_Whether_Matrix_Can_Be_Obtained_By_Rotation.py) | Easy | In-Place Transpose + Reverse | O(N²) | O(1) |
@@ -182,11 +183,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 50 
+Total Problems: 51 
 
 Easy: 18 
 
-Medium: 24 
+Medium: 25 
 
 Hard: 8  
 
@@ -203,14 +204,14 @@ Last updated: Daily
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 3666 |
 | DFS / Trees                | 1022, 1382 |
 | Dynamic Programming        | 799, 1594, 3129, 3130, 3640 |
-| Prefix / Range Queries     | 2906, 3070, 3212, 3714, 3721 |
+| Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 3600 |
 | Binary Search on Answer    | 3600, 3296 |
 | Backtracking / Decision Tree | 401, 1415 |
 | Math / Modular Arithmetic  | 1622 |
-| Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 3070, 3212, 3567, 3643 |
+| Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 3070, 3212, 3546, 3567, 3643 |
 
 ## 📝 Solution Highlights
 
@@ -278,6 +279,8 @@ Last updated: Daily
 **1594. Maximum Non Negative Product in a Matrix**: Demonstrates the failure of greedy pathfinding algorithms when dealing with negative multiplication. It uses a 2D Dynamic Programming matrix to track dual-states (`max_product`, `min_product`) at every cell, successfully maintaining the lowest negative bounds to capitalize on sign-flipping operations further down the grid.
 
 **2906. Construct Product Matrix**: Solves a 2D variation of the classic "Product Except Self" problem while navigating strict non-prime modulo constraints ($12345$). Because the modulo is non-prime, division via Modular Multiplicative Inverse is mathematically invalid. This solution elegantly bypasses the need for division entirely by flattening the matrix traversal into an $O(N \cdot M)$ two-pass algorithm, calculating running prefix and suffix products while updating the result matrix in-place for $O(1)$ auxiliary space.
+
+**3546. Equal Sum Grid Partition I**: Bypasses the need for a heavy 2D Prefix Sum matrix by utilizing 1D Spatial Projection. Because valid cuts must span the entire length or width of the grid, the $O(M \times N)$ 2D matrix can be mathematically squashed into two independent 1D arrays (`row_sums` and `col_sums`). This reduces the partitioning logic to a trivial 1D running prefix sum check, drastically simplifying the codebase and boundary conditions.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
