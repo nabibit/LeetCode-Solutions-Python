@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-52-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-53-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -122,6 +122,7 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 799 | [Champagne Tower](./DynamicProgramming/0799_Champagne_Tower.py) | Medium | Simulation + DP (In-place) | O(R²) | O(R) |
 | 1594 | [Maximum Non Negative Product in a Matrix](./DynamicProgramming/1594_Max_Non_Negative_Product_Matrix.py) | Medium | 2D DP (Min/Max Dual-State) | O(M*N) | O(M*N) |
+| 2946 | [Matrix Similarity After Cyclic Shifts](./Matrix/2946_Matrix_Similarity_After_Cyclic_Shifts.py) | Easy | Modular Arithmetic + Slice Comparison | O(M*N) | O(N) |
 | 3129 | [Find All Possible Stable Binary Arrays I](./DynamicProgramming/3129_Find_All_Possible_Stable_Binary_Arrays_I.py) | Medium | DP with Invalid State Subtraction | O(Z * O) | O(Z * O) |
 | 3130 | [Find All Possible Stable Binary Arrays II](./DynamicProgramming/3130_Find_All_Possible_Stable_Binary_Arrays_II.py) | Hard | DP with Invalid State Subtraction | O(Z * O) | O(Z * O) |
 
@@ -184,9 +185,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 52 
+Total Problems: 53 
 
-Easy: 18 
+Easy: 19 
 
 Medium: 25 
 
@@ -212,7 +213,7 @@ Last updated: Daily
 | Binary Search on Answer    | 3600, 3296 |
 | Backtracking / Decision Tree | 401, 1415 |
 | Math / Modular Arithmetic  | 1622 |
-| Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 3070, 3212, 3546, 3548, 3567, 3643 |
+| Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 
 ## 📝 Solution Highlights
 
@@ -242,6 +243,8 @@ Last updated: Daily
 **3643. Flip Square Submatrix Vertically**: Showcases idiomatic Python by utilizing slice assignment (`grid[top][y:y+k], grid[bottom][y:y+k] = ...`) combined with a two-pointer approach to reverse a targeted submatrix in-place, keeping the codebase extremely clean and avoiding the boilerplate of nested element-wise swapping loops.
 
 **1886. Determine Whether Matrix Can Be Obtained By Rotation**: Avoids complex coordinate mapping by breaking a 90-degree matrix rotation into two primitive $O(1)$ space operations: a diagonal transposition followed by a horizontal row reversal. This allows for rapid, in-place orientation checks without allocating memory for rotated copies.
+
+**2946. Matrix Similarity After Cyclic Shifts**: Bypasses the Time Limit Exceeded (TLE) trap of simulating massive shift constraints by utilizing Modular Arithmetic (`k % n`). To achieve strict $O(1)$ auxiliary space, it abandons array reallocation entirely, instead mapping cyclical coordinate geometry to dynamically verify if an element `k` steps away matches the current index.
 
 ### Complex Logic
 
