@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-55-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-56-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -87,6 +87,7 @@ LeetCode-Solutions-Python/
 | 1888 | [Minimum Number of Flips to Make the Binary String Alternating](./Strings/1888_Minimum_Number_of_Flips_to_Make_the_Binary_String_Alternating.py) | Medium | Sliding Window (Virtual Doubling) | O(N) | O(1) |
 | 1980 | [Find Unique Binary String](./Strings/1980_Find_Unique_Binary_String.py) | Medium | Cantor's Diagonalization | O(N) | O(N) |
 | 2839 | [Check if Strings Can be Made Equal With Operations I](./Strings/2839_Check_if_Strings_Can_be_Made_Equal.py) | Easy | Parity Grouping + Sorting | O(1) | O(1) |
+| 2840 | [Check if Strings Can be Made Equal With Operations II](./Strings/2840_Check_if_Strings_Can_be_Made_Equal_II.py) | Medium | Parity Grouping + Frequency Map | O(N) | O(1) |
 | 3713 | [Longest Balanced Substring I](./Strings/3713_Longest_Balanced_Substring_I.py) | Medium | Brute Force (All Substrings) | O(n²) | O(1) |
 | 3714 | [Longest Balanced Substring II](./Strings/3714_Longest_Balanced_Substring_II.py) | Medium | Prefix Difference Map | O(n) | O(n) |
 
@@ -187,11 +188,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 55 
+Total Problems: 56 
 
 Easy: 20 
 
-Medium: 26 
+Medium: 27 
 
 Hard: 9  
 
@@ -216,7 +217,7 @@ Last updated: Daily
 | Backtracking / Decision Tree | 401, 1415 |
 | Math / Modular Arithmetic  | 1622 |
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
-| String Manipulation / Parity | 2839 |
+| String Manipulation / Parity | 2839, 2840 |
 
 ## 📝 Solution Highlights
 
