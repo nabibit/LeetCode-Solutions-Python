@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-86-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-87-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -183,6 +183,7 @@ LeetCode-Solutions-Python/
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
 | 36 | [Valid Sudoku](./Matrix/0036_Valid_Sudoku.py) | Medium | Matrix Traversal / Hash Set Validation | O(1) | O(1) |
+| 212 | [Word Search II](./Matrix/0212_Word_Search_II.py) | Hard | Trie (Prefix Tree) + DFS Backtracking | O(M*N*3^L) | O(W) |
 | 1727 | [Largest Submatrix With Rearrangements](./Matrix/1727_Largest_Submatrix_With_Rearrangements.py) | Medium | Histogram Heights + Greedy Sorting | O(M * N log N) | O(1) |
 | 1886 | [Determine Whether Matrix Can Be Obtained By Rotation](./Matrix/1886_Determine_Whether_Matrix_Can_Be_Obtained_By_Rotation.py) | Easy | In-Place Transpose + Reverse | O(N²) | O(1) |
 | 2906 | [Construct Product Matrix](./Matrix/2906_Construct_Product_Matrix.py) | Medium | Prefix & Suffix Sweeps | O(N*M) | O(1)* |
@@ -219,13 +220,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 86 
+Total Problems: 87 
 
 Easy: 26 
 
 Medium: 39 
 
-Hard: 21  
+Hard: 22  
 
 Last updated: Daily  
 
@@ -238,7 +239,7 @@ Last updated: Daily
 | Greedy / Sorting           | 1536, 1689, 1727, 2833, 3010, 3634 |
 | Sliding Window             | 42, 1461, 1848, 1888, 2078, 3013, 3741 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
-| DFS / Trees                | 1022, 1382 |
+| DFS / Trees                | 212, 1022, 1382 |
 | Dynamic Programming        | 799, 1320, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3637 |
@@ -291,6 +292,8 @@ Last updated: Daily
 **2946. Matrix Similarity After Cyclic Shifts**: Bypasses the Time Limit Exceeded (TLE) trap of simulating massive shift constraints by utilizing Modular Arithmetic (`k % n`). To achieve strict $O(1)$ auxiliary space, it abandons array reallocation entirely, instead mapping cyclical coordinate geometry to dynamically verify if an element `k` steps away matches the current index.
 
 **36. Valid Sudoku**: Replaces the inefficient $O(N^3)$ approach of rescanning rows and columns with a single $O(1)$ pass. Utilizes three arrays of Hash Sets to record seen values in real-time, leveraging mathematical integer division `(r // 3) * 3 + (c // 3)` to instantly map 2D coordinates to their corresponding $3 \times 3$ sub-box.
+
+**212. Word Search II**: Bypasses the catastrophic Time Limit Exceeded (TLE) of running $K$ individual DFS searches by utilizing a Trie (Prefix Tree). The DFS traverses the grid and the Trie simultaneously, instantly pruning paths that do not form a valid prefix for any word in the dictionary. Implements dynamic node deletion upon word discovery to further prevent redundant recursive traversals.
 
 ### Complex Logic
 
