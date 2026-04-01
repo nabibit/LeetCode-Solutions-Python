@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-85-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-86-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -72,6 +72,7 @@ LeetCode-Solutions-Python/
 | 2751 | [Robot Collisions](./Arrays/2751_Robot_Collisions.py) | Hard | Sorting + Stack Simulation | O(N log N) | O(N) |
 | 3010 | [Divide an Array Into Subarrays With Minimum Cost I](./Arrays/3010_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_I.py) | Easy | Greedy + Sorting | O(n log n) | O(n) |
 | 3013 | [Divide an Array Into Subarrays With Minimum Cost II](./Arrays/3013_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_II.py) | Hard | Sliding Window + Two Heaps | O(n log d) | O(n) |
+| 3027 | [Find the Number of Ways to Place People II](./Arrays/3027_Find_the_Number_of_Ways_to_Place_People_II.py) | Hard | 2D Geometry Sweep + Running Max | O(N²) | O(1) |
 | 3379 | [Transformed Array](./Arrays/3379_Transformed_Array.py) | Easy | Simulation (Modular Arithmetic) | O(n) | O(n) |
 | 3488 | [Closest Equal Element Queries](./Arrays/3488_Closest_Equal_Element_Queries.py) | Medium | Hash Map + Circular Math | O(N + Q) | O(N) |
 | 3634 | [Minimum Removals to Balance Array](./Arrays/3634_Minimum_Removals_to_Balance.py) | Medium | Two Pointers + Sorting | O(n log n) | O(1) |
@@ -218,13 +219,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 85 
+Total Problems: 86 
 
 Easy: 26 
 
 Medium: 39 
 
-Hard: 20  
+Hard: 21  
 
 Last updated: Daily  
 
@@ -256,6 +257,7 @@ Last updated: Daily
 | Interval Sweeping / Bounded States | 3661 |
 | String Matching / KMP Automaton | 3474 |
 | Stack / 1D Simulation | 2751 |
+| Geometric Sweeping / Running Max | 3027 |
 
 ## 📝 Solution Highlights
 
@@ -339,6 +341,8 @@ Last updated: Daily
 **2751. Robot Collisions**: Uses a stack to simulate real-time collisions after sorting by position. Left-moving robots sequentially crash into the stack of right-moving robots, handling health deductions and mutual destructions natively without creating a nested loop bottleneck.
 
 **37. Sudoku Solver**: Avoids standard $O(N)$ row/col validation during Backtracking by utilizing 3 arrays of Hash Sets (`rows`, `cols`, `boxes`). This reduces the validity check for every digit placement down to a lightning-fast $O(1)$ lookup, drastically pruning the $O(9^M)$ decision tree.
+
+**3027. Find the Number of Ways to Place People II**: Bypasses complex 2D Segment Trees by sorting coordinates (X ascending, Y descending) to guarantee directional logic. Uses a nested sweep that validates empty bounding boxes in strict $O(1)$ time by maintaining a "running highest Y-coordinate", instantly blocking any prospective rectangles that trap intermediate points.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
