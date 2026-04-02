@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-83-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-84-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -112,6 +112,7 @@ LeetCode-Solutions-Python/
 
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
+| 37 | [Sudoku Solver](./Backtracking/0037_Sudoku_Solver.py) | Hard | Backtracking (Hash Set Pruning) | O(9^(Empty)) | O(1) |
 | 401 | [Binary Watch](./Backtracking/0401_Binary_Watch.py) | Easy | Backtracking / Bit Counting | O(C(10, k)) | O(k) |
 | 1415 | [The k-th Lexicographical String of All Happy Strings of Length n](./Backtracking/1415_The_kth_Lexicographical_String_of_All_Happy_Strings.py) | Medium | Combinatorial Math / Decision Tree | O(N) | O(N) |
 
@@ -216,13 +217,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 83 
+Total Problems: 84 
 
 Easy: 26 
 
 Medium: 38 
 
-Hard: 19  
+Hard: 20  
 
 Last updated: Daily  
 
@@ -242,7 +243,7 @@ Last updated: Daily
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 3600 |
 | Binary Search on Answer    |  3296, 3464, 3600 |
-| Backtracking / Decision Tree | 401, 1415 |
+| Backtracking / Decision Tree | 37, 401, 1415 |
 | Math / Modular Arithmetic  | 1622, 2033, 3783 |
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
@@ -333,6 +334,8 @@ Last updated: Daily
 **1320. Minimum Distance to Type a Word Using Two Fingers**: Bypasses the massive memory overhead of a 3D DP State (`index`, `finger_1`, `finger_2`) by utilizing State Compression. By recognizing that one finger is strictly bound to the spatial coordinate of `word[i-1]`, the algorithm compresses the state down to 2D (`index`, `other_finger`), dropping the time complexity drastically to an ultra-lean $O(N \times 27)$.
 
 **2751. Robot Collisions**: Uses a stack to simulate real-time collisions after sorting by position. Left-moving robots sequentially crash into the stack of right-moving robots, handling health deductions and mutual destructions natively without creating a nested loop bottleneck.
+
+**37. Sudoku Solver**: Avoids standard $O(N)$ row/col validation during Backtracking by utilizing 3 arrays of Hash Sets (`rows`, `cols`, `boxes`). This reduces the validity check for every digit placement down to a lightning-fast $O(1)$ lookup, drastically pruning the $O(9^M)$ decision tree.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
