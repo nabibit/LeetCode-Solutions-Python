@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-84-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-85-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -181,6 +181,7 @@ LeetCode-Solutions-Python/
 
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
+| 36 | [Valid Sudoku](./Matrix/0036_Valid_Sudoku.py) | Medium | Matrix Traversal / Hash Set Validation | O(1) | O(1) |
 | 1727 | [Largest Submatrix With Rearrangements](./Matrix/1727_Largest_Submatrix_With_Rearrangements.py) | Medium | Histogram Heights + Greedy Sorting | O(M * N log N) | O(1) |
 | 1886 | [Determine Whether Matrix Can Be Obtained By Rotation](./Matrix/1886_Determine_Whether_Matrix_Can_Be_Obtained_By_Rotation.py) | Easy | In-Place Transpose + Reverse | O(N²) | O(1) |
 | 2906 | [Construct Product Matrix](./Matrix/2906_Construct_Product_Matrix.py) | Medium | Prefix & Suffix Sweeps | O(N*M) | O(1)* |
@@ -217,11 +218,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 84 
+Total Problems: 85 
 
 Easy: 26 
 
-Medium: 38 
+Medium: 39 
 
 Hard: 20  
 
@@ -248,7 +249,7 @@ Last updated: Daily
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
-| Hash Map / Index Tracking | 2615, 3488, 3740, 3741, 3761 |
+| Hash Map / Index Tracking | 36, 2615, 3488, 3740, 3741, 3761 |
 | Union-Find / Disjoint Set | 1722 |
 | Square Root Decomposition / Chunking | 3655 |
 | Array Simulation | 3653 |
@@ -286,6 +287,8 @@ Last updated: Daily
 **1886. Determine Whether Matrix Can Be Obtained By Rotation**: Avoids complex coordinate mapping by breaking a 90-degree matrix rotation into two primitive $O(1)$ space operations: a diagonal transposition followed by a horizontal row reversal. This allows for rapid, in-place orientation checks without allocating memory for rotated copies.
 
 **2946. Matrix Similarity After Cyclic Shifts**: Bypasses the Time Limit Exceeded (TLE) trap of simulating massive shift constraints by utilizing Modular Arithmetic (`k % n`). To achieve strict $O(1)$ auxiliary space, it abandons array reallocation entirely, instead mapping cyclical coordinate geometry to dynamically verify if an element `k` steps away matches the current index.
+
+**36. Valid Sudoku**: Replaces the inefficient $O(N^3)$ approach of rescanning rows and columns with a single $O(1)$ pass. Utilizes three arrays of Hash Sets to record seen values in real-time, leveraging mathematical integer division `(r // 3) * 3 + (c // 3)` to instantly map 2D coordinates to their corresponding $3 \times 3$ sub-box.
 
 ### Complex Logic
 
