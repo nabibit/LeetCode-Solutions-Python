@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-82-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-83-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -60,6 +60,7 @@ LeetCode-Solutions-Python/
 
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
+| 42 | [Trapping Rain Water](./Arrays/0042_Trapping_Rain_Water.py) | Hard | Two Pointers (Min-Max bounds) | O(N) | O(1) |
 | 1536 | [Minimum Swaps to Arrange a Binary Grid](./Arrays/1536_Minimum_Swaps_to_Arrange_a_Binary_Grid.py) | Medium | Greedy (Pop/Insert Simulation) | O(N²) | O(N) |
 | 1582 | [Special Positions in a Binary Matrix](./Arrays/1582_Special_Positions_in_a_Binary_Matrix.py) | Easy | Matrix Precomputation | O(M * N) | O(M + N) |
 | 1848 | [Minimum Distance to the Target Element](./Arrays/1848_Min_Distance_to_Target_Element.py) | Easy | Expanding Window (Early Exit) | O(N) | O(1) |
@@ -215,13 +216,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 82 
+Total Problems: 83 
 
 Easy: 26 
 
 Medium: 38 
 
-Hard: 18  
+Hard: 19  
 
 Last updated: Daily  
 
@@ -232,7 +233,7 @@ Last updated: Daily
 | Core Category              | Problems |
 |----------------------------|----------|
 | Greedy / Sorting           | 1536, 1689, 1727, 2833, 3010, 3634 |
-| Sliding Window             | 1461, 1848, 1888, 2078, 3013, 3741 |
+| Sliding Window             | 42, 1461, 1848, 1888, 2078, 3013, 3741 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 1022, 1382 |
 | Dynamic Programming        | 799, 1320, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640 |
