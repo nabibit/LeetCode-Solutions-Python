@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-81-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-82-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -68,6 +68,7 @@ LeetCode-Solutions-Python/
 | 2078 | [Two Furthest Houses With Different Colors](./Arrays/2078_Two_Furthest_Houses_With_Diff_Colors.py) | Easy | Boundary Anchoring (Two Pointers) | O(N) | O(1) |
 | 2515 | [Shortest Distance to Target String in a Circular Array](./Arrays/2515_Shortest_Distance_Target_String_Circular.py) | Easy | Bidirectional Distance Math | O(N) | O(1) |
 | 2615 | [Sum of Distances](./Arrays/2615_Sum_of_Distances.py) | Medium | Hash Map + Prefix Sums | O(N) | O(N) |
+| 2751 | [Robot Collisions](./Arrays/2751_Robot_Collisions.py) | Hard | Sorting + Stack Simulation | O(N log N) | O(N) |
 | 3010 | [Divide an Array Into Subarrays With Minimum Cost I](./Arrays/3010_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_I.py) | Easy | Greedy + Sorting | O(n log n) | O(n) |
 | 3013 | [Divide an Array Into Subarrays With Minimum Cost II](./Arrays/3013_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_II.py) | Hard | Sliding Window + Two Heaps | O(n log d) | O(n) |
 | 3379 | [Transformed Array](./Arrays/3379_Transformed_Array.py) | Easy | Simulation (Modular Arithmetic) | O(n) | O(n) |
@@ -214,13 +215,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 81 
+Total Problems: 82 
 
 Easy: 26 
 
 Medium: 38 
 
-Hard: 17  
+Hard: 18  
 
 Last updated: Daily  
 
@@ -251,6 +252,7 @@ Last updated: Daily
 | Array Simulation | 3653 |
 | Interval Sweeping / Bounded States | 3661 |
 | String Matching / KMP Automaton | 3474 |
+| Stack / 1D Simulation | 2751 |
 
 ## 📝 Solution Highlights
 
@@ -328,6 +330,8 @@ Last updated: Daily
 **2463. Minimum Total Distance Traveled**: Demonstrates advanced state optimization in Dynamic Programming. Rather than "flattening" the factory capacities into a massive 1D array—which risks catastrophic maximum recursion depth limits in Python—the algorithm utilizes Capacity Batching. At each factory state `f_idx`, a localized loop simulates assigning `k` robots at once. This drastically compresses the recursion tree depth to a strict maximum of $F$ (factories), ensuring safe, robust, and highly performant $O(R^2 \times F)$ execution.
 
 **1320. Minimum Distance to Type a Word Using Two Fingers**: Bypasses the massive memory overhead of a 3D DP State (`index`, `finger_1`, `finger_2`) by utilizing State Compression. By recognizing that one finger is strictly bound to the spatial coordinate of `word[i-1]`, the algorithm compresses the state down to 2D (`index`, `other_finger`), dropping the time complexity drastically to an ultra-lean $O(N \times 27)$.
+
+**2751. Robot Collisions**: Uses a stack to simulate real-time collisions after sorting by position. Left-moving robots sequentially crash into the stack of right-moving robots, handling health deductions and mutual destructions natively without creating a nested loop bottleneck.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
