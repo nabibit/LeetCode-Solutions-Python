@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-80-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-81-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -102,6 +102,7 @@ LeetCode-Solutions-Python/
 | 2833 | [Furthest Point From Origin](./Strings/2833_Furthest_Point_From_Origin.py) | Easy | Greedy / Counting | O(N) | O(1) |
 | 2839 | [Check if Strings Can be Made Equal With Operations I](./Strings/2839_Check_if_Strings_Can_be_Made_Equal.py) | Easy | Parity Grouping + Sorting | O(1) | O(1) |
 | 2840 | [Check if Strings Can be Made Equal With Operations II](./Strings/2840_Check_if_Strings_Can_be_Made_Equal_II.py) | Medium | Parity Grouping + Frequency Map | O(N) | O(1) |
+| 3474 | [Lexicographically Smallest Generated String](./Strings/3474_Lexicographically_Smallest_Generated.py) | Hard | KMP Automaton / Backtracking | O(N+M) | O(N+M) |
 | 3713 | [Longest Balanced Substring I](./Strings/3713_Longest_Balanced_Substring_I.py) | Medium | Brute Force (All Substrings) | O(n²) | O(1) |
 | 3714 | [Longest Balanced Substring II](./Strings/3714_Longest_Balanced_Substring_II.py) | Medium | Prefix Difference Map | O(n) | O(n) |
 
@@ -213,13 +214,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 80 
+Total Problems: 81 
 
 Easy: 26 
 
 Medium: 38 
 
-Hard: 16  
+Hard: 17  
 
 Last updated: Daily  
 
@@ -249,6 +250,7 @@ Last updated: Daily
 | Square Root Decomposition / Chunking | 3655 |
 | Array Simulation | 3653 |
 | Interval Sweeping / Bounded States | 3661 |
+| String Matching / KMP Automaton | 3474 |
 
 ## 📝 Solution Highlights
 
