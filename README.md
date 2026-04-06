@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-79-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-80-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -146,6 +146,7 @@ LeetCode-Solutions-Python/
 | 3130 | [Find All Possible Stable Binary Arrays II](./DynamicProgramming/3130_Find_All_Possible_Stable_Binary_Arrays_II.py) | Hard | DP with Invalid State Subtraction | O(Z * O) | O(Z * O) |
 | 3225 | [Maximum Score From Grid Operations](./DynamicProgramming/3225_Max_Score_Grid_Operations.py) | Hard | DP (State Decoupling) + Prefix Sums | O(N³) | O(N²) |
 | 3418 | [Maximum Amount of Money Robot Can Earn](./DynamicProgramming/3418_Max_Money_Robot_Can_Earn.py) | Medium | 3D DP (State Tracking) | O(M*N) | O(M*N) |
+| 3661 | [Maximum Walls Destroyed by Robots](./DynamicProgramming/3661_Max_Walls_Destroyed_Robots.py) | Hard | Bounded Intervals + 1D DP | O(R log R + W log W) | O(R + W) |
 
 ### [Trees](./Trees/)
 
@@ -212,13 +213,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 79 
+Total Problems: 80 
 
 Easy: 26 
 
 Medium: 38 
 
-Hard: 15  
+Hard: 16  
 
 Last updated: Daily  
 
@@ -247,6 +248,7 @@ Last updated: Daily
 | Union-Find / Disjoint Set | 1722 |
 | Square Root Decomposition / Chunking | 3655 |
 | Array Simulation | 3653 |
+| Interval Sweeping / Bounded States | 3661 |
 
 ## 📝 Solution Highlights
 
