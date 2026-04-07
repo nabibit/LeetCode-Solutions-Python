@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-76-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-77-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -98,6 +98,7 @@ LeetCode-Solutions-Python/
 | 1888 | [Minimum Number of Flips to Make the Binary String Alternating](./Strings/1888_Minimum_Number_of_Flips_to_Make_the_Binary_String_Alternating.py) | Medium | Sliding Window (Virtual Doubling) | O(N) | O(1) |
 | 1980 | [Find Unique Binary String](./Strings/1980_Find_Unique_Binary_String.py) | Medium | Cantor's Diagonalization | O(N) | O(N) |
 | 2452 | [Words Within Two Edits of Dictionary](./Strings/2452_Words_Within_Two_Edits.py) | Medium | Hamming Distance / Early Exit | O(Q*D*L) | O(1) |
+| 2573 | [Find the String with LCP](./Strings/2573_Find_the_String_with_LCP.py) | Hard | Greedy Assignment / DP Validation | O(N²) | O(N) |
 | 2833 | [Furthest Point From Origin](./Strings/2833_Furthest_Point_From_Origin.py) | Easy | Greedy / Counting | O(N) | O(1) |
 | 2839 | [Check if Strings Can be Made Equal With Operations I](./Strings/2839_Check_if_Strings_Can_be_Made_Equal.py) | Easy | Parity Grouping + Sorting | O(1) | O(1) |
 | 2840 | [Check if Strings Can be Made Equal With Operations II](./Strings/2840_Check_if_Strings_Can_be_Made_Equal_II.py) | Medium | Parity Grouping + Frequency Map | O(N) | O(1) |
@@ -209,13 +210,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 76 
+Total Problems: 77 
 
 Easy: 26 
 
 Medium: 37 
 
-Hard: 13  
+Hard: 14  
 
 Last updated: Daily  
 
@@ -229,7 +230,7 @@ Last updated: Daily
 | Sliding Window             | 1461, 1848, 1888, 2078, 3013, 3741 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 1022, 1382 |
-| Dynamic Programming        | 799, 1320, 1594, 2463, 3129, 3130, 3418, 3640 |
+| Dynamic Programming        | 799, 1320, 1594, 2463, 2573, 3129, 3130, 3418, 3640 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
