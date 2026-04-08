@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-75-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-76-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -75,6 +75,7 @@ LeetCode-Solutions-Python/
 | 3634 | [Minimum Removals to Balance Array](./Arrays/3634_Minimum_Removals_to_Balance.py) | Medium | Two Pointers + Sorting | O(n log n) | O(1) |
 | 3637 | [Trionic Array I](./Arrays/3637_Trionic_Array_I.py) | Easy | Linear Scan (Pattern Recognition) | O(n) | O(1) |
 | 3640 | [Trionic Array II](./Arrays/3640_Trionic_Array_II.py) | Hard | Dynamic Programming (State Machine) | O(n) | O(n) |
+| 3653 | [XOR After Range Multiplication Queries I](./Arrays/3653_XOR_After_Range_Multiplication_I.py) | Medium | Array Simulation | O(Q*N) | O(1) |
 | 3655 | [XOR After Range Multiplication Queries II](./Arrays/3655_XOR_After_Range_Multiplication.py) | Hard | Sqrt Decomposition / Difference Arrays | O(N * sqrt(Q)) | O(N) |
 | 3719 | [Longest Balanced Subarray I](./Arrays/3719_Longest_Balanced_Subarray_I.py) | Medium | Brute Force (All Subarrays)| O(n²) | O(n) |
 | 3721 | [Longest Balanced Subarray II](./Arrays/3721_Longest_Balanced_Subarray_II.py) | Hard | Segment Tree + Prefix Sums | O(n log n) | O(n) |
@@ -208,11 +209,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 75 
+Total Problems: 76 
 
 Easy: 26 
 
-Medium: 36 
+Medium: 37 
 
 Hard: 13  
 
@@ -242,6 +243,7 @@ Last updated: Daily
 | Hash Map / Index Tracking | 2615, 3488, 3740, 3741, 3761 |
 | Union-Find / Disjoint Set | 1722 |
 | Square Root Decomposition / Chunking | 3655 |
+| Array Simulation | 3653 |
 
 ## 📝 Solution Highlights
 
