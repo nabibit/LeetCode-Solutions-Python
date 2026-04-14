@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-58-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-59-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -126,6 +126,7 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 799 | [Champagne Tower](./DynamicProgramming/0799_Champagne_Tower.py) | Medium | Simulation + DP (In-place) | O(R²) | O(R) |
 | 1594 | [Maximum Non Negative Product in a Matrix](./DynamicProgramming/1594_Max_Non_Negative_Product_Matrix.py) | Medium | 2D DP (Min/Max Dual-State) | O(M*N) | O(M*N) |
+| 2463 | [Minimum Total Distance Traveled](./DynamicProgramming/2463_Min_Total_Distance_Traveled.py) | Hard | Top-Down DP (Capacity Batching) | O(R² * F) | O(R * F) |
 | 2946 | [Matrix Similarity After Cyclic Shifts](./Matrix/2946_Matrix_Similarity_After_Cyclic_Shifts.py) | Easy | Modular Arithmetic + Slice Comparison | O(M*N) | O(N) |
 | 3129 | [Find All Possible Stable Binary Arrays I](./DynamicProgramming/3129_Find_All_Possible_Stable_Binary_Arrays_I.py) | Medium | DP with Invalid State Subtraction | O(Z * O) | O(Z * O) |
 | 3130 | [Find All Possible Stable Binary Arrays II](./DynamicProgramming/3130_Find_All_Possible_Stable_Binary_Arrays_II.py) | Hard | DP with Invalid State Subtraction | O(Z * O) | O(Z * O) |
@@ -190,13 +191,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 58 
+Total Problems: 59 
 
 Easy: 22 
 
 Medium: 27 
 
-Hard: 9  
+Hard: 10  
 
 Last updated: Daily  
 
@@ -210,7 +211,7 @@ Last updated: Daily
 | Sliding Window             | 1461, 1848, 1888, 3013 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 3666 |
 | DFS / Trees                | 1022, 1382 |
-| Dynamic Programming        | 799, 1594, 3129, 3130, 3418, 3640 |
+| Dynamic Programming        | 799, 1594, 2463, 3129, 3130, 3418, 3640 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
@@ -294,6 +295,8 @@ Last updated: Daily
 **3546. Equal Sum Grid Partition I**: Bypasses the need for a heavy 2D Prefix Sum matrix by utilizing 1D Spatial Projection. Because valid cuts must span the entire length or width of the grid, the $O(M \times N)$ 2D matrix can be mathematically squashed into two independent 1D arrays (`row_sums` and `col_sums`). This reduces the partitioning logic to a trivial 1D running prefix sum check, drastically simplifying the codebase and boundary conditions.
 
 **3548. Equal Sum Grid Partition II**: Bypasses severe Time Limit Exceeded (TLE) constraints by replacing heavy $O(N^2)$ graph-connectivity validation (BFS/DFS) with absolute topological properties. It leverages the mathematical proof that removing any single internal node from a $\ge 2 \times 2$ grid graph maintains its connected components, strictly limiting boundary-deletion checks to 1D isolated sub-vectors. This reduces the problem back to a highly-optimized $O(M \times N)$ frequency map sweep.
+
+**2463. Minimum Total Distance Traveled**: Demonstrates advanced state optimization in Dynamic Programming. Rather than "flattening" the factory capacities into a massive 1D array—which risks catastrophic maximum recursion depth limits in Python—the algorithm utilizes Capacity Batching. At each factory state `f_idx`, a localized loop simulates assigning `k` robots at once. This drastically compresses the recursion tree depth to a strict maximum of $F$ (factories), ensuring safe, robust, and highly performant $O(R^2 \times F)$ execution.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
