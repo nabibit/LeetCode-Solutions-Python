@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-66-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-67-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -70,6 +70,7 @@ LeetCode-Solutions-Python/
 | 3010 | [Divide an Array Into Subarrays With Minimum Cost I](./Arrays/3010_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_I.py) | Easy | Greedy + Sorting | O(n log n) | O(n) |
 | 3013 | [Divide an Array Into Subarrays With Minimum Cost II](./Arrays/3013_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_II.py) | Hard | Sliding Window + Two Heaps | O(n log d) | O(n) |
 | 3379 | [Transformed Array](./Arrays/3379_Transformed_Array.py) | Easy | Simulation (Modular Arithmetic) | O(n) | O(n) |
+| 3488 | [Closest Equal Element Queries](./Arrays/3488_Closest_Equal_Element_Queries.py) | Medium | Hash Map + Circular Math | O(N + Q) | O(N) |
 | 3634 | [Minimum Removals to Balance Array](./Arrays/3634_Minimum_Removals_to_Balance.py) | Medium | Two Pointers + Sorting | O(n log n) | O(1) |
 | 3637 | [Trionic Array I](./Arrays/3637_Trionic_Array_I.py) | Easy | Linear Scan (Pattern Recognition) | O(n) | O(1) |
 | 3640 | [Trionic Array II](./Arrays/3640_Trionic_Array_II.py) | Hard | Dynamic Programming (State Machine) | O(n) | O(n) |
@@ -198,11 +199,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 66 
+Total Problems: 67 
 
 Easy: 24 
 
-Medium: 31 
+Medium: 32 
 
 Hard: 11  
 
@@ -229,7 +230,7 @@ Last updated: Daily
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
-| Hash Map / Index Tracking | 3741, 3761 |
+| Hash Map / Index Tracking | 3488, 3741, 3761 |
 | Union-Find / Disjoint Set | 1722 |
 
 ## 📝 Solution Highlights
