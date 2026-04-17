@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-64-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-65-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -76,6 +76,7 @@ LeetCode-Solutions-Python/
 | 3719 | [Longest Balanced Subarray I](./Arrays/3719_Longest_Balanced_Subarray_I.py) | Medium | Brute Force (All Subarrays)| O(n²) | O(n) |
 | 3721 | [Longest Balanced Subarray II](./Arrays/3721_Longest_Balanced_Subarray_II.py) | Hard | Segment Tree + Prefix Sums | O(n log n) | O(n) |
 | 3741 | [Minimum Distance Between Three Equal Elements II](./Arrays/3741_Min_Dist_Three_Equal_Elements_II.py) | Medium | Hash Map + Index Tracking | O(N) | O(N) |
+| 3761 | [Minimum Absolute Distance Between Mirror Pairs](./Arrays/3761_Min_Abs_Distance_Mirror_Pairs.py) | Medium | Hash Map + Index Tracking | O(N) | O(N) |
 
 ### [Strings](./Strings/)
 
@@ -196,11 +197,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 64 
+Total Problems: 65 
 
 Easy: 24 
 
-Medium: 29 
+Medium: 30 
 
 Hard: 11  
 
@@ -227,6 +228,7 @@ Last updated: Daily
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
+| Hash Map / Index Tracking | 3741, 3761 |
 
 ## 📝 Solution Highlights
 
