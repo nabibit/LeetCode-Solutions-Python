@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-63-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-64-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -154,6 +154,7 @@ LeetCode-Solutions-Python/
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
 | 1622 | [Fancy Sequence](./Math/1622_Fancy_Sequence.py) | Hard | Modular Inverse (Fermat's Little Theorem) | O(1)* | O(N) |
+| 3783 | [Mirror Distance of an Integer](./Math/3783_Mirror_Distance_of_an_Integer.py) | Easy | String Slicing / Digit Extraction | O(D) | O(D) |
 
 ### [Matrix](./Matrix/)
 
@@ -195,9 +196,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 63 
+Total Problems: 64 
 
-Easy: 23 
+Easy: 24 
 
 Medium: 29 
 
@@ -222,7 +223,7 @@ Last updated: Daily
 | Graphs    | 3600 |
 | Binary Search on Answer    | 3600, 3296 |
 | Backtracking / Decision Tree | 401, 1415 |
-| Math / Modular Arithmetic  | 1622 |
+| Math / Modular Arithmetic  | 1622, 3783 |
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
