@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-62-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-63-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -63,6 +63,7 @@ LeetCode-Solutions-Python/
 | 1536 | [Minimum Swaps to Arrange a Binary Grid](./Arrays/1536_Minimum_Swaps_to_Arrange_a_Binary_Grid.py) | Medium | Greedy (Pop/Insert Simulation) | O(N²) | O(N) |
 | 1582 | [Special Positions in a Binary Matrix](./Arrays/1582_Special_Positions_in_a_Binary_Matrix.py) | Easy | Matrix Precomputation | O(M * N) | O(M + N) |
 | 1848 | [Minimum Distance to the Target Element](./Arrays/1848_Min_Distance_to_Target_Element.py) | Easy | Expanding Window (Early Exit) | O(N) | O(1) |
+| 1855 | [Maximum Distance Between a Pair of Values](./Arrays/1855_Max_Distance_Between_Pair.py) | Medium | Two Pointers | O(N+M) | O(1) |
 | 1878 | [Get Biggest Three Rhombus Sums in a Grid](./Arrays/1878_Get_Biggest_Three_Rhombus_Sums.py) | Medium | Boundary Simulation | O(M*N*min(M,N)) | O(U) |
 | 2078 | [Two Furthest Houses With Different Colors](./Arrays/2078_Two_Furthest_Houses_With_Diff_Colors.py) | Easy | Boundary Anchoring (Two Pointers) | O(N) | O(1) |
 | 2515 | [Shortest Distance to Target String in a Circular Array](./Arrays/2515_Shortest_Distance_Target_String_Circular.py) | Easy | Bidirectional Distance Math | O(N) | O(1) |
@@ -194,11 +195,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 62 
+Total Problems: 63 
 
 Easy: 23 
 
-Medium: 28 
+Medium: 29 
 
 Hard: 11  
 
@@ -212,7 +213,7 @@ Last updated: Daily
 |----------------------------|----------|
 | Greedy / Sorting           | 1536, 1689, 1727, 3010, 3634 |
 | Sliding Window             | 1461, 1848, 1888, 2078, 3013, 3741 |
-| Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 3666 |
+| Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 1022, 1382 |
 | Dynamic Programming        | 799, 1320, 1594, 2463, 3129, 3130, 3418, 3640 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3714, 3721 |
