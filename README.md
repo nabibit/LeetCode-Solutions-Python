@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-60-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-62-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -64,6 +64,7 @@ LeetCode-Solutions-Python/
 | 1582 | [Special Positions in a Binary Matrix](./Arrays/1582_Special_Positions_in_a_Binary_Matrix.py) | Easy | Matrix Precomputation | O(M * N) | O(M + N) |
 | 1848 | [Minimum Distance to the Target Element](./Arrays/1848_Min_Distance_to_Target_Element.py) | Easy | Expanding Window (Early Exit) | O(N) | O(1) |
 | 1878 | [Get Biggest Three Rhombus Sums in a Grid](./Arrays/1878_Get_Biggest_Three_Rhombus_Sums.py) | Medium | Boundary Simulation | O(M*N*min(M,N)) | O(U) |
+| 2078 | [Two Furthest Houses With Different Colors](./Arrays/2078_Two_Furthest_Houses_With_Diff_Colors.py) | Easy | Boundary Anchoring (Two Pointers) | O(N) | O(1) |
 | 2515 | [Shortest Distance to Target String in a Circular Array](./Arrays/2515_Shortest_Distance_Target_String_Circular.py) | Easy | Bidirectional Distance Math | O(N) | O(1) |
 | 3010 | [Divide an Array Into Subarrays With Minimum Cost I](./Arrays/3010_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_I.py) | Easy | Greedy + Sorting | O(n log n) | O(n) |
 | 3013 | [Divide an Array Into Subarrays With Minimum Cost II](./Arrays/3013_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_II.py) | Hard | Sliding Window + Two Heaps | O(n log d) | O(n) |
@@ -73,6 +74,7 @@ LeetCode-Solutions-Python/
 | 3640 | [Trionic Array II](./Arrays/3640_Trionic_Array_II.py) | Hard | Dynamic Programming (State Machine) | O(n) | O(n) |
 | 3719 | [Longest Balanced Subarray I](./Arrays/3719_Longest_Balanced_Subarray_I.py) | Medium | Brute Force (All Subarrays)| O(n²) | O(n) |
 | 3721 | [Longest Balanced Subarray II](./Arrays/3721_Longest_Balanced_Subarray_II.py) | Hard | Segment Tree + Prefix Sums | O(n log n) | O(n) |
+| 3741 | [Minimum Distance Between Three Equal Elements II](./Arrays/3741_Min_Dist_Three_Equal_Elements_II.py) | Medium | Hash Map + Index Tracking | O(N) | O(N) |
 
 ### [Strings](./Strings/)
 
@@ -192,11 +194,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 60 
+Total Problems: 62 
 
-Easy: 22 
+Easy: 23 
 
-Medium: 27 
+Medium: 28 
 
 Hard: 11  
 
@@ -209,7 +211,7 @@ Last updated: Daily
 | Core Category              | Problems |
 |----------------------------|----------|
 | Greedy / Sorting           | 1536, 1689, 1727, 3010, 3634 |
-| Sliding Window             | 1461, 1848, 1888, 3013 |
+| Sliding Window             | 1461, 1848, 1888, 2078, 3013, 3741 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 3666 |
 | DFS / Trees                | 1022, 1382 |
 | Dynamic Programming        | 799, 1320, 1594, 2463, 3129, 3130, 3418, 3640 |
@@ -303,6 +305,8 @@ Last updated: Daily
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
+
+**3741. Minimum Distance Between Three Equal Elements II**: Optimized the triplet distance formula $abs(i - j) + abs(j - k) + abs(k - i)$ by recognizing that for sorted indices $i < j < k$, the expression simplifies to $2(k - i)$. This transformation allows the problem to be solved in a single linear pass using a Hash Map to track the index of the element from two occurrences prior, reducing the search space from $O(N^3)$ to $O(N)$.
 
 ### Graph Operations
 **3600. Maximize Spanning Tree Stability with Upgrades**: Combines Binary Search on the Answer with Kruskal's Algorithm. Instead of building a complex dynamic tree, it efficiently validates a target "stability" score by constructing a Spanning Tree using a Disjoint Set Union (DSU) and optimally budgeting edge upgrades.
