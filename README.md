@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-65-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-66-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -149,6 +149,7 @@ LeetCode-Solutions-Python/
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
 | 3600 | [Maximize Spanning Tree Stability with Upgrades](./Graphs/3600._Maximize_Spanning_Tree_Stability_with_Uprades.py) | Hard | Binary Search on Answer + Kruskal's (DSU) | O(E log M) | O(V + E) |
+| 1722 | [Minimize Hamming Distance After Swap Operations](./Graphs/1722_Min_Hamming_Distance_Swaps.py) | Medium | Union-Find / Connected Components | O(N) | O(N) |
 
 ### [Math](./Math/)
 
@@ -197,11 +198,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 65 
+Total Problems: 66 
 
 Easy: 24 
 
-Medium: 30 
+Medium: 31 
 
 Hard: 11  
 
@@ -229,6 +230,7 @@ Last updated: Daily
 | String Manipulation / Parity | 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
 | Hash Map / Index Tracking | 3741, 3761 |
+| Union-Find / Disjoint Set | 1722 |
 
 ## 📝 Solution Highlights
 
