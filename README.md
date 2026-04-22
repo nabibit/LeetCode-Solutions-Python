@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-68-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-69-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -94,6 +94,7 @@ LeetCode-Solutions-Python/
 | 1784 | [Check if Binary String Has at Most One Segment of Ones](./Strings/1784_Check_if_Binary_String_Has_at_Most_One_Segment_of_Ones.py) | Easy | Linear Scan State Tracking | O(n) | O(1) |
 | 1888 | [Minimum Number of Flips to Make the Binary String Alternating](./Strings/1888_Minimum_Number_of_Flips_to_Make_the_Binary_String_Alternating.py) | Medium | Sliding Window (Virtual Doubling) | O(N) | O(1) |
 | 1980 | [Find Unique Binary String](./Strings/1980_Find_Unique_Binary_String.py) | Medium | Cantor's Diagonalization | O(N) | O(N) |
+| 2452 | [Words Within Two Edits of Dictionary](./Strings/2452_Words_Within_Two_Edits.py) | Medium | Hamming Distance / Early Exit | O(Q*D*L) | O(1) |
 | 2839 | [Check if Strings Can be Made Equal With Operations I](./Strings/2839_Check_if_Strings_Can_be_Made_Equal.py) | Easy | Parity Grouping + Sorting | O(1) | O(1) |
 | 2840 | [Check if Strings Can be Made Equal With Operations II](./Strings/2840_Check_if_Strings_Can_be_Made_Equal_II.py) | Medium | Parity Grouping + Frequency Map | O(N) | O(1) |
 | 3713 | [Longest Balanced Substring I](./Strings/3713_Longest_Balanced_Substring_I.py) | Medium | Brute Force (All Substrings) | O(n²) | O(1) |
@@ -200,11 +201,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 68 
+Total Problems: 69 
 
 Easy: 25 
 
-Medium: 32 
+Medium: 33 
 
 Hard: 11  
 
@@ -229,7 +230,7 @@ Last updated: Daily
 | Backtracking / Decision Tree | 401, 1415 |
 | Math / Modular Arithmetic  | 1622, 3783 |
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
-| String Manipulation / Parity | 2839, 2840 |
+| String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
 | Hash Map / Index Tracking | 3488, 3740, 3741, 3761 |
 | Union-Find / Disjoint Set | 1722 |
