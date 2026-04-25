@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-73-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-74-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -114,6 +114,7 @@ LeetCode-Solutions-Python/
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
 | 3296 | [Minimum Number of Seconds to Make Mountain Height Zero](./BinarySearch/3296_Min_Seconds_Mountain_Zero.py) | Medium | Binary Search on Answer + Quadratic Formula | O(N log M) | O(1) |
+| 3464 | [Maximize the Distance Between Points on a Square](./BinarySearch/3464_Maximize_Distance_Square.py) | Hard | 1D Mapping / Binary Search on Answer | O(N log N) | O(N) |
 
 ### [BitManipulation](./BitManipulation/)
 
@@ -206,13 +207,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 73 
+Total Problems: 74 
 
 Easy: 25 
 
 Medium: 36 
 
-Hard: 12  
+Hard: 13  
 
 Last updated: Daily  
 
@@ -231,7 +232,7 @@ Last updated: Daily
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 3600 |
-| Binary Search on Answer    | 3600, 3296 |
+| Binary Search on Answer    |  3296, 3464, 3600 |
 | Backtracking / Decision Tree | 401, 1415 |
 | Math / Modular Arithmetic  | 1622, 3783 |
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
