@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-72-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-73-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -154,6 +154,7 @@ LeetCode-Solutions-Python/
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
 | 1391 | [Check if There is a Valid Path in a Grid](./Graphs/1391_Valid_Path_in_Grid.py) | Medium | BFS / Grid Traversal | O(M*N) | O(M*N) |
+| 1559 | [Detect Cycles in 2D Grid](./Graphs/1559_Detect_Cycles_in_2D_Grid.py) | Medium | BFS / Cycle Detection | O(M*N) | O(M*N) |
 | 1722 | [Minimize Hamming Distance After Swap Operations](./Graphs/1722_Min_Hamming_Distance_Swaps.py) | Medium | Union-Find / Connected Components | O(N) | O(N) |
 | 3600 | [Maximize Spanning Tree Stability with Upgrades](./Graphs/3600._Maximize_Spanning_Tree_Stability_with_Uprades.py) | Hard | Binary Search on Answer + Kruskal's (DSU) | O(E log M) | O(V + E) |
 
@@ -205,11 +206,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 72 
+Total Problems: 73 
 
 Easy: 25 
 
-Medium: 35 
+Medium: 36 
 
 Hard: 12  
 
@@ -229,7 +230,7 @@ Last updated: Daily
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
-| Graphs    | 1391, 3600 |
+| Graphs    | 1391, 1559, 3600 |
 | Binary Search on Answer    | 3600, 3296 |
 | Backtracking / Decision Tree | 401, 1415 |
 | Math / Modular Arithmetic  | 1622, 3783 |
