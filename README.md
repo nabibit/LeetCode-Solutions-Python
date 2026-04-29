@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-78-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-79-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -144,6 +144,7 @@ LeetCode-Solutions-Python/
 | 2946 | [Matrix Similarity After Cyclic Shifts](./Matrix/2946_Matrix_Similarity_After_Cyclic_Shifts.py) | Easy | Modular Arithmetic + Slice Comparison | O(M*N) | O(N) |
 | 3129 | [Find All Possible Stable Binary Arrays I](./DynamicProgramming/3129_Find_All_Possible_Stable_Binary_Arrays_I.py) | Medium | DP with Invalid State Subtraction | O(Z * O) | O(Z * O) |
 | 3130 | [Find All Possible Stable Binary Arrays II](./DynamicProgramming/3130_Find_All_Possible_Stable_Binary_Arrays_II.py) | Hard | DP with Invalid State Subtraction | O(Z * O) | O(Z * O) |
+| 3225 | [Maximum Score From Grid Operations](./DynamicProgramming/3225_Max_Score_Grid_Operations.py) | Hard | DP (State Decoupling) + Prefix Sums | O(N³) | O(N²) |
 | 3418 | [Maximum Amount of Money Robot Can Earn](./DynamicProgramming/3418_Max_Money_Robot_Can_Earn.py) | Medium | 3D DP (State Tracking) | O(M*N) | O(M*N) |
 
 ### [Trees](./Trees/)
@@ -211,13 +212,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 78 
+Total Problems: 79 
 
 Easy: 26 
 
 Medium: 38 
 
-Hard: 14  
+Hard: 15  
 
 Last updated: Daily  
 
@@ -231,7 +232,7 @@ Last updated: Daily
 | Sliding Window             | 1461, 1848, 1888, 2078, 3013, 3741 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 1022, 1382 |
-| Dynamic Programming        | 799, 1320, 1594, 2463, 2573, 3129, 3130, 3418, 3640 |
+| Dynamic Programming        | 799, 1320, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
