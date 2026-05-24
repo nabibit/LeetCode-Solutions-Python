@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-89-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-90-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -82,6 +82,7 @@ LeetCode-Solutions-Python/
 | 3653 | [XOR After Range Multiplication Queries I](./Arrays/3653_XOR_After_Range_Multiplication_I.py) | Medium | Array Simulation | O(Q*N) | O(1) |
 | 3655 | [XOR After Range Multiplication Queries II](./Arrays/3655_XOR_After_Range_Multiplication.py) | Hard | Sqrt Decomposition / Difference Arrays | O(N * sqrt(Q)) | O(N) |
 | 3719 | [Longest Balanced Subarray I](./Arrays/3719_Longest_Balanced_Subarray_I.py) | Medium | Brute Force (All Subarrays)| O(n²) | O(n) |
+| 3660 | [Jump Game IX](./Arrays/3660_Jump_Game_IX.py) | Medium | Prefix Max & Suffix Min Sweeps | O(N) | O(N) |
 | 3721 | [Longest Balanced Subarray II](./Arrays/3721_Longest_Balanced_Subarray_II.py) | Hard | Segment Tree + Prefix Sums | O(n log n) | O(n) |
 | 3740 | [Minimum Distance Between Three Equal Elements I](./Arrays/3740_Min_Dist_Three_Equal_Elements_I.py) | Easy | Hash Map + Index Tracking | O(N) | O(N) |
 | 3741 | [Minimum Distance Between Three Equal Elements II](./Arrays/3741_Min_Dist_Three_Equal_Elements_II.py) | Medium | Hash Map + Index Tracking | O(N) | O(N) |
@@ -222,11 +223,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 89 
+Total Problems: 90 
 
 Easy: 26 
 
-Medium: 40 
+Medium: 41 
 
 Hard: 23  
 
@@ -243,7 +244,7 @@ Last updated: Daily
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 212, 1022, 1382 |
 | Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640 |
-| Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3714, 3721 |
+| Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3660, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 3600 |
@@ -298,6 +299,8 @@ Last updated: Daily
 **212. Word Search II**: Bypasses the catastrophic Time Limit Exceeded (TLE) of running $K$ individual DFS searches by utilizing a Trie (Prefix Tree). The DFS traverses the grid and the Trie simultaneously, instantly pruning paths that do not form a valid prefix for any word in the dictionary. Implements dynamic node deletion upon word discovery to further prevent redundant recursive traversals.
 
 **2657. Find the Prefix Common Array of Two Arrays**: Avoids an $O(N^2)$ nested prefix comparison by leveraging the mathematical properties of permutations. Uses a single shared frequency array to track elements as they are revealed; whenever an element's frequency hits exactly 2, it is guaranteed to have appeared in both arrays, allowing for an optimal $O(N)$ real-time sweep.
+
+**3660. Jump Game IX**: Avoids the $O(N^2)$ trap of simulating graph reachability by mathematically analyzing the global landscape. It uses a dual-sweep approach: a left-to-right Prefix Max sweep to determine local capacity, and a right-to-left Suffix Min sweep. If a point's Prefix Max exceeds the Suffix Min ahead of it, it successfully bridges into the right-side network, resolving the entire array in a strictly linear $O(N)$ pass.
 
 ### Complex Logic
 
