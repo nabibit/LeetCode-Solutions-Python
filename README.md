@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-87-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-89-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -69,6 +69,7 @@ LeetCode-Solutions-Python/
 | 2078 | [Two Furthest Houses With Different Colors](./Arrays/2078_Two_Furthest_Houses_With_Diff_Colors.py) | Easy | Boundary Anchoring (Two Pointers) | O(N) | O(1) |
 | 2515 | [Shortest Distance to Target String in a Circular Array](./Arrays/2515_Shortest_Distance_Target_String_Circular.py) | Easy | Bidirectional Distance Math | O(N) | O(1) |
 | 2615 | [Sum of Distances](./Arrays/2615_Sum_of_Distances.py) | Medium | Hash Map + Prefix Sums | O(N) | O(N) |
+| 2657 | [Find the Prefix Common Array of Two Arrays](./Arrays/2657_Find_the_Prefix_Common_Array.py) | Medium | Shared Frequency Array | O(N) | O(N) |
 | 2751 | [Robot Collisions](./Arrays/2751_Robot_Collisions.py) | Hard | Sorting + Stack Simulation | O(N log N) | O(N) |
 | 3010 | [Divide an Array Into Subarrays With Minimum Cost I](./Arrays/3010_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_I.py) | Easy | Greedy + Sorting | O(n log n) | O(n) |
 | 3013 | [Divide an Array Into Subarrays With Minimum Cost II](./Arrays/3013_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_II.py) | Hard | Sliding Window + Two Heaps | O(n log d) | O(n) |
@@ -144,6 +145,7 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 799 | [Champagne Tower](./DynamicProgramming/0799_Champagne_Tower.py) | Medium | Simulation + DP (In-place) | O(R²) | O(R) |
 | 1320 | [Minimum Distance to Type a Word Using Two Fingers](./DynamicProgramming/1320_Min_Distance_Type_Word_Two_Fingers.py) | Hard | Top-Down DP (State Compression) | O(N) | O(N) |
+| 1340 | [Jump Game V](./DynamicProgramming/1340_Jump_Game_V.py) | Hard | Top-Down DP (Memoization) / DAG Traversal | O(N*d) | O(N) |
 | 1594 | [Maximum Non Negative Product in a Matrix](./DynamicProgramming/1594_Max_Non_Negative_Product_Matrix.py) | Medium | 2D DP (Min/Max Dual-State) | O(M*N) | O(M*N) |
 | 2463 | [Minimum Total Distance Traveled](./DynamicProgramming/2463_Min_Total_Distance_Traveled.py) | Hard | Top-Down DP (Capacity Batching) | O(R² * F) | O(R * F) |
 | 2946 | [Matrix Similarity After Cyclic Shifts](./Matrix/2946_Matrix_Similarity_After_Cyclic_Shifts.py) | Easy | Modular Arithmetic + Slice Comparison | O(M*N) | O(N) |
@@ -220,13 +222,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 87 
+Total Problems: 89 
 
 Easy: 26 
 
-Medium: 39 
+Medium: 40 
 
-Hard: 22  
+Hard: 23  
 
 Last updated: Daily  
 
@@ -240,7 +242,7 @@ Last updated: Daily
 | Sliding Window             | 42, 1461, 1848, 1888, 2078, 3013, 3741 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 212, 1022, 1382 |
-| Dynamic Programming        | 799, 1320, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640 |
+| Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
@@ -251,7 +253,7 @@ Last updated: Daily
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
-| Hash Map / Index Tracking | 36, 2615, 3488, 3740, 3741, 3761 |
+| Hash Map / Index Tracking | 36, 2615, 2657, 3488, 3740, 3741, 3761 |
 | Union-Find / Disjoint Set | 1722 |
 | Square Root Decomposition / Chunking | 3655 |
 | Array Simulation | 3653 |
@@ -294,6 +296,8 @@ Last updated: Daily
 **36. Valid Sudoku**: Replaces the inefficient $O(N^3)$ approach of rescanning rows and columns with a single $O(1)$ pass. Utilizes three arrays of Hash Sets to record seen values in real-time, leveraging mathematical integer division `(r // 3) * 3 + (c // 3)` to instantly map 2D coordinates to their corresponding $3 \times 3$ sub-box.
 
 **212. Word Search II**: Bypasses the catastrophic Time Limit Exceeded (TLE) of running $K$ individual DFS searches by utilizing a Trie (Prefix Tree). The DFS traverses the grid and the Trie simultaneously, instantly pruning paths that do not form a valid prefix for any word in the dictionary. Implements dynamic node deletion upon word discovery to further prevent redundant recursive traversals.
+
+**2657. Find the Prefix Common Array of Two Arrays**: Avoids an $O(N^2)$ nested prefix comparison by leveraging the mathematical properties of permutations. Uses a single shared frequency array to track elements as they are revealed; whenever an element's frequency hits exactly 2, it is guaranteed to have appeared in both arrays, allowing for an optimal $O(N)$ real-time sweep.
 
 ### Complex Logic
 
@@ -346,6 +350,8 @@ Last updated: Daily
 **37. Sudoku Solver**: Avoids standard $O(N)$ row/col validation during Backtracking by utilizing 3 arrays of Hash Sets (`rows`, `cols`, `boxes`). This reduces the validity check for every digit placement down to a lightning-fast $O(1)$ lookup, drastically pruning the $O(9^M)$ decision tree.
 
 **3027. Find the Number of Ways to Place People II**: Bypasses complex 2D Segment Trees by sorting coordinates (X ascending, Y descending) to guarantee directional logic. Uses a nested sweep that validates empty bounding boxes in strict $O(1)$ time by maintaining a "running highest Y-coordinate", instantly blocking any prospective rectangles that trap intermediate points.
+
+**1340. Jump Game V**: Bypasses the complexity of full BFS array traversals by recognizing the downward jumping rule transforms the array into a Directed Acyclic Graph (DAG). Utilizes a Top-Down DFS with memoization to strictly calculate overlapping "line of sight" jumps in $O(N \cdot d)$ time, instantly breaking inner loops when a visual obstruction (a taller or equal element) is encountered.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
