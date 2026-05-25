@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-90-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-91-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -140,7 +140,7 @@ LeetCode-Solutions-Python/
 | 1680 | [Concatenation of Consecutive Binary Numbers](./BitManipulation/1680_Concatenation_of_Consecutive_Binary_Numbers.py) | Medium | Bitwise Shift & Modulo | O(N) | O(1) |
 | 3666 | [Minimum Operations to Equalize Binary String](./BitManipulation/3666_Minimum_Operations_to_Equalize_Binary_String.py) | Hard | SortedList BFS Parity Search | O(N log N) | O(N) |
 
-### [DynamicProgramming](./DynamicProgramming/)
+## [DynamicProgramming](./DynamicProgramming/)
 
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
@@ -148,6 +148,7 @@ LeetCode-Solutions-Python/
 | 1320 | [Minimum Distance to Type a Word Using Two Fingers](./DynamicProgramming/1320_Min_Distance_Type_Word_Two_Fingers.py) | Hard | Top-Down DP (State Compression) | O(N) | O(N) |
 | 1340 | [Jump Game V](./DynamicProgramming/1340_Jump_Game_V.py) | Hard | Top-Down DP (Memoization) / DAG Traversal | O(N*d) | O(N) |
 | 1594 | [Maximum Non Negative Product in a Matrix](./DynamicProgramming/1594_Max_Non_Negative_Product_Matrix.py) | Medium | 2D DP (Min/Max Dual-State) | O(M*N) | O(M*N) |
+| 1871 | [Jump Game VII](./DynamicProgramming/1871_Jump_Game_VII.py) | Medium | 1D DP + Sliding Window Count | O(N) | O(N) |
 | 2463 | [Minimum Total Distance Traveled](./DynamicProgramming/2463_Min_Total_Distance_Traveled.py) | Hard | Top-Down DP (Capacity Batching) | O(R² * F) | O(R * F) |
 | 2946 | [Matrix Similarity After Cyclic Shifts](./Matrix/2946_Matrix_Similarity_After_Cyclic_Shifts.py) | Easy | Modular Arithmetic + Slice Comparison | O(M*N) | O(N) |
 | 3129 | [Find All Possible Stable Binary Arrays I](./DynamicProgramming/3129_Find_All_Possible_Stable_Binary_Arrays_I.py) | Medium | DP with Invalid State Subtraction | O(Z * O) | O(Z * O) |
@@ -223,11 +224,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 90 
+Total Problems: 91 
 
 Easy: 26 
 
-Medium: 41 
+Medium: 42 
 
 Hard: 23  
 
@@ -240,8 +241,7 @@ Last updated: Daily
 | Core Category              | Problems |
 |----------------------------|----------|
 | Greedy / Sorting           | 1536, 1689, 1727, 2833, 3010, 3634 |
-| Sliding Window             | 42, 1461, 1848, 1888, 2078, 3013, 3741 |
-| Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
+| Sliding Window             | 42, 1461, 1848, 1871,Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 212, 1022, 1382 |
 | Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3660, 3714, 3721 |
@@ -355,6 +355,8 @@ Last updated: Daily
 **3027. Find the Number of Ways to Place People II**: Bypasses complex 2D Segment Trees by sorting coordinates (X ascending, Y descending) to guarantee directional logic. Uses a nested sweep that validates empty bounding boxes in strict $O(1)$ time by maintaining a "running highest Y-coordinate", instantly blocking any prospective rectangles that trap intermediate points.
 
 **1340. Jump Game V**: Bypasses the complexity of full BFS array traversals by recognizing the downward jumping rule transforms the array into a Directed Acyclic Graph (DAG). Utilizes a Top-Down DFS with memoization to strictly calculate overlapping "line of sight" jumps in $O(N \cdot d)$ time, instantly breaking inner loops when a visual obstruction (a taller or equal element) is encountered.
+
+**1871. Jump Game VII**: Prevents an $O(N \cdot K)$ Time Limit Exceeded (TLE) error by avoiding nested backwards lookups for valid jump origin points. Utilizes a Sliding Window variable (`reachable_in_window`) to maintain a rolling count of valid, active launchpads within the `[minJump, maxJump]` bounds, reducing the dynamic programming state transitions to a strictly $O(1)$ constant-time check per index.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
