@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-91-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-92-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -74,6 +74,7 @@ LeetCode-Solutions-Python/
 | 3010 | [Divide an Array Into Subarrays With Minimum Cost I](./Arrays/3010_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_I.py) | Easy | Greedy + Sorting | O(n log n) | O(n) |
 | 3013 | [Divide an Array Into Subarrays With Minimum Cost II](./Arrays/3013_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_II.py) | Hard | Sliding Window + Two Heaps | O(n log d) | O(n) |
 | 3027 | [Find the Number of Ways to Place People II](./Arrays/3027_Find_the_Number_of_Ways_to_Place_People_II.py) | Hard | 2D Geometry Sweep + Running Max | O(N²) | O(1) |
+| 3300 | [Minimum Element After Replacement With Digit Sum](./Arrays/3300_Min_Element_After_Replacement_Digit_Sum.py) | Easy | Linear Scan + Modulo Digit Extraction | O(N) | O(1) |
 | 3379 | [Transformed Array](./Arrays/3379_Transformed_Array.py) | Easy | Simulation (Modular Arithmetic) | O(n) | O(n) |
 | 3488 | [Closest Equal Element Queries](./Arrays/3488_Closest_Equal_Element_Queries.py) | Medium | Hash Map + Circular Math | O(N + Q) | O(N) |
 | 3634 | [Minimum Removals to Balance Array](./Arrays/3634_Minimum_Removals_to_Balance.py) | Medium | Two Pointers + Sorting | O(n log n) | O(1) |
@@ -224,9 +225,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 91 
+Total Problems: 92 
 
-Easy: 26 
+Easy: 27 
 
 Medium: 42 
 
@@ -250,7 +251,7 @@ Last updated: Daily
 | Graphs    | 1391, 1559, 3600 |
 | Binary Search on Answer    |  3296, 3464, 3600 |
 | Backtracking / Decision Tree | 37, 401, 1415 |
-| Math / Modular Arithmetic  | 1622, 2033, 3783 |
+| Math / Modular Arithmetic  | 1622, 2033, 3300, 3783 |
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
@@ -301,6 +302,8 @@ Last updated: Daily
 **2657. Find the Prefix Common Array of Two Arrays**: Avoids an $O(N^2)$ nested prefix comparison by leveraging the mathematical properties of permutations. Uses a single shared frequency array to track elements as they are revealed; whenever an element's frequency hits exactly 2, it is guaranteed to have appeared in both arrays, allowing for an optimal $O(N)$ real-time sweep.
 
 **3660. Jump Game IX**: Avoids the $O(N^2)$ trap of simulating graph reachability by mathematically analyzing the global landscape. It uses a dual-sweep approach: a left-to-right Prefix Max sweep to determine local capacity, and a right-to-left Suffix Min sweep. If a point's Prefix Max exceeds the Suffix Min ahead of it, it successfully bridges into the right-side network, resolving the entire array in a strictly linear $O(N)$ pass.
+
+**3300. Minimum Element After Replacement With Digit Sum**: Avoids the performance overhead of casting integers to strings (`str(num)`) by utilizing pure base-10 mathematics. Extracts and sums individual digits in-place using a `num % 10` modulo operation and a `num //= 10` reduction, keeping the auxiliary space strictly $O(1)$ and minimizing memory allocations during the linear scan.
 
 ### Complex Logic
 
