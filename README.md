@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-92-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-93-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -67,6 +67,7 @@ LeetCode-Solutions-Python/
 | 1855 | [Maximum Distance Between a Pair of Values](./Arrays/1855_Max_Distance_Between_Pair.py) | Medium | Two Pointers | O(N+M) | O(1) |
 | 1878 | [Get Biggest Three Rhombus Sums in a Grid](./Arrays/1878_Get_Biggest_Three_Rhombus_Sums.py) | Medium | Boundary Simulation | O(M*N*min(M,N)) | O(U) |
 | 2078 | [Two Furthest Houses With Different Colors](./Arrays/2078_Two_Furthest_Houses_With_Diff_Colors.py) | Easy | Boundary Anchoring (Two Pointers) | O(N) | O(1) |
+| 2144 | [Minimum Cost of Buying Candies With Discount](./Arrays/2144_Min_Cost_Buying_Candies_Discount.py) | Easy | Greedy Descending Sort | O(N log N) | O(1) |
 | 2515 | [Shortest Distance to Target String in a Circular Array](./Arrays/2515_Shortest_Distance_Target_String_Circular.py) | Easy | Bidirectional Distance Math | O(N) | O(1) |
 | 2615 | [Sum of Distances](./Arrays/2615_Sum_of_Distances.py) | Medium | Hash Map + Prefix Sums | O(N) | O(N) |
 | 2657 | [Find the Prefix Common Array of Two Arrays](./Arrays/2657_Find_the_Prefix_Common_Array.py) | Medium | Shared Frequency Array | O(N) | O(N) |
@@ -225,9 +226,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 92 
+Total Problems: 93 
 
-Easy: 27 
+Easy: 28 
 
 Medium: 42 
 
@@ -241,7 +242,7 @@ Last updated: Daily
 
 | Core Category              | Problems |
 |----------------------------|----------|
-| Greedy / Sorting           | 1536, 1689, 1727, 2833, 3010, 3634 |
+| Greedy / Sorting           | 1536, 1689, 1727, 2144, 2833, 3010, 3634 |
 | Sliding Window             | 42, 1461, 1848, 1871,Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 212, 1022, 1382 |
 | Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640 |
@@ -304,6 +305,8 @@ Last updated: Daily
 **3660. Jump Game IX**: Avoids the $O(N^2)$ trap of simulating graph reachability by mathematically analyzing the global landscape. It uses a dual-sweep approach: a left-to-right Prefix Max sweep to determine local capacity, and a right-to-left Suffix Min sweep. If a point's Prefix Max exceeds the Suffix Min ahead of it, it successfully bridges into the right-side network, resolving the entire array in a strictly linear $O(N)$ pass.
 
 **3300. Minimum Element After Replacement With Digit Sum**: Avoids the performance overhead of casting integers to strings (`str(num)`) by utilizing pure base-10 mathematics. Extracts and sums individual digits in-place using a `num % 10` modulo operation and a `num //= 10` reduction, keeping the auxiliary space strictly $O(1)$ and minimizing memory allocations during the linear scan.
+
+**2144. Minimum Cost of Buying Candies With Discount**: Demonstrates a classic Greedy optimization. By sorting the array in descending order, the algorithm forces the "free" items to be as expensive as mathematically possible. It then computes the minimum total cost in a single pass by exploiting a modulo check (`i % 3 != 2`) to effortlessly skip the cost of every third item.
 
 ### Complex Logic
 
