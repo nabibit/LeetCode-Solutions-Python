@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-93-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-94-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -78,6 +78,7 @@ LeetCode-Solutions-Python/
 | 3300 | [Minimum Element After Replacement With Digit Sum](./Arrays/3300_Min_Element_After_Replacement_Digit_Sum.py) | Easy | Linear Scan + Modulo Digit Extraction | O(N) | O(1) |
 | 3379 | [Transformed Array](./Arrays/3379_Transformed_Array.py) | Easy | Simulation (Modular Arithmetic) | O(n) | O(n) |
 | 3488 | [Closest Equal Element Queries](./Arrays/3488_Closest_Equal_Element_Queries.py) | Medium | Hash Map + Circular Math | O(N + Q) | O(N) |
+| 3633 | [Earliest Finish Time for Land and Water Rides I](./Arrays/3633_Earliest_Finish_Time_Land_Water_Rides_I.py) | Easy | Simulation / Min-Max Bounding | O(N*M) | O(1) |
 | 3634 | [Minimum Removals to Balance Array](./Arrays/3634_Minimum_Removals_to_Balance.py) | Medium | Two Pointers + Sorting | O(n log n) | O(1) |
 | 3637 | [Trionic Array I](./Arrays/3637_Trionic_Array_I.py) | Easy | Linear Scan (Pattern Recognition) | O(n) | O(1) |
 | 3640 | [Trionic Array II](./Arrays/3640_Trionic_Array_II.py) | Hard | Dynamic Programming (State Machine) | O(n) | O(n) |
@@ -226,9 +227,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 93 
+Total Problems: 94 
 
-Easy: 28 
+Easy: 29 
 
 Medium: 42 
 
@@ -247,7 +248,7 @@ Last updated: Daily
 | DFS / Trees                | 212, 1022, 1382 |
 | Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3660, 3714, 3721 |
-| Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3637 |
+| Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3633, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 3600 |
 | Binary Search on Answer    |  3296, 3464, 3600 |
@@ -307,6 +308,8 @@ Last updated: Daily
 **3300. Minimum Element After Replacement With Digit Sum**: Avoids the performance overhead of casting integers to strings (`str(num)`) by utilizing pure base-10 mathematics. Extracts and sums individual digits in-place using a `num % 10` modulo operation and a `num //= 10` reduction, keeping the auxiliary space strictly $O(1)$ and minimizing memory allocations during the linear scan.
 
 **2144. Minimum Cost of Buying Candies With Discount**: Demonstrates a classic Greedy optimization. By sorting the array in descending order, the algorithm forces the "free" items to be as expensive as mathematically possible. It then computes the minimum total cost in a single pass by exploiting a modulo check (`i % 3 != 2`) to effortlessly skip the cost of every third item.
+
+**3633. Earliest Finish Time for Land and Water Rides I**: Uses a straightforward $O(N \times M)$ simulation to test both chronological permutations (Land-then-Water vs. Water-then-Land) for every possible ride pairing. Employs a robust `max(finish_time_A, start_time_B)` bounds check to seamlessly handle the physical reality of waiting for a ride to open versus arriving after it has already started operating.
 
 ### Complex Logic
 
