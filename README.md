@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-94-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-95-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -128,6 +128,7 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 3296 | [Minimum Number of Seconds to Make Mountain Height Zero](./BinarySearch/3296_Min_Seconds_Mountain_Zero.py) | Medium | Binary Search on Answer + Quadratic Formula | O(N log M) | O(1) |
 | 3464 | [Maximize the Distance Between Points on a Square](./BinarySearch/3464_Maximize_Distance_Square.py) | Hard | 1D Mapping / Binary Search on Answer | O(N log N) | O(N) |
+| 3635 | [Earliest Finish Time for Land and Water Rides II](./BinarySearch/3635_Earliest_Finish_Time_Land_Water_Rides_II.py) | Medium | Binary Search / Prefix & Suffix Sweeps | O(NlogN + MlogM) | O(N+M) |
 
 ### [BitManipulation](./BitManipulation/)
 
@@ -227,11 +228,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 94 
+Total Problems: 95 
 
 Easy: 29 
 
-Medium: 42 
+Medium: 43 
 
 Hard: 23  
 
@@ -247,7 +248,7 @@ Last updated: Daily
 | Sliding Window             | 42, 1461, 1848, 1871,Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 212, 1022, 1382 |
 | Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640 |
-| Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3660, 3714, 3721 |
+| Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3633, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 3600 |
@@ -366,6 +367,8 @@ Last updated: Daily
 **1340. Jump Game V**: Bypasses the complexity of full BFS array traversals by recognizing the downward jumping rule transforms the array into a Directed Acyclic Graph (DAG). Utilizes a Top-Down DFS with memoization to strictly calculate overlapping "line of sight" jumps in $O(N \cdot d)$ time, instantly breaking inner loops when a visual obstruction (a taller or equal element) is encountered.
 
 **1871. Jump Game VII**: Prevents an $O(N \cdot K)$ Time Limit Exceeded (TLE) error by avoiding nested backwards lookups for valid jump origin points. Utilizes a Sliding Window variable (`reachable_in_window`) to maintain a rolling count of valid, active launchpads within the `[minJump, maxJump]` bounds, reducing the dynamic programming state transitions to a strictly $O(1)$ constant-time check per index.
+
+**3635. Earliest Finish Time for Land and Water Rides II**: Solves the Time Limit Exceeded (TLE) barrier of its predecessor by abandoning the $O(N \times M)$ nested loop simulation. Instead, it utilizes an $O(N \log M)$ Binary Search paired with precomputed Prefix and Suffix Minimum arrays. This guarantees $O(1)$ optimal ride selection by instantly splitting the target ride pool into two distinct, pre-calculated mathematical bounds: rides requiring a wait time, and rides offering immediate boarding.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
