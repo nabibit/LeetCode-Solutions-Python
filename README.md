@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-95-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-96-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -160,6 +160,7 @@ LeetCode-Solutions-Python/
 | 3225 | [Maximum Score From Grid Operations](./DynamicProgramming/3225_Max_Score_Grid_Operations.py) | Hard | DP (State Decoupling) + Prefix Sums | O(N³) | O(N²) |
 | 3418 | [Maximum Amount of Money Robot Can Earn](./DynamicProgramming/3418_Max_Money_Robot_Can_Earn.py) | Medium | 3D DP (State Tracking) | O(M*N) | O(M*N) |
 | 3661 | [Maximum Walls Destroyed by Robots](./DynamicProgramming/3661_Max_Walls_Destroyed_Robots.py) | Hard | Bounded Intervals + 1D DP | O(R log R + W log W) | O(R + W) |
+| 3751 | [Total Waviness of Numbers in Range I](./DynamicProgramming/3751_Total_Waviness_of_Numbers_in_Range_I.py) | Medium | Digit DP / Prefix State Tracking | O(log N) | O(log N) |
 
 ### [Trees](./Trees/)
 
@@ -228,11 +229,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 95 
+Total Problems: 96 
 
 Easy: 29 
 
-Medium: 43 
+Medium: 44 
 
 Hard: 23  
 
@@ -247,7 +248,7 @@ Last updated: Daily
 | Greedy / Sorting           | 1536, 1689, 1727, 2144, 2833, 3010, 3634 |
 | Sliding Window             | 42, 1461, 1848, 1871,Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 212, 1022, 1382 |
-| Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640 |
+| Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640, 3751 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3633, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
@@ -369,6 +370,8 @@ Last updated: Daily
 **1871. Jump Game VII**: Prevents an $O(N \cdot K)$ Time Limit Exceeded (TLE) error by avoiding nested backwards lookups for valid jump origin points. Utilizes a Sliding Window variable (`reachable_in_window`) to maintain a rolling count of valid, active launchpads within the `[minJump, maxJump]` bounds, reducing the dynamic programming state transitions to a strictly $O(1)$ constant-time check per index.
 
 **3635. Earliest Finish Time for Land and Water Rides II**: Solves the Time Limit Exceeded (TLE) barrier of its predecessor by abandoning the $O(N \times M)$ nested loop simulation. Instead, it utilizes an $O(N \log M)$ Binary Search paired with precomputed Prefix and Suffix Minimum arrays. This guarantees $O(1)$ optimal ride selection by instantly splitting the target ride pool into two distinct, pre-calculated mathematical bounds: rides requiring a wait time, and rides offering immediate boarding.
+
+**3751. Total Waviness of Numbers in Range I**: Bypasses the catastrophic Time Limit Exceeded (TLE) of an $O(N)$ brute-force iterative scan by utilizing Digit Dynamic Programming. By constructing prefixes and tracking only the previous two digits in the recursive state, it evaluates the total topological waviness in $O(\log_{10}(\text{num2}))$ time. It calculates $F(num2) - F(num1 - 1)$ to isolate the target range with absolute mathematical precision.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
