@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-97-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-98-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -69,6 +69,7 @@ LeetCode-Solutions-Python/
 | 2078 | [Two Furthest Houses With Different Colors](./Arrays/2078_Two_Furthest_Houses_With_Diff_Colors.py) | Easy | Boundary Anchoring (Two Pointers) | O(N) | O(1) |
 | 2144 | [Minimum Cost of Buying Candies With Discount](./Arrays/2144_Min_Cost_Buying_Candies_Discount.py) | Easy | Greedy Descending Sort | O(N log N) | O(1) |
 | 2515 | [Shortest Distance to Target String in a Circular Array](./Arrays/2515_Shortest_Distance_Target_String_Circular.py) | Easy | Bidirectional Distance Math | O(N) | O(1) |
+| 2161 | [Partition Array According to Given Pivot](./Arrays/2161_Partition_Array_According_to_Pivot.py) | Medium | Stable Partition / 3-Bucket Sweep | O(N) | O(N) |
 | 2615 | [Sum of Distances](./Arrays/2615_Sum_of_Distances.py) | Medium | Hash Map + Prefix Sums | O(N) | O(N) |
 | 2657 | [Find the Prefix Common Array of Two Arrays](./Arrays/2657_Find_the_Prefix_Common_Array.py) | Medium | Shared Frequency Array | O(N) | O(N) |
 | 2751 | [Robot Collisions](./Arrays/2751_Robot_Collisions.py) | Hard | Sorting + Stack Simulation | O(N log N) | O(N) |
@@ -230,11 +231,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 97 
+Total Problems: 98 
 
 Easy: 29 
 
-Medium: 44 
+Medium: 45 
 
 Hard: 24  
 
@@ -251,7 +252,7 @@ Last updated: Daily
 | DFS / Trees                | 212, 1022, 1382 |
 | Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721 |
-| Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 3379, 3633, 3637 |
+| Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 2161, 3379, 3633, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 3600 |
 | Binary Search on Answer    |  3296, 3464, 3600 |
@@ -313,6 +314,8 @@ Last updated: Daily
 **2144. Minimum Cost of Buying Candies With Discount**: Demonstrates a classic Greedy optimization. By sorting the array in descending order, the algorithm forces the "free" items to be as expensive as mathematically possible. It then computes the minimum total cost in a single pass by exploiting a modulo check (`i % 3 != 2`) to effortlessly skip the cost of every third item.
 
 **3633. Earliest Finish Time for Land and Water Rides I**: Uses a straightforward $O(N \times M)$ simulation to test both chronological permutations (Land-then-Water vs. Water-then-Land) for every possible ride pairing. Employs a robust `max(finish_time_A, start_time_B)` bounds check to seamlessly handle the physical reality of waiting for a ride to open versus arriving after it has already started operating.
+
+**2161. Partition Array According to Given Pivot**: Avoids the unstable relative-ordering destruction of the classic $O(1)$ space Dutch National Flag algorithm. Utilizes a strict $O(N)$ stable bucket-placement strategy (or a highly optimized two-pass pre-allocated array) to guarantee chronological preservation of elements while grouping them cleanly around the pivot.
 
 ### Complex Logic
 
