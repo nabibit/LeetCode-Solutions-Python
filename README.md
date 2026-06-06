@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-98-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-99-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -170,6 +170,7 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 1022 | [Sum of Root To Leaf Binary Numbers](./Trees/1022_Sum_of_Root_To_Leaf_Binary_Numbers.py) | Easy | DFS & Bitwise Shift | O(N) | O(H) |
 | 1382 | [Balance a Binary Search Tree](./Trees/1382_Balance_a_Binary_Search_Tree.py) | Medium | In-Order Traversal + Divide & Conquer | O(n) | O(n) |
+| 2196 | [Create Binary Tree From Descriptions](./Trees/2196_Create_Binary_Tree_From_Descriptions.py) | Medium | Hash Map + Set (Root Identification) | O(N) | O(N) |
 
 ### [Graphs](./Graphs/)
 
@@ -231,11 +232,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 98 
+Total Problems: 99 
 
 Easy: 29 
 
-Medium: 45 
+Medium: 46 
 
 Hard: 24  
 
@@ -249,7 +250,7 @@ Last updated: Daily
 |----------------------------|----------|
 | Greedy / Sorting           | 1536, 1689, 1727, 2144, 2833, 3010, 3634 |
 | Sliding Window             | 42, 1461, 1848, 1871,Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
-| DFS / Trees                | 212, 1022, 1382 |
+| DFS / Trees                | 212, 1022, 1382, 2196 |
 | Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 2161, 3379, 3633, 3637 |
@@ -316,6 +317,8 @@ Last updated: Daily
 **3633. Earliest Finish Time for Land and Water Rides I**: Uses a straightforward $O(N \times M)$ simulation to test both chronological permutations (Land-then-Water vs. Water-then-Land) for every possible ride pairing. Employs a robust `max(finish_time_A, start_time_B)` bounds check to seamlessly handle the physical reality of waiting for a ride to open versus arriving after it has already started operating.
 
 **2161. Partition Array According to Given Pivot**: Avoids the unstable relative-ordering destruction of the classic $O(1)$ space Dutch National Flag algorithm. Utilizes a strict $O(N)$ stable bucket-placement strategy (or a highly optimized two-pass pre-allocated array) to guarantee chronological preservation of elements while grouping them cleanly around the pivot.
+
+**2196. Create Binary Tree From Descriptions**: Merges Graph construction with Tree logic. Bypasses nested tree-traversal lookups by maintaining a central Hash Map of memory references `(val -> TreeNode)`. It identifies the ultimate Root node in $O(N)$ time by simply tracking all valid children in a Hash Set and returning the singular orphaned parent. Space-optimized variants inject a `has_parent` boolean directly into the instance `__dict__` to eliminate the Hash Set memory footprint entirely.
 
 ### Complex Logic
 
