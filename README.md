@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-99-green)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-100-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -69,6 +69,7 @@ LeetCode-Solutions-Python/
 | 2078 | [Two Furthest Houses With Different Colors](./Arrays/2078_Two_Furthest_Houses_With_Diff_Colors.py) | Easy | Boundary Anchoring (Two Pointers) | O(N) | O(1) |
 | 2144 | [Minimum Cost of Buying Candies With Discount](./Arrays/2144_Min_Cost_Buying_Candies_Discount.py) | Easy | Greedy Descending Sort | O(N log N) | O(1) |
 | 2515 | [Shortest Distance to Target String in a Circular Array](./Arrays/2515_Shortest_Distance_Target_String_Circular.py) | Easy | Bidirectional Distance Math | O(N) | O(1) |
+| 2574 | [Left and Right Sum Differences](./Arrays/2574_Left_and_Right_Sum_Differences.py) | Easy | Running Prefix & Suffix Sums | O(N) | O(1) |
 | 2161 | [Partition Array According to Given Pivot](./Arrays/2161_Partition_Array_According_to_Pivot.py) | Medium | Stable Partition / 3-Bucket Sweep | O(N) | O(N) |
 | 2615 | [Sum of Distances](./Arrays/2615_Sum_of_Distances.py) | Medium | Hash Map + Prefix Sums | O(N) | O(N) |
 | 2657 | [Find the Prefix Common Array of Two Arrays](./Arrays/2657_Find_the_Prefix_Common_Array.py) | Medium | Shared Frequency Array | O(N) | O(N) |
@@ -232,9 +233,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 99 
+Total Problems: 100 
 
-Easy: 29 
+Easy: 30 
 
 Medium: 46 
 
@@ -251,7 +252,7 @@ Last updated: Daily
 | Greedy / Sorting           | 1536, 1689, 1727, 2144, 2833, 3010, 3634 |
 | Sliding Window             | 42, 1461, 1848, 1871,Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 212, 1022, 1382, 2196 |
-| Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 3129, 3130, 3225, 3418, 3640, 3751, 3753 |
+| Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 2161, 3379, 3633, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
@@ -381,6 +382,8 @@ Last updated: Daily
 **3751. Total Waviness of Numbers in Range I**: Bypasses the catastrophic Time Limit Exceeded (TLE) of an $O(N)$ brute-force iterative scan by utilizing Digit Dynamic Programming. By constructing prefixes and tracking only the previous two digits in the recursive state, it evaluates the total topological waviness in $O(\log_{10}(\text{num2}))$ time. It calculates $F(num2) - F(num1 - 1)$ to isolate the target range with absolute mathematical precision.
 
 **3753. Total Waviness of Numbers in Range II**: Because the $O(\log N)$ Digit DP architecture built for the Phase I version was already strictly optimal, it effortlessly clears the $10^{15}$ constraint boundary of this Hard variation. This demonstrates the power of state-space reduction—by evaluating mathematical digit transitions rather than iterating through integers, it resolves massive ranges in micro-seconds without requiring a single code modification.
+
+**2574. Left and Right Sum Differences**: Eliminates the $O(N^2)$ overhead of recalculating subarray sums at every index. Utilizes a single-pass "Running Balance" algorithm that precalculates the total sum as the initial `right_sum`, dynamically shifting values to the `left_sum` in $O(1)$ time per step. The space-optimized variant successfully mutates the input array in-place, reducing the total memory footprint to strict $O(1)$ without sacrificing linear time execution.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
