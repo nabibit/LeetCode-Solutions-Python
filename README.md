@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-100-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-101-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -172,6 +172,7 @@ LeetCode-Solutions-Python/
 | 1022 | [Sum of Root To Leaf Binary Numbers](./Trees/1022_Sum_of_Root_To_Leaf_Binary_Numbers.py) | Easy | DFS & Bitwise Shift | O(N) | O(H) |
 | 1382 | [Balance a Binary Search Tree](./Trees/1382_Balance_a_Binary_Search_Tree.py) | Medium | In-Order Traversal + Divide & Conquer | O(n) | O(n) |
 | 2196 | [Create Binary Tree From Descriptions](./Trees/2196_Create_Binary_Tree_From_Descriptions.py) | Medium | Hash Map + Set (Root Identification) | O(N) | O(N) |
+| 3558 | [Number of Ways to Assign Edge Weights I](./Trees/3558_Num_Ways_Assign_Edge_Weights_I.py) | Medium | BFS Depth Traversal + Combinatorics | O(N) | O(N) |
 
 ### [Graphs](./Graphs/)
 
@@ -233,11 +234,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 100 
+Total Problems: 101 
 
 Easy: 30 
 
-Medium: 46 
+Medium: 47 
 
 Hard: 24  
 
@@ -259,7 +260,7 @@ Last updated: Daily
 | Graphs    | 1391, 1559, 3600 |
 | Binary Search on Answer    |  3296, 3464, 3600 |
 | Backtracking / Decision Tree | 37, 401, 1415 |
-| Math / Modular Arithmetic  | 1622, 2033, 3300, 3783 |
+| Math / Modular Arithmetic  | 1622, 2033, 3300, 3558, 3783 |
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
@@ -384,6 +385,8 @@ Last updated: Daily
 **3753. Total Waviness of Numbers in Range II**: Because the $O(\log N)$ Digit DP architecture built for the Phase I version was already strictly optimal, it effortlessly clears the $10^{15}$ constraint boundary of this Hard variation. This demonstrates the power of state-space reduction—by evaluating mathematical digit transitions rather than iterating through integers, it resolves massive ranges in micro-seconds without requiring a single code modification.
 
 **2574. Left and Right Sum Differences**: Eliminates the $O(N^2)$ overhead of recalculating subarray sums at every index. Utilizes a single-pass "Running Balance" algorithm that precalculates the total sum as the initial `right_sum`, dynamically shifting values to the `left_sum` in $O(1)$ time per step. The space-optimized variant successfully mutates the input array in-place, reducing the total memory footprint to strict $O(1)$ without sacrificing linear time execution.
+
+**3558. Number of Ways to Assign Edge Weights I**: Disguises a pure combinatorics problem behind a standard Tree traversal prompt. Rather than simulating edge weight assignments or running pathfinding sum checks, it leverages mathematical parity. By proving that exactly half of all possible $1$ and $2$ weight assignments across $L$ edges result in an odd sum, the algorithm reduces the entire problem to a single $O(N)$ BFS depth discovery, followed by an $O(\log L)$ execution of $2^{L-1} \pmod{10^9+7}$.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
