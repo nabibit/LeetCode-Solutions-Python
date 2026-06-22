@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-101-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-102-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -100,6 +100,7 @@ LeetCode-Solutions-Python/
 | 67 | [Add Binary](./Strings/0067_Add_Binary.py) | Easy | Bit Manipulation (Simulation) | O(n + m) | O(max(n,m)) |
 | 696 | [Count Binary Substrings](./Strings/0696_Count_Binary_Substrings.py) | Easy | Linear Scan (Group Counting) | O(n) |	O(1) |
 | 761 | [Special Binary String](./Strings/0761_Special_Binary_String.py) | Hard | Recursion + Sorting | O(n²) | O(n) |
+| 1189 | [Maximum Number of Balloons](./Strings/1189_Maximum_Number_of_Balloons.py) | Easy | Hash Map Frequency Counting | O(N) | O(1) |
 | 1461 | [Check If a String Contains All Binary Codes](./Strings/1461_Check_If_String_Contains_All_Binary_Codes.py) | Medium | Sliding Window Set / Rolling Hash | O(N) | O(N*K) |
 | 1545 | [Find Kth Bit in Nth Binary String](./Strings/1545_Find_Kth_Bit_in_Nth_Binary_String.py) | Medium | Divide & Conquer (Recursion) | O(N) | O(N) |
 | 1689 | [Partitioning Into Minimum Number Of Deci-Binary Numbers](./Strings/1689_Partitioning_into_Minimum_number_Of_Deci-Binary_Numbers.py) | Medium | Greedy (Max Digit Search) | O(n) | O(1) |
@@ -234,9 +235,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 101 
+Total Problems: 102 
 
-Easy: 30 
+Easy: 31 
 
 Medium: 47 
 
@@ -264,7 +265,7 @@ Last updated: Daily
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
-| Hash Map / Index Tracking | 36, 2615, 2657, 3488, 3740, 3741, 3761 |
+| Hash Map / Index Tracking | 36, 1189, 2615, 2657, 3488, 3740, 3741, 3761 |
 | Union-Find / Disjoint Set | 1722 |
 | Square Root Decomposition / Chunking | 3655 |
 | Array Simulation | 3653 |
@@ -321,6 +322,8 @@ Last updated: Daily
 **2161. Partition Array According to Given Pivot**: Avoids the unstable relative-ordering destruction of the classic $O(1)$ space Dutch National Flag algorithm. Utilizes a strict $O(N)$ stable bucket-placement strategy (or a highly optimized two-pass pre-allocated array) to guarantee chronological preservation of elements while grouping them cleanly around the pivot.
 
 **2196. Create Binary Tree From Descriptions**: Merges Graph construction with Tree logic. Bypasses nested tree-traversal lookups by maintaining a central Hash Map of memory references `(val -> TreeNode)`. It identifies the ultimate Root node in $O(N)$ time by simply tracking all valid children in a Hash Set and returning the singular orphaned parent. Space-optimized variants inject a `has_parent` boolean directly into the instance `__dict__` to eliminate the Hash Set memory footprint entirely.
+
+**1189. Maximum Number of Balloons**: Leverages Python's `collections.Counter` to construct an $O(N)$ single-pass frequency map of the input text. It derives the maximum possible instances of the target word by mathematically scaling down double-occurrence characters (`'l'` and `'o'` via integer division `// 2`) and returning the strict minimum across the five-character requirement pool.
 
 ### Complex Logic
 
