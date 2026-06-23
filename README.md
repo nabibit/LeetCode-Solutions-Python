@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-102-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-103-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -163,6 +163,7 @@ LeetCode-Solutions-Python/
 | 3225 | [Maximum Score From Grid Operations](./DynamicProgramming/3225_Max_Score_Grid_Operations.py) | Hard | DP (State Decoupling) + Prefix Sums | O(N³) | O(N²) |
 | 3418 | [Maximum Amount of Money Robot Can Earn](./DynamicProgramming/3418_Max_Money_Robot_Can_Earn.py) | Medium | 3D DP (State Tracking) | O(M*N) | O(M*N) |
 | 3661 | [Maximum Walls Destroyed by Robots](./DynamicProgramming/3661_Max_Walls_Destroyed_Robots.py) | Hard | Bounded Intervals + 1D DP | O(R log R + W log W) | O(R + W) |
+| 3699 | [Number of ZigZag Arrays I](./DynamicProgramming/3699_Number_of_ZigZag_Arrays_I.py) | Hard | Directional DP + Prefix/Suffix Sum Sweeps | O(N*K) | O(K) |
 | 3751 | [Total Waviness of Numbers in Range I](./DynamicProgramming/3751_Total_Waviness_of_Numbers_in_Range_I.py) | Medium | Digit DP / Prefix State Tracking | O(log N) | O(log N) |
 | 3753 | [Total Waviness of Numbers in Range II](./DynamicProgramming/3753_Total_Waviness_of_Numbers_in_Range_II.py) | Hard | Digit DP / Prefix State Tracking | O(log N) | O(log N) |
 
@@ -235,13 +236,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 102 
+Total Problems: 103 
 
 Easy: 31 
 
 Medium: 47 
 
-Hard: 24  
+Hard: 25  
 
 Last updated: Daily  
 
@@ -390,6 +391,8 @@ Last updated: Daily
 **2574. Left and Right Sum Differences**: Eliminates the $O(N^2)$ overhead of recalculating subarray sums at every index. Utilizes a single-pass "Running Balance" algorithm that precalculates the total sum as the initial `right_sum`, dynamically shifting values to the `left_sum` in $O(1)$ time per step. The space-optimized variant successfully mutates the input array in-place, reducing the total memory footprint to strict $O(1)$ without sacrificing linear time execution.
 
 **3558. Number of Ways to Assign Edge Weights I**: Disguises a pure combinatorics problem behind a standard Tree traversal prompt. Rather than simulating edge weight assignments or running pathfinding sum checks, it leverages mathematical parity. By proving that exactly half of all possible $1$ and $2$ weight assignments across $L$ edges result in an odd sum, the algorithm reduces the entire problem to a single $O(N)$ BFS depth discovery, followed by an $O(\log L)$ execution of $2^{L-1} \pmod{10^9+7}$.
+
+**3699. Number of ZigZag Arrays I**: Bypasses the $O(N \cdot K^2)$ execution penalty of standard state-space DP by enforcing strict directional alternation (UP followed by DOWN). It flattens the transition calculations down to an optimal $O(N \cdot K)$ linear sweep by maintaining running prefix sums for valid UP-step origins and running suffix sums for valid DOWN-step origins, achieving an ultra-lean $O(K)$ space footprint.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
