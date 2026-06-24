@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-103-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-104-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -164,6 +164,7 @@ LeetCode-Solutions-Python/
 | 3418 | [Maximum Amount of Money Robot Can Earn](./DynamicProgramming/3418_Max_Money_Robot_Can_Earn.py) | Medium | 3D DP (State Tracking) | O(M*N) | O(M*N) |
 | 3661 | [Maximum Walls Destroyed by Robots](./DynamicProgramming/3661_Max_Walls_Destroyed_Robots.py) | Hard | Bounded Intervals + 1D DP | O(R log R + W log W) | O(R + W) |
 | 3699 | [Number of ZigZag Arrays I](./DynamicProgramming/3699_Number_of_ZigZag_Arrays_I.py) | Hard | Directional DP + Prefix/Suffix Sum Sweeps | O(N*K) | O(K) |
+| 3700 | [Number of ZigZag Arrays II](./DynamicProgramming/3700_Number_of_ZigZag_Arrays_II.py) | Hard | Block Matrix Exponentiation | O(M³logN) | O(M²) |
 | 3751 | [Total Waviness of Numbers in Range I](./DynamicProgramming/3751_Total_Waviness_of_Numbers_in_Range_I.py) | Medium | Digit DP / Prefix State Tracking | O(log N) | O(log N) |
 | 3753 | [Total Waviness of Numbers in Range II](./DynamicProgramming/3753_Total_Waviness_of_Numbers_in_Range_II.py) | Hard | Digit DP / Prefix State Tracking | O(log N) | O(log N) |
 
@@ -236,13 +237,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 103 
+Total Problems: 104 
 
 Easy: 31 
 
 Medium: 47 
 
-Hard: 25  
+Hard: 26  
 
 Last updated: Daily  
 
@@ -255,7 +256,7 @@ Last updated: Daily
 | Greedy / Sorting           | 1536, 1689, 1727, 2144, 2833, 3010, 3634 |
 | Sliding Window             | 42, 1461, 1848, 1871,Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 212, 1022, 1382, 2196 |
-| Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3751, 3753 |
+| Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 2161, 3379, 3633, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
@@ -393,6 +394,8 @@ Last updated: Daily
 **3558. Number of Ways to Assign Edge Weights I**: Disguises a pure combinatorics problem behind a standard Tree traversal prompt. Rather than simulating edge weight assignments or running pathfinding sum checks, it leverages mathematical parity. By proving that exactly half of all possible $1$ and $2$ weight assignments across $L$ edges result in an odd sum, the algorithm reduces the entire problem to a single $O(N)$ BFS depth discovery, followed by an $O(\log L)$ execution of $2^{L-1} \pmod{10^9+7}$.
 
 **3699. Number of ZigZag Arrays I**: Bypasses the $O(N \cdot K^2)$ execution penalty of standard state-space DP by enforcing strict directional alternation (UP followed by DOWN). It flattens the transition calculations down to an optimal $O(N \cdot K)$ linear sweep by maintaining running prefix sums for valid UP-step origins and running suffix sums for valid DOWN-step origins, achieving an ultra-lean $O(K)$ space footprint.
+
+**3700. Number of ZigZag Arrays II**: Overcomes the $N = 10^9$ Time Limit Exceeded (TLE) barrier of Phase I by shifting from iterative Dynamic Programming to Block Matrix Exponentiation. Because the transition rules between numbers are position-invariant, the entire recurrence is encoded into $M \times M$ transition matrices ($A$ for UP steps, $B$ for DOWN steps). Utilizing binary exponentiation to compute $(A \cdot B)^k$ in $O(\log N)$ steps, it successfully processes 1-billion element arrays in a fraction of a second.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
