@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-106-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-107-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -76,6 +76,7 @@ LeetCode-Solutions-Python/
 | 2751 | [Robot Collisions](./Arrays/2751_Robot_Collisions.py) | Hard | Sorting + Stack Simulation | O(N log N) | O(N) |
 | 3010 | [Divide an Array Into Subarrays With Minimum Cost I](./Arrays/3010_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_I.py) | Easy | Greedy + Sorting | O(n log n) | O(n) |
 | 3013 | [Divide an Array Into Subarrays With Minimum Cost II](./Arrays/3013_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_II.py) | Hard | Sliding Window + Two Heaps | O(n log d) | O(n) |
+| 3020 | [Find the Maximum Number of Elements in Subset](./Arrays/3020_Find_Max_Elements_in_Subset.py) | Medium | Hash Map Frequency & Mountain Pattern Squaring | O(N) | O(N) |
 | 3027 | [Find the Number of Ways to Place People II](./Arrays/3027_Find_the_Number_of_Ways_to_Place_People_II.py) | Hard | 2D Geometry Sweep + Running Max | O(N²) | O(1) |
 | 3300 | [Minimum Element After Replacement With Digit Sum](./Arrays/3300_Min_Element_After_Replacement_Digit_Sum.py) | Easy | Linear Scan + Modulo Digit Extraction | O(N) | O(1) |
 | 3379 | [Transformed Array](./Arrays/3379_Transformed_Array.py) | Easy | Simulation (Modular Arithmetic) | O(n) | O(n) |
@@ -239,11 +240,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 106
+Total Problems: 107
 
 Easy: 31 
 
-Medium: 48 
+Medium: 49 
 
 Hard: 27  
 
@@ -269,7 +270,7 @@ Last updated: Daily
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
-| Hash Map / Index Tracking | 36, 1189, 2615, 2657, 3488, 3740, 3741, 3761 |
+| Hash Map / Index Tracking | 36, 1189, 2615, 2657, 3020, 3488, 3740, 3741, 3761 |
 | Union-Find / Disjoint Set | 1722 |
 | Square Root Decomposition / Chunking | 3655 |
 | Array Simulation | 3653 |
@@ -328,6 +329,8 @@ Last updated: Daily
 **2196. Create Binary Tree From Descriptions**: Merges Graph construction with Tree logic. Bypasses nested tree-traversal lookups by maintaining a central Hash Map of memory references `(val -> TreeNode)`. It identifies the ultimate Root node in $O(N)$ time by simply tracking all valid children in a Hash Set and returning the singular orphaned parent. Space-optimized variants inject a `has_parent` boolean directly into the instance `__dict__` to eliminate the Hash Set memory footprint entirely.
 
 **1189. Maximum Number of Balloons**: Leverages Python's `collections.Counter` to construct an $O(N)$ single-pass frequency map of the input text. It derives the maximum possible instances of the target word by mathematically scaling down double-occurrence characters (`'l'` and `'o'` via integer division `// 2`) and returning the strict minimum across the five-character requirement pool.
+
+**3020. Find the Maximum Number of Elements in Subset**: Transforms a complex subset pattern recognition prompt into a straightforward frequency map traversal. By recognizing that valid sequences form a symmetrical mountain of squared bases ($x \rightarrow x^2 \rightarrow x^4$), it counts element pairs to build the upward and downward slopes. It isolates the infinite-loop trap of base $1$ by independently extracting its odd frequency bound, solving the entire array in an optimal $O(N)$ sweep.
 
 ### Complex Logic
 
