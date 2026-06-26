@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-105-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-106-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -90,6 +90,7 @@ LeetCode-Solutions-Python/
 | 3719 | [Longest Balanced Subarray I](./Arrays/3719_Longest_Balanced_Subarray_I.py) | Medium | Brute Force (All Subarrays)| O(n²) | O(n) |
 | 3721 | [Longest Balanced Subarray II](./Arrays/3721_Longest_Balanced_Subarray_II.py) | Hard | Segment Tree + Prefix Sums | O(n log n) | O(n) |
 | 3737 | [Count Subarrays With Majority Element I](./Arrays/3737_Count_Subarrays_With_Majority_Element_I.py) | Medium | +1/-1 Transformation & Rolling Prefix Balance | O(N) | O(N) |
+| 3739 | [Count Subarrays With Majority Element II](./Arrays/3739_Count_Subarrays_With_Majority_Element_II.py) | Hard | +1/-1 Transformation & Rolling Prefix Balance | O(N) | O(N) |
 | 3740 | [Minimum Distance Between Three Equal Elements I](./Arrays/3740_Min_Dist_Three_Equal_Elements_I.py) | Easy | Hash Map + Index Tracking | O(N) | O(N) |
 | 3741 | [Minimum Distance Between Three Equal Elements II](./Arrays/3741_Min_Dist_Three_Equal_Elements_II.py) | Medium | Hash Map + Index Tracking | O(N) | O(N) |
 | 3761 | [Minimum Absolute Distance Between Mirror Pairs](./Arrays/3761_Min_Abs_Distance_Mirror_Pairs.py) | Medium | Hash Map + Index Tracking | O(N) | O(N) |
@@ -238,13 +239,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 105 
+Total Problems: 106
 
 Easy: 31 
 
 Medium: 48 
 
-Hard: 26  
+Hard: 27  
 
 Last updated: Daily  
 
@@ -258,7 +259,7 @@ Last updated: Daily
 | Sliding Window             | 42, 1461, 1848, 1871,Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 212, 1022, 1382, 2196 |
 | Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
-| Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737 |
+| Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 2161, 3379, 3633, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 3600 |
@@ -399,6 +400,8 @@ Last updated: Daily
 **3700. Number of ZigZag Arrays II**: Overcomes the $N = 10^9$ Time Limit Exceeded (TLE) barrier of Phase I by shifting from iterative Dynamic Programming to Block Matrix Exponentiation. Because the transition rules between numbers are position-invariant, the entire recurrence is encoded into $M \times M$ transition matrices ($A$ for UP steps, $B$ for DOWN steps). Utilizing binary exponentiation to compute $(A \cdot B)^k$ in $O(\log N)$ steps, it successfully processes 1-billion element arrays in a fraction of a second.
 
 **3737. Count Subarrays With Majority Element I**: Bypasses the $O(N \log N)$ Time Complexity trap of utilizing a Fenwick Tree (Binary Indexed Tree) or Merge Sort to count prefix inversions. By treating the target as $+1$ and all other elements as $-1$, it enforces a strict single-step differential. This allows the algorithm to maintain a running tally of valid historical prefix sums in pure $O(N)$ time by dynamically adding or subtracting the exact boundary frequency whenever the global sum ascends or descends.
+
+**3739. Count Subarrays With Majority Element II**: Bypasses the $O(N \log N)$ execution overhead of utilizing a Fenwick Tree (Binary Indexed Tree) or Merge Sort to track prefix inversions across $10^5$ constraints. By transforming target elements into $+1$ and non-targets into $-1$, the algorithm reduces the majority condition to finding positive subarray sums. It maintains a running tally of valid historical prefix sums in pure $O(N)$ linear time by dynamically adding or subtracting the exact boundary frequency whenever the global running sum ascends or descends.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
