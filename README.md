@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-107-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-108-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -63,6 +63,7 @@ LeetCode-Solutions-Python/
 | 42 | [Trapping Rain Water](./Arrays/0042_Trapping_Rain_Water.py) | Hard | Two Pointers (Min-Max bounds) | O(N) | O(1) |
 | 1536 | [Minimum Swaps to Arrange a Binary Grid](./Arrays/1536_Minimum_Swaps_to_Arrange_a_Binary_Grid.py) | Medium | Greedy (Pop/Insert Simulation) | O(N²) | O(N) |
 | 1582 | [Special Positions in a Binary Matrix](./Arrays/1582_Special_Positions_in_a_Binary_Matrix.py) | Easy | Matrix Precomputation | O(M * N) | O(M + N) |
+| 1846 | [Maximum Element After Decreasing and Rearranging](./Arrays/1846_Max_Element_After_Decreasing.py) | Medium | Greedy Staircase / O(N) Frequency Buckets | O(N) | O(N) |
 | 1848 | [Minimum Distance to the Target Element](./Arrays/1848_Min_Distance_to_Target_Element.py) | Easy | Expanding Window (Early Exit) | O(N) | O(1) |
 | 1855 | [Maximum Distance Between a Pair of Values](./Arrays/1855_Max_Distance_Between_Pair.py) | Medium | Two Pointers | O(N+M) | O(1) |
 | 1878 | [Get Biggest Three Rhombus Sums in a Grid](./Arrays/1878_Get_Biggest_Three_Rhombus_Sums.py) | Medium | Boundary Simulation | O(M*N*min(M,N)) | O(U) |
@@ -240,11 +241,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 107
+Total Problems: 108
 
 Easy: 31 
 
-Medium: 49 
+Medium: 50 
 
 Hard: 27  
 
@@ -256,7 +257,7 @@ Last updated: Daily
 
 | Core Category              | Problems |
 |----------------------------|----------|
-| Greedy / Sorting           | 1536, 1689, 1727, 2144, 2833, 3010, 3634 |
+| Greedy / Sorting           | 1536, 1689, 1727, 1846, 2144, 2833, 3010, 3634 |
 | Sliding Window             | 42, 1461, 1848, 1871,Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 212, 1022, 1382, 2196 |
 | Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
@@ -331,6 +332,8 @@ Last updated: Daily
 **1189. Maximum Number of Balloons**: Leverages Python's `collections.Counter` to construct an $O(N)$ single-pass frequency map of the input text. It derives the maximum possible instances of the target word by mathematically scaling down double-occurrence characters (`'l'` and `'o'` via integer division `// 2`) and returning the strict minimum across the five-character requirement pool.
 
 **3020. Find the Maximum Number of Elements in Subset**: Transforms a complex subset pattern recognition prompt into a straightforward frequency map traversal. By recognizing that valid sequences form a symmetrical mountain of squared bases ($x \rightarrow x^2 \rightarrow x^4$), it counts element pairs to build the upward and downward slopes. It isolates the infinite-loop trap of base $1$ by independently extracting its odd frequency bound, solving the entire array in an optimal $O(N)$ sweep.
+
+**1846. Maximum Element After Decreasing and Rearranging**: Marks the **50th Medium Problem** solved! Bypasses standard $O(N \log N)$ sorting overhead by recognizing that the maximum possible answer in an array of size $N$ is strictly bounded by $N$. Utilizes an $O(N)$ frequency bucket array to clamp oversized elements, dynamically building the maximum possible staircase height in a single linear sweep.
 
 ### Complex Logic
 
