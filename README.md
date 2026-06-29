@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-108-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-109-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -111,6 +111,7 @@ LeetCode-Solutions-Python/
 | 1758 | [Minimum Changes To Make Alternating Binary String](./Strings/1758_Minimum_Changes_To_Make_Alternating_Binary_String.py) | Easy | Symmetric Pattern Counting | O(n) | O(1) |
 | 1784 | [Check if Binary String Has at Most One Segment of Ones](./Strings/1784_Check_if_Binary_String_Has_at_Most_One_Segment_of_Ones.py) | Easy | Linear Scan State Tracking | O(n) | O(1) |
 | 1888 | [Minimum Number of Flips to Make the Binary String Alternating](./Strings/1888_Minimum_Number_of_Flips_to_Make_the_Binary_String_Alternating.py) | Medium | Sliding Window (Virtual Doubling) | O(N) | O(1) |
+| 1967 | [Number of Strings That Appear as Substrings in Word](./Strings/1967_Num_Strings_Appear_as_Substrings.py) | Easy | Built-in Substring Search | O(P*N) | O(1) |
 | 1980 | [Find Unique Binary String](./Strings/1980_Find_Unique_Binary_String.py) | Medium | Cantor's Diagonalization | O(N) | O(N) |
 | 2452 | [Words Within Two Edits of Dictionary](./Strings/2452_Words_Within_Two_Edits.py) | Medium | Hamming Distance / Early Exit | O(Q*D*L) | O(1) |
 | 2573 | [Find the String with LCP](./Strings/2573_Find_the_String_with_LCP.py) | Hard | Greedy Assignment / DP Validation | O(N²) | O(N) |
@@ -241,9 +242,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 108
+Total Problems: 109
 
-Easy: 31 
+Easy: 32 
 
 Medium: 50 
 
@@ -262,7 +263,7 @@ Last updated: Daily
 | DFS / Trees                | 212, 1022, 1382, 2196 |
 | Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739 |
-| Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878, 1980, 2161, 3379, 3633, 3637 |
+| Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878,1967, 1980, 2161, 3379, 3633, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 3600 |
 | Binary Search on Answer    |  3296, 3464, 3600 |
@@ -334,6 +335,8 @@ Last updated: Daily
 **3020. Find the Maximum Number of Elements in Subset**: Transforms a complex subset pattern recognition prompt into a straightforward frequency map traversal. By recognizing that valid sequences form a symmetrical mountain of squared bases ($x \rightarrow x^2 \rightarrow x^4$), it counts element pairs to build the upward and downward slopes. It isolates the infinite-loop trap of base $1$ by independently extracting its odd frequency bound, solving the entire array in an optimal $O(N)$ sweep.
 
 **1846. Maximum Element After Decreasing and Rearranging**: Marks the **50th Medium Problem** solved! Bypasses standard $O(N \log N)$ sorting overhead by recognizing that the maximum possible answer in an array of size $N$ is strictly bounded by $N$. Utilizes an $O(N)$ frequency bucket array to clamp oversized elements, dynamically building the maximum possible staircase height in a single linear sweep.
+
+**1967. Number of Strings That Appear as Substrings in Word**: Demonstrates the power of idiomatic Python by bypassing manual sliding-window character matching. Leverages Python's native `in` operator—backed by highly optimized C-level string search algorithms—to evaluate substring existence across the pattern array in practically instant sub-linear time, maintaining a strict $O(1)$ memory footprint.
 
 ### Complex Logic
 
