@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-109-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-110-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -105,6 +105,7 @@ LeetCode-Solutions-Python/
 | 696 | [Count Binary Substrings](./Strings/0696_Count_Binary_Substrings.py) | Easy | Linear Scan (Group Counting) | O(n) |	O(1) |
 | 761 | [Special Binary String](./Strings/0761_Special_Binary_String.py) | Hard | Recursion + Sorting | O(n²) | O(n) |
 | 1189 | [Maximum Number of Balloons](./Strings/1189_Maximum_Number_of_Balloons.py) | Easy | Hash Map Frequency Counting | O(N) | O(1) |
+| 1358 | [Number of Substrings Containing All Three Characters](./Strings/1358_Number_of_Substrings_Containing_All_Three.py) | Medium | Sliding Window / Last-Seen Index Tracking | O(N) | O(1) |
 | 1461 | [Check If a String Contains All Binary Codes](./Strings/1461_Check_If_String_Contains_All_Binary_Codes.py) | Medium | Sliding Window Set / Rolling Hash | O(N) | O(N*K) |
 | 1545 | [Find Kth Bit in Nth Binary String](./Strings/1545_Find_Kth_Bit_in_Nth_Binary_String.py) | Medium | Divide & Conquer (Recursion) | O(N) | O(N) |
 | 1689 | [Partitioning Into Minimum Number Of Deci-Binary Numbers](./Strings/1689_Partitioning_into_Minimum_number_Of_Deci-Binary_Numbers.py) | Medium | Greedy (Max Digit Search) | O(n) | O(1) |
@@ -242,11 +243,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 109
+Total Problems: 110
 
 Easy: 32 
 
-Medium: 50 
+Medium: 51
 
 Hard: 27  
 
@@ -259,7 +260,8 @@ Last updated: Daily
 | Core Category              | Problems |
 |----------------------------|----------|
 | Greedy / Sorting           | 1536, 1689, 1727, 1846, 2144, 2833, 3010, 3634 |
-| Sliding Window             | 42, 1461, 1848, 1871,Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
+| Sliding Window             | 42, 1358, 1461, 1848, 1871 |
+| Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 212, 1022, 1382, 2196 |
 | Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739 |
@@ -337,6 +339,8 @@ Last updated: Daily
 **1846. Maximum Element After Decreasing and Rearranging**: Marks the **50th Medium Problem** solved! Bypasses standard $O(N \log N)$ sorting overhead by recognizing that the maximum possible answer in an array of size $N$ is strictly bounded by $N$. Utilizes an $O(N)$ frequency bucket array to clamp oversized elements, dynamically building the maximum possible staircase height in a single linear sweep.
 
 **1967. Number of Strings That Appear as Substrings in Word**: Demonstrates the power of idiomatic Python by bypassing manual sliding-window character matching. Leverages Python's native `in` operator—backed by highly optimized C-level string search algorithms—to evaluate substring existence across the pattern array in practically instant sub-linear time, maintaining a strict $O(1)$ memory footprint.
+
+**1358. Number of Substrings Containing All Three Characters**: Bypasses the overhead of a traditional shrinking sliding window by implementing Last-Seen Index Tracking. By recording the most recent occurrence of each required character in an array, the minimum of these indices acts as a strict bottleneck. This reveals that every index from 0 up to this minimum is a valid starting position, allowing the algorithm to mathematically accumulate the correct counts in a lightning-fast $O(N)$ linear sweep.
 
 ### Complex Logic
 
