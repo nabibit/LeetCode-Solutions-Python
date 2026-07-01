@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-110-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-111-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -153,7 +153,7 @@ LeetCode-Solutions-Python/
 | 1680 | [Concatenation of Consecutive Binary Numbers](./BitManipulation/1680_Concatenation_of_Consecutive_Binary_Numbers.py) | Medium | Bitwise Shift & Modulo | O(N) | O(1) |
 | 3666 | [Minimum Operations to Equalize Binary String](./BitManipulation/3666_Minimum_Operations_to_Equalize_Binary_String.py) | Hard | SortedList BFS Parity Search | O(N log N) | O(N) |
 
-## [DynamicProgramming](./DynamicProgramming/)
+### [DynamicProgramming](./DynamicProgramming/)
 
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
@@ -209,6 +209,7 @@ LeetCode-Solutions-Python/
 | 212 | [Word Search II](./Matrix/0212_Word_Search_II.py) | Hard | Trie (Prefix Tree) + DFS Backtracking | O(M*N*3^L) | O(W) |
 | 1727 | [Largest Submatrix With Rearrangements](./Matrix/1727_Largest_Submatrix_With_Rearrangements.py) | Medium | Histogram Heights + Greedy Sorting | O(M * N log N) | O(1) |
 | 1886 | [Determine Whether Matrix Can Be Obtained By Rotation](./Matrix/1886_Determine_Whether_Matrix_Can_Be_Obtained_By_Rotation.py) | Easy | In-Place Transpose + Reverse | O(N²) | O(1) |
+| 2812 | [Find the Safest Path in a Grid](./Matrix/2812_Find_the_Safest_Path_in_a_Grid.py) | Medium | Multi-Source BFS & Max-Heap | O(N²logN) | O(N²) |
 | 2906 | [Construct Product Matrix](./Matrix/2906_Construct_Product_Matrix.py) | Medium | Prefix & Suffix Sweeps | O(N*M) | O(1)* |
 | 3070 | [Count Submatrices with Top-Left Element and Sum Less Than k](./Matrix/3070_Count_Submatrices_Top_Left.py) | Medium | 2D Prefix Sum + Staircase Pruning | O(M*N) | O(1) |
 | 3212 | [Count Submatrices With Equal Frequency of X and Y](./Matrix/3212_Count_Submatrices_Equal_Frequency.py) | Medium | Space-Optimized 2D Prefix Sum | O(M*N) | O(N) |
@@ -243,11 +244,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 110
+Total Problems: 111
 
 Easy: 32 
 
-Medium: 51
+Medium: 52
 
 Hard: 27  
 
@@ -267,7 +268,7 @@ Last updated: Daily
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878,1967, 1980, 2161, 3379, 3633, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
-| Graphs    | 1391, 1559, 3600 |
+| Graphs    | 1391, 1559, 2812, 3600 |
 | Binary Search on Answer    |  3296, 3464, 3600 |
 | Backtracking / Decision Tree | 37, 401, 1415 |
 | Math / Modular Arithmetic  | 1622, 2033, 3300, 3558, 3783 |
@@ -415,6 +416,8 @@ Last updated: Daily
 **3737. Count Subarrays With Majority Element I**: Bypasses the $O(N \log N)$ Time Complexity trap of utilizing a Fenwick Tree (Binary Indexed Tree) or Merge Sort to count prefix inversions. By treating the target as $+1$ and all other elements as $-1$, it enforces a strict single-step differential. This allows the algorithm to maintain a running tally of valid historical prefix sums in pure $O(N)$ time by dynamically adding or subtracting the exact boundary frequency whenever the global sum ascends or descends.
 
 **3739. Count Subarrays With Majority Element II**: Bypasses the $O(N \log N)$ execution overhead of utilizing a Fenwick Tree (Binary Indexed Tree) or Merge Sort to track prefix inversions across $10^5$ constraints. By transforming target elements into $+1$ and non-targets into $-1$, the algorithm reduces the majority condition to finding positive subarray sums. It maintains a running tally of valid historical prefix sums in pure $O(N)$ linear time by dynamically adding or subtracting the exact boundary frequency whenever the global running sum ascends or descends.
+
+**2812. Find the Safest Path in a Grid**: Combines two advanced traversal algorithms to maximize a bottleneck condition. It executes a Multi-Source BFS to precompute the exact Manhattan distance from all threats simultaneously. To navigate the grid without invoking a standard $O(N^2 \log N)$ Binary Search bound-check, it employs a Dijkstra-style Max-Heap, dynamically prioritizing the safest available frontiers to guarantee the global optimal path is returned upon reaching the destination. The highly optimized variant achieves $O(N)$ auxiliary space by aggressively mutating the input grid to double as both the BFS distance map and the heap's visited tracker.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
