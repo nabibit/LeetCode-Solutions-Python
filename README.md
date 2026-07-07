@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-111-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-112-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -199,6 +199,7 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 1622 | [Fancy Sequence](./Math/1622_Fancy_Sequence.py) | Hard | Modular Inverse (Fermat's Little Theorem) | O(1)* | O(N) |
 | 2033 | [Minimum Operations to Make a Uni-Value Grid](./Math/2033_Min_Operations_Uni_Value_Grid.py) | Medium | Median Minimization / Modulo Math | O(N log N) | O(N) |
+| 3754 | [Concatenate Non-Zero Digits and Multiply by Sum I](./Math/3754_Concatenate_Non_Zero_Digits_and_Multiply_by_Sum_I.py) | Easy | String Filtering & Digit Sum Math | O(D) | O(D) |
 | 3783 | [Mirror Distance of an Integer](./Math/3783_Mirror_Distance_of_an_Integer.py) | Easy | String Slicing / Digit Extraction | O(D) | O(D) |
 
 ### [Matrix](./Matrix/)
@@ -244,9 +245,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 111
+Total Problems: 112
 
-Easy: 32 
+Easy: 33 
 
 Medium: 52
 
@@ -271,7 +272,7 @@ Last updated: Daily
 | Graphs    | 1391, 1559, 2812, 3600 |
 | Binary Search on Answer    |  3296, 3464, 3600 |
 | Backtracking / Decision Tree | 37, 401, 1415 |
-| Math / Modular Arithmetic  | 1622, 2033, 3300, 3558, 3783 |
+| Math / Modular Arithmetic  | 1622, 2033, 3300, 3558, 3754, 3783 |
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
@@ -342,6 +343,8 @@ Last updated: Daily
 **1967. Number of Strings That Appear as Substrings in Word**: Demonstrates the power of idiomatic Python by bypassing manual sliding-window character matching. Leverages Python's native `in` operator—backed by highly optimized C-level string search algorithms—to evaluate substring existence across the pattern array in practically instant sub-linear time, maintaining a strict $O(1)$ memory footprint.
 
 **1358. Number of Substrings Containing All Three Characters**: Bypasses the overhead of a traditional shrinking sliding window by implementing Last-Seen Index Tracking. By recording the most recent occurrence of each required character in an array, the minimum of these indices acts as a strict bottleneck. This reveals that every index from 0 up to this minimum is a valid starting position, allowing the algorithm to mathematically accumulate the correct counts in a lightning-fast $O(N)$ linear sweep.
+
+**3754. Concatenate Non-Zero Digits and Multiply by Sum I**: Solves a multi-step integer transformation cleanly in O(D) time (where D is the number of digits). By converting the integer to a string to filter out zeroes and immediately utilizing Python's generator expressions for the digit sum, it achieves an ultra-lean linear scan while avoiding repeated arithmetic division and modulo operations.
 
 ### Complex Logic
 
