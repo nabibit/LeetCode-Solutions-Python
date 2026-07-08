@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-112-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-113-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -122,6 +122,7 @@ LeetCode-Solutions-Python/
 | 3474 | [Lexicographically Smallest Generated String](./Strings/3474_Lexicographically_Smallest_Generated.py) | Hard | KMP Automaton / Backtracking | O(N+M) | O(N+M) |
 | 3713 | [Longest Balanced Substring I](./Strings/3713_Longest_Balanced_Substring_I.py) | Medium | Brute Force (All Substrings) | O(n²) | O(1) |
 | 3714 | [Longest Balanced Substring II](./Strings/3714_Longest_Balanced_Substring_II.py) | Medium | Prefix Difference Map | O(n) | O(n) |
+| 3756 | [Concatenate Non-Zero Digits and Multiply by Sum II](./Strings/3756_Concatenate_Non_Zero_Digits_II.py) | Medium | Non-Zero Compression & Prefix Math | O(M+QlogM) | O(M) |
 
 ### [Backtracking](./Backtracking/)
 
@@ -245,11 +246,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 112
+Total Problems: 113
 
 Easy: 33 
 
-Medium: 52
+Medium: 53
 
 Hard: 27  
 
@@ -266,7 +267,7 @@ Last updated: Daily
 | Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 212, 1022, 1382, 2196 |
 | Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
-| Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739 |
+| Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739, 3756 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878,1967, 1980, 2161, 3379, 3633, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 2812, 3600 |
@@ -421,6 +422,8 @@ Last updated: Daily
 **3739. Count Subarrays With Majority Element II**: Bypasses the $O(N \log N)$ execution overhead of utilizing a Fenwick Tree (Binary Indexed Tree) or Merge Sort to track prefix inversions across $10^5$ constraints. By transforming target elements into $+1$ and non-targets into $-1$, the algorithm reduces the majority condition to finding positive subarray sums. It maintains a running tally of valid historical prefix sums in pure $O(N)$ linear time by dynamically adding or subtracting the exact boundary frequency whenever the global running sum ascends or descends.
 
 **2812. Find the Safest Path in a Grid**: Combines two advanced traversal algorithms to maximize a bottleneck condition. It executes a Multi-Source BFS to precompute the exact Manhattan distance from all threats simultaneously. To navigate the grid without invoking a standard $O(N^2 \log N)$ Binary Search bound-check, it employs a Dijkstra-style Max-Heap, dynamically prioritizing the safest available frontiers to guarantee the global optimal path is returned upon reaching the destination. The highly optimized variant achieves $O(N)$ auxiliary space by aggressively mutating the input grid to double as both the BFS distance map and the heap's visited tracker.
+
+**3756. Concatenate Non-Zero Digits and Multiply by Sum II**: Bypasses the $O(Q \times M)$ Time Limit Exceeded (TLE) barrier of repeated string extraction over large query arrays. It performs string compression by filtering out zero digits—which contribute nothing to concatenation or sum—and precomputes modular prefix sums and powers of 10 over the remaining indices. This allows any arbitrary range query $[l, r]$ to map via binary search to its non-zero bounds, extracting the concatenated integer value and digit sum in $O(\log M)$ time per query.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
