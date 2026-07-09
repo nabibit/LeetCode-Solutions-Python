@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-113-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-114-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -119,6 +119,7 @@ LeetCode-Solutions-Python/
 | 2833 | [Furthest Point From Origin](./Strings/2833_Furthest_Point_From_Origin.py) | Easy | Greedy / Counting | O(N) | O(1) |
 | 2839 | [Check if Strings Can be Made Equal With Operations I](./Strings/2839_Check_if_Strings_Can_be_Made_Equal.py) | Easy | Parity Grouping + Sorting | O(1) | O(1) |
 | 2840 | [Check if Strings Can be Made Equal With Operations II](./Strings/2840_Check_if_Strings_Can_be_Made_Equal_II.py) | Medium | Parity Grouping + Frequency Map | O(N) | O(1) |
+| 3532 | [Path Existence Queries in a Graph I](./Graphs/3532_Path_Existence_Queries_in_a_Graph_I.py) | Medium | Sorted Contiguous Component Labeling | O(N+Q) | O(N) |
 | 3474 | [Lexicographically Smallest Generated String](./Strings/3474_Lexicographically_Smallest_Generated.py) | Hard | KMP Automaton / Backtracking | O(N+M) | O(N+M) |
 | 3713 | [Longest Balanced Substring I](./Strings/3713_Longest_Balanced_Substring_I.py) | Medium | Brute Force (All Substrings) | O(n²) | O(1) |
 | 3714 | [Longest Balanced Substring II](./Strings/3714_Longest_Balanced_Substring_II.py) | Medium | Prefix Difference Map | O(n) | O(n) |
@@ -246,11 +247,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 113
+Total Problems: 114
 
 Easy: 33 
 
-Medium: 53
+Medium: 54
 
 Hard: 27  
 
@@ -270,7 +271,7 @@ Last updated: Daily
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739, 3756 |
 | Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878,1967, 1980, 2161, 3379, 3633, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
-| Graphs    | 1391, 1559, 2812, 3600 |
+| Graphs    | 1391, 1559, 2812, 3532, 3600 |
 | Binary Search on Answer    |  3296, 3464, 3600 |
 | Backtracking / Decision Tree | 37, 401, 1415 |
 | Math / Modular Arithmetic  | 1622, 2033, 3300, 3558, 3754, 3783 |
@@ -432,6 +433,8 @@ Last updated: Daily
 
 ### Graph Operations
 **3600. Maximize Spanning Tree Stability with Upgrades**: Combines Binary Search on the Answer with Kruskal's Algorithm. Instead of building a complex dynamic tree, it efficiently validates a target "stability" score by constructing a Spanning Tree using a Disjoint Set Union (DSU) and optimally budgeting edge upgrades.
+
+**3532. Path Existence Queries in a Graph I**: Bypasses the overhead of constructing an adjacency list or executing complex Disjoint Set Union (DSU) tree operations by capitalizing on the array's sorted property. Because `nums` is sorted in non-decreasing order, valid graph edges strictly form contiguous horizontal clusters. The algorithm sweeps the array in a single $O(N)$ pass, incrementing a component ID whenever an adjacent difference exceeds `maxDiff`, allowing any arbitrary path query $[u, v]$ to be evaluated in $O(1)$ constant time via index ID comparison.
 
 ---
 
