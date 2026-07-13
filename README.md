@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-114-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-115-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -105,6 +105,7 @@ LeetCode-Solutions-Python/
 | 696 | [Count Binary Substrings](./Strings/0696_Count_Binary_Substrings.py) | Easy | Linear Scan (Group Counting) | O(n) |	O(1) |
 | 761 | [Special Binary String](./Strings/0761_Special_Binary_String.py) | Hard | Recursion + Sorting | O(n²) | O(n) |
 | 1189 | [Maximum Number of Balloons](./Strings/1189_Maximum_Number_of_Balloons.py) | Easy | Hash Map Frequency Counting | O(N) | O(1) |
+| 1291 | [Sequential Digits](./Strings/1291_Sequential_Digits.py) | Medium | Master String Sliding Window | O(1) | O(1) |
 | 1358 | [Number of Substrings Containing All Three Characters](./Strings/1358_Number_of_Substrings_Containing_All_Three.py) | Medium | Sliding Window / Last-Seen Index Tracking | O(N) | O(1) |
 | 1461 | [Check If a String Contains All Binary Codes](./Strings/1461_Check_If_String_Contains_All_Binary_Codes.py) | Medium | Sliding Window Set / Rolling Hash | O(N) | O(N*K) |
 | 1545 | [Find Kth Bit in Nth Binary String](./Strings/1545_Find_Kth_Bit_in_Nth_Binary_String.py) | Medium | Divide & Conquer (Recursion) | O(N) | O(N) |
@@ -247,11 +248,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 114
+Total Problems: 115
 
 Easy: 33 
 
-Medium: 54
+Medium: 55
 
 Hard: 27  
 
@@ -269,7 +270,7 @@ Last updated: Daily
 | DFS / Trees                | 212, 1022, 1382, 2196 |
 | Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739, 3756 |
-| Simulation / Linear Scan   | 696, 1582, 1758, 1784, 1878,1967, 1980, 2161, 3379, 3633, 3637 |
+| Simulation / Linear Scan   | 696, 1291, 1582, 1758, 1784, 1878,1967, 1980, 2161, 3379, 3633, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 2812, 3532, 3600 |
 | Binary Search on Answer    |  3296, 3464, 3600 |
@@ -347,6 +348,8 @@ Last updated: Daily
 **1358. Number of Substrings Containing All Three Characters**: Bypasses the overhead of a traditional shrinking sliding window by implementing Last-Seen Index Tracking. By recording the most recent occurrence of each required character in an array, the minimum of these indices acts as a strict bottleneck. This reveals that every index from 0 up to this minimum is a valid starting position, allowing the algorithm to mathematically accumulate the correct counts in a lightning-fast $O(N)$ linear sweep.
 
 **3754. Concatenate Non-Zero Digits and Multiply by Sum I**: Solves a multi-step integer transformation cleanly in O(D) time (where D is the number of digits). By converting the integer to a string to filter out zeroes and immediately utilizing Python's generator expressions for the digit sum, it achieves an ultra-lean linear scan while avoiding repeated arithmetic division and modulo operations.
+
+**1291. Sequential Digits**: Bypasses the catastrophic $O(N)$ Time Limit Exceeded (TLE) error of manually validating sequential elements across massive boundary limits (up to $10^9$). By recognizing that every possible valid answer is strictly a substring of the mathematical master string `"123456789"`, the algorithm restricts the entire search space to a universally bounded maximum of 36 checks, generating and naturally sorting the results in absolute $O(1)$ constant time.
 
 ### Complex Logic
 
