@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-116-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-117-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -205,6 +205,7 @@ LeetCode-Solutions-Python/
 | 3658 | [GCD of Odd and Even Sums](./Math/3658_GCD_of_Odd_and_Even_Sums.py) | Easy | Mathematical Simplification | O(1) | O(1) |
 | 3754 | [Concatenate Non-Zero Digits and Multiply by Sum I](./Math/3754_Concatenate_Non_Zero_Digits_and_Multiply_by_Sum_I.py) | Easy | String Filtering & Digit Sum Math | O(D) | O(D) |
 | 3783 | [Mirror Distance of an Integer](./Math/3783_Mirror_Distance_of_an_Integer.py) | Easy | String Slicing / Digit Extraction | O(D) | O(D) |
+| 3867 | [Sum of GCD of Formed Pairs](./Math/3867_Sum_of_GCD_of_Formed_Pairs.py) | Medium | In-Place Prefix Computation & Two Pointers | O(N log N) | O(1) |
 
 ### [Matrix](./Matrix/)
 
@@ -249,11 +250,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 116
+Total Problems: 117
 
 Easy: 34 
 
-Medium: 55
+Medium: 56
 
 Hard: 27  
 
@@ -276,7 +277,7 @@ Last updated: Daily
 | Graphs    | 1391, 1559, 2812, 3532, 3600 |
 | Binary Search on Answer    |  3296, 3464, 3600 |
 | Backtracking / Decision Tree | 37, 401, 1415 |
-| Math / Modular Arithmetic  | 1622, 2033, 3300, 3558, 3658, 3754, 3783 |
+| Math / Modular Arithmetic  | 1622, 2033, 3300, 3558, 3658, 3754, 3783, 3867 |
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
@@ -353,6 +354,8 @@ Last updated: Daily
 **1291. Sequential Digits**: Bypasses the catastrophic $O(N)$ Time Limit Exceeded (TLE) error of manually validating sequential elements across massive boundary limits (up to $10^9$). By recognizing that every possible valid answer is strictly a substring of the mathematical master string `"123456789"`, the algorithm restricts the entire search space to a universally bounded maximum of 36 checks, generating and naturally sorting the results in absolute $O(1)$ constant time.
 
 **3658. GCD of Odd and Even Sums**: Bypasses the $O(N)$ execution trap of simulating odd and even arrays entirely. Utilizing mathematical proofs, it recognizes that the sum of the first $n$ odd numbers is exactly $n^2$ and the first $n$ even numbers is exactly $n(n+1)$. Because $n$ and $n+1$ are consecutive integers, their Greatest Common Divisor is strictly $1$. Thus, $\gcd(n^2, n(n+1))$ mathematically collapses directly to $n$, reducing the entire algorithm to a pure $O(1)$ constant-time return statement.
+
+**3867. Sum of GCD of Formed Pairs**: Translates a multi-step array transformation into an ultra-lean execution by utilizing in-place memory mutation. Instead of allocating a secondary `prefixGcd` array, it tracks the running maximum and instantly overwrites the original indices with their evaluated GCDs. A standard sorting operation paired with a shrinking two-pointer boundary allows it to pair minimum and maximum elements seamlessly, mathematically sidestepping the unpaired middle element during odd-length constraints by terminating strictly when `left < right`.
 
 ### Complex Logic
 
