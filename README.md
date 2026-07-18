@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-118-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-119-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -201,6 +201,7 @@ LeetCode-Solutions-Python/
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
 | 1622 | [Fancy Sequence](./Math/1622_Fancy_Sequence.py) | Hard | Modular Inverse (Fermat's Little Theorem) | O(1)* | O(N) |
+| 1979 | [Find Greatest Common Divisor of Array](./Math/1979_Find_Greatest_Common_Divisor_of_Array.py) | Easy | O(N) Min-Max Scan & Euclidean Algorithm | O(N) | O(1) |
 | 2033 | [Minimum Operations to Make a Uni-Value Grid](./Math/2033_Min_Operations_Uni_Value_Grid.py) | Medium | Median Minimization / Modulo Math | O(N log N) | O(N) |
 | 3312 | [Sorted GCD Pair Queries](./Math/3312_Sorted_GCD_Pair_Queries.py) | Hard | Inclusion-Exclusion Sieve & Prefix Binary Search | O(M log M) | O(M) |
 | 3658 | [GCD of Odd and Even Sums](./Math/3658_GCD_of_Odd_and_Even_Sums.py) | Easy | Mathematical Simplification | O(1) | O(1) |
@@ -251,9 +252,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 118
+Total Problems: 119
 
-Easy: 34 
+Easy: 35 
 
 Medium: 56
 
@@ -278,7 +279,7 @@ Last updated: Daily
 | Graphs    | 1391, 1559, 2812, 3532, 3600 |
 | Binary Search on Answer    |  3296, 3464, 3600 |
 | Backtracking / Decision Tree | 37, 401, 1415 |
-| Math / Modular Arithmetic  | 1622, 2033, 3300, 3312, 3558, 3658, 3754, 3783, 3867 |
+| Math / Modular Arithmetic  | 1622, 1979, 2033, 3300, 3312, 3558, 3658, 3754, 3783, 3867 |
 | Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
@@ -357,6 +358,8 @@ Last updated: Daily
 **3658. GCD of Odd and Even Sums**: Bypasses the $O(N)$ execution trap of simulating odd and even arrays entirely. Utilizing mathematical proofs, it recognizes that the sum of the first $n$ odd numbers is exactly $n^2$ and the first $n$ even numbers is exactly $n(n+1)$. Because $n$ and $n+1$ are consecutive integers, their Greatest Common Divisor is strictly $1$. Thus, $\gcd(n^2, n(n+1))$ mathematically collapses directly to $n$, reducing the entire algorithm to a pure $O(1)$ constant-time return statement.
 
 **3867. Sum of GCD of Formed Pairs**: Translates a multi-step array transformation into an ultra-lean execution by utilizing in-place memory mutation. Instead of allocating a secondary `prefixGcd` array, it tracks the running maximum and instantly overwrites the original indices with their evaluated GCDs. A standard sorting operation paired with a shrinking two-pointer boundary allows it to pair minimum and maximum elements seamlessly, mathematically sidestepping the unpaired middle element during odd-length constraints by terminating strictly when `left < right`.
+
+**1979. Find Greatest Common Divisor of Array**: Demonstrates optimal boundary extraction by bypassing standard $O(N \log N)$ array sorting. Utilizes a strict $O(N)$ dual-linear scan via built-in `min()` and `max()` functions to instantly isolate the target elements. Evaluates the resulting pair utilizing the mathematical Euclidean algorithm (`math.gcd`), resolving the greatest common divisor in highly optimized logarithmic time while maintaining an absolute $O(1)$ auxiliary memory footprint.
 
 ### Complex Logic
 
