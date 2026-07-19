@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-119-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-120-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -104,6 +104,7 @@ LeetCode-Solutions-Python/
 | 67 | [Add Binary](./Strings/0067_Add_Binary.py) | Easy | Bit Manipulation (Simulation) | O(n + m) | O(max(n,m)) |
 | 696 | [Count Binary Substrings](./Strings/0696_Count_Binary_Substrings.py) | Easy | Linear Scan (Group Counting) | O(n) |	O(1) |
 | 761 | [Special Binary String](./Strings/0761_Special_Binary_String.py) | Hard | Recursion + Sorting | O(n²) | O(n) |
+| 1081 | [Smallest Subsequence of Distinct Characters](./Strings/1081_Smallest_Subsequence_Distinct.py) | Medium | Monotonic Stack & Last Occurrence Tracker | O(N) | O(1) |
 | 1189 | [Maximum Number of Balloons](./Strings/1189_Maximum_Number_of_Balloons.py) | Easy | Hash Map Frequency Counting | O(N) | O(1) |
 | 1291 | [Sequential Digits](./Strings/1291_Sequential_Digits.py) | Medium | Master String Sliding Window | O(1) | O(1) |
 | 1358 | [Number of Substrings Containing All Three Characters](./Strings/1358_Number_of_Substrings_Containing_All_Three.py) | Medium | Sliding Window / Last-Seen Index Tracking | O(N) | O(1) |
@@ -252,11 +253,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 119
+Total Problems: 120
 
 Easy: 35 
 
-Medium: 56
+Medium: 57
 
 Hard: 28  
 
@@ -289,7 +290,7 @@ Last updated: Daily
 | Array Simulation | 3653 |
 | Interval Sweeping / Bounded States | 3661 |
 | String Matching / KMP Automaton | 3474 |
-| Stack / 1D Simulation | 2751 |
+| Stack / 1D Simulation | 1081, 2751 |
 | Geometric Sweeping / Running Max | 3027 |
 
 ## 📝 Solution Highlights
@@ -440,6 +441,8 @@ Last updated: Daily
 **3756. Concatenate Non-Zero Digits and Multiply by Sum II**: Bypasses the $O(Q \times M)$ Time Limit Exceeded (TLE) barrier of repeated string extraction over large query arrays. It performs string compression by filtering out zero digits—which contribute nothing to concatenation or sum—and precomputes modular prefix sums and powers of 10 over the remaining indices. This allows any arbitrary range query $[l, r]$ to map via binary search to its non-zero bounds, extracting the concatenated integer value and digit sum in $O(\log M)$ time per query.
 
 **3312. Sorted GCD Pair Queries**: Bypasses the catastrophic $O(N^2)$ Time Limit Exceeded (TLE) error of generating and evaluating distinct array pairs. It mathematically resolves the frequencies of all possible GCDs by implementing an Inclusion-Exclusion Sieve. By tracking multiples and sweeping backward from the maximum value $M$, it subtracts overcounted higher-order multiples in $O(M \log M)$ time based on the harmonic series. It then aggregates these exact counts into a prefix sum array, answering massive arrays of sorted-index queries in $O(\log M)$ time per query via Binary Search.
+
+**1081. Smallest Subsequence of Distinct Characters**: Bypasses the combinatorial nightmare of evaluating all valid subsequences by utilizing a Monotonic Stack. By pre-calculating the last occurrence index of every character, the algorithm greedily pops lexicographically larger characters off the stack whenever a smaller character is encountered—provided that the popped character is guaranteed to appear again later in the string. This reduces the entire problem to a highly efficient $O(N)$ linear scan, requiring only $O(1)$ auxiliary memory restricted to the 26-character alphabet.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
