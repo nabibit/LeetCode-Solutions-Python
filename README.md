@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-120-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-121-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -216,6 +216,7 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 36 | [Valid Sudoku](./Matrix/0036_Valid_Sudoku.py) | Medium | Matrix Traversal / Hash Set Validation | O(1) | O(1) |
 | 212 | [Word Search II](./Matrix/0212_Word_Search_II.py) | Hard | Trie (Prefix Tree) + DFS Backtracking | O(M*N*3^L) | O(W) |
+| 1260 | [Shift 2D Grid](./Matrix/1260_Shift_2D_Grid.py) | Easy | 1D Flattening & Inverse Modulo Math | O(M*N) | O(M*N) |
 | 1727 | [Largest Submatrix With Rearrangements](./Matrix/1727_Largest_Submatrix_With_Rearrangements.py) | Medium | Histogram Heights + Greedy Sorting | O(M * N log N) | O(1) |
 | 1886 | [Determine Whether Matrix Can Be Obtained By Rotation](./Matrix/1886_Determine_Whether_Matrix_Can_Be_Obtained_By_Rotation.py) | Easy | In-Place Transpose + Reverse | O(N²) | O(1) |
 | 2812 | [Find the Safest Path in a Grid](./Matrix/2812_Find_the_Safest_Path_in_a_Grid.py) | Medium | Multi-Source BFS & Max-Heap | O(N²logN) | O(N²) |
@@ -253,9 +254,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 120
+Total Problems: 121
 
-Easy: 35 
+Easy: 36
 
 Medium: 57
 
@@ -281,7 +282,7 @@ Last updated: Daily
 | Binary Search on Answer    |  3296, 3464, 3600 |
 | Backtracking / Decision Tree | 37, 401, 1415 |
 | Math / Modular Arithmetic  | 1622, 1979, 2033, 3300, 3312, 3558, 3658, 3754, 3783, 3867 |
-| Matrix / 2D Traversal      | 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
+| Matrix / 2D Traversal      | 1260, 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
 | Hash Map / Index Tracking | 36, 1189, 2615, 2657, 3020, 3488, 3740, 3741, 3761 |
@@ -361,6 +362,8 @@ Last updated: Daily
 **3867. Sum of GCD of Formed Pairs**: Translates a multi-step array transformation into an ultra-lean execution by utilizing in-place memory mutation. Instead of allocating a secondary `prefixGcd` array, it tracks the running maximum and instantly overwrites the original indices with their evaluated GCDs. A standard sorting operation paired with a shrinking two-pointer boundary allows it to pair minimum and maximum elements seamlessly, mathematically sidestepping the unpaired middle element during odd-length constraints by terminating strictly when `left < right`.
 
 **1979. Find Greatest Common Divisor of Array**: Demonstrates optimal boundary extraction by bypassing standard $O(N \log N)$ array sorting. Utilizes a strict $O(N)$ dual-linear scan via built-in `min()` and `max()` functions to instantly isolate the target elements. Evaluates the resulting pair utilizing the mathematical Euclidean algorithm (`math.gcd`), resolving the greatest common divisor in highly optimized logarithmic time while maintaining an absolute $O(1)$ auxiliary memory footprint.
+
+**1260. Shift 2D Grid**: Marks the phenomenal **120th Problem Milestone**! Bypasses the complex conditional logic of simulating 2D matrix wrap-arounds by treating the matrix as a continuous 1D cyclic array. By applying an inverse modulo transformation `(curr_1D - k) % TOTAL`, the algorithm mathematically queries the origin of every cell in a single $O(M \times N)$ sweep. The heavily optimized Pythonic variant achieves the exact same result in three lines of code by executing raw C-level list slicing and reshaping.
 
 ### Complex Logic
 
