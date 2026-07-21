@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-121-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-122-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -123,6 +123,7 @@ LeetCode-Solutions-Python/
 | 2840 | [Check if Strings Can be Made Equal With Operations II](./Strings/2840_Check_if_Strings_Can_be_Made_Equal_II.py) | Medium | Parity Grouping + Frequency Map | O(N) | O(1) |
 | 3532 | [Path Existence Queries in a Graph I](./Graphs/3532_Path_Existence_Queries_in_a_Graph_I.py) | Medium | Sorted Contiguous Component Labeling | O(N+Q) | O(N) |
 | 3474 | [Lexicographically Smallest Generated String](./Strings/3474_Lexicographically_Smallest_Generated.py) | Hard | KMP Automaton / Backtracking | O(N+M) | O(N+M) |
+| 3499 | [Maximize Active Section with Trade I](./Strings/3499_Maximize_Active_Section_Trade.py) | Medium | itertools.groupby & The 1-Refund Illusion | O(N) | O(N) |
 | 3713 | [Longest Balanced Substring I](./Strings/3713_Longest_Balanced_Substring_I.py) | Medium | Brute Force (All Substrings) | O(n²) | O(1) |
 | 3714 | [Longest Balanced Substring II](./Strings/3714_Longest_Balanced_Substring_II.py) | Medium | Prefix Difference Map | O(n) | O(n) |
 | 3756 | [Concatenate Non-Zero Digits and Multiply by Sum II](./Strings/3756_Concatenate_Non_Zero_Digits_II.py) | Medium | Non-Zero Compression & Prefix Math | O(M+QlogM) | O(M) |
@@ -254,11 +255,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 121
+Total Problems: 122
 
 Easy: 36
 
-Medium: 57
+Medium: 58
 
 Hard: 28  
 
@@ -276,7 +277,7 @@ Last updated: Daily
 | DFS / Trees                | 212, 1022, 1382, 2196 |
 | Dynamic Programming        | 799, 1320, 1340, 1594, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739, 3756 |
-| Simulation / Linear Scan   | 696, 1291, 1582, 1758, 1784, 1878,1967, 1980, 2161, 3379, 3633, 3637 |
+| Simulation / Linear Scan   | 696, 1291, 1582, 1758, 1784, 1878,1967, 1980, 2161, 3379, 3499, 3633, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 2812, 3532, 3600 |
 | Binary Search on Answer    |  3296, 3464, 3600 |
@@ -364,6 +365,8 @@ Last updated: Daily
 **1979. Find Greatest Common Divisor of Array**: Demonstrates optimal boundary extraction by bypassing standard $O(N \log N)$ array sorting. Utilizes a strict $O(N)$ dual-linear scan via built-in `min()` and `max()` functions to instantly isolate the target elements. Evaluates the resulting pair utilizing the mathematical Euclidean algorithm (`math.gcd`), resolving the greatest common divisor in highly optimized logarithmic time while maintaining an absolute $O(1)$ auxiliary memory footprint.
 
 **1260. Shift 2D Grid**: Marks the phenomenal **120th Problem Milestone**! Bypasses the complex conditional logic of simulating 2D matrix wrap-arounds by treating the matrix as a continuous 1D cyclic array. By applying an inverse modulo transformation `(curr_1D - k) % TOTAL`, the algorithm mathematically queries the origin of every cell in a single $O(M \times N)$ sweep. The heavily optimized Pythonic variant achieves the exact same result in three lines of code by executing raw C-level list slicing and reshaping.
+
+**3499. Maximize Active Section with Trade I**: Deconstructs a complex, multi-stage block transformation rule into an ultra-lean $O(N)$ linear sweep. Utilizing the "1-Refund Illusion," the algorithm recognizes that sacrificing an active block perfectly merges the adjacent inactive blocks, and immediately refunds the sacrificed elements when the newly formed superstructure is converted back. This mathematical guarantee reduces the logic to simply finding the maximum sum of any two adjacent inactive blocks and appending it to the original active base count.
 
 ### Complex Logic
 
