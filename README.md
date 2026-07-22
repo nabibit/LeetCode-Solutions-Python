@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-122-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-123-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -121,6 +121,7 @@ LeetCode-Solutions-Python/
 | 2833 | [Furthest Point From Origin](./Strings/2833_Furthest_Point_From_Origin.py) | Easy | Greedy / Counting | O(N) | O(1) |
 | 2839 | [Check if Strings Can be Made Equal With Operations I](./Strings/2839_Check_if_Strings_Can_be_Made_Equal.py) | Easy | Parity Grouping + Sorting | O(1) | O(1) |
 | 2840 | [Check if Strings Can be Made Equal With Operations II](./Strings/2840_Check_if_Strings_Can_be_Made_Equal_II.py) | Medium | Parity Grouping + Frequency Map | O(N) | O(1) |
+| 3501 | [Maximize Active Section with Trade II](./Strings/3501_Maximize_Active_Section_Trade_II.py) | Hard | Sparse Table (RMQ) & Block Parsing | O(NlogN+QlogM) | O(NlogN) |
 | 3532 | [Path Existence Queries in a Graph I](./Graphs/3532_Path_Existence_Queries_in_a_Graph_I.py) | Medium | Sorted Contiguous Component Labeling | O(N+Q) | O(N) |
 | 3474 | [Lexicographically Smallest Generated String](./Strings/3474_Lexicographically_Smallest_Generated.py) | Hard | KMP Automaton / Backtracking | O(N+M) | O(N+M) |
 | 3499 | [Maximize Active Section with Trade I](./Strings/3499_Maximize_Active_Section_Trade.py) | Medium | itertools.groupby & The 1-Refund Illusion | O(N) | O(N) |
@@ -255,13 +256,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 122
+Total Problems: 123
 
 Easy: 36
 
 Medium: 58
 
-Hard: 28  
+Hard: 29  
 
 Last updated: Daily  
 
@@ -294,6 +295,7 @@ Last updated: Daily
 | String Matching / KMP Automaton | 3474 |
 | Stack / 1D Simulation | 1081, 2751 |
 | Geometric Sweeping / Running Max | 3027 |
+| Segment Tree / Fenwick / RMQ | 307, 315, 2407, 3183, 3501, 3688 |
 
 ## 📝 Solution Highlights
 
@@ -454,6 +456,8 @@ Last updated: Daily
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
 
 **3741. Minimum Distance Between Three Equal Elements II**: Optimized the triplet distance formula $abs(i - j) + abs(j - k) + abs(k - i)$ by recognizing that for sorted indices $i < j < k$, the expression simplifies to $2(k - i)$. This transformation allows the problem to be solved in a single linear pass using a Hash Map to track the index of the element from two occurrences prior, reducing the search space from $O(N^3)$ to $O(N)$.
+
+**3501. Maximize Active Section with Trade II**: Elevates the greedy "1-Refund Illusion" from its predecessor by executing it over $Q$ arbitrary, independent range queries. To bypass the catastrophic $O(Q \times N)$ execution bottleneck of repeated block evaluation, it pre-parses the string into distinct positional blocks and evaluates all possible merge gains into an underlying array. By layering a Sparse Table over this array, it resolves any continuous Range Maximum Query (RMQ) in strictly $O(1)$ constant time. Paired with dual binary searches to isolate truncated boundary edges, the algorithm mathematically enforces the "two-block minimum" constraint, processing massive query arrays flawlessly in $O(\log M)$ time per query.
 
 ### Graph Operations
 **3600. Maximize Spanning Tree Stability with Upgrades**: Combines Binary Search on the Answer with Kruskal's Algorithm. Instead of building a complex dynamic tree, it efficiently validates a target "stability" score by constructing a Spanning Tree using a Disjoint Set Union (DSU) and optimally budgeting edge upgrades.
