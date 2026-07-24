@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-124-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-125-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -158,6 +158,7 @@ LeetCode-Solutions-Python/
 | 1404 | [Number of Steps to Reduce a Number in Binary Representation to One](./BitManipulation/1404_Number_of_Steps_to_Reduce_a_Number_in_Binary_Representation_to_One.py) | Medium | Right-to-Left Carry Tracking | O(N) | O(1) |
 | 1680 | [Concatenation of Consecutive Binary Numbers](./BitManipulation/1680_Concatenation_of_Consecutive_Binary_Numbers.py) | Medium | Bitwise Shift & Modulo | O(N) | O(1) |
 | 3513 | [Number of Unique XOR Triplets I](./BitManipulation/3513_Number_of_Unique_XOR_Triplets_I.py) | Medium | O(1) Bit-Length Vector Span | O(1) | O(1) |
+| 3514 | [Number of Unique XOR Triplets II](./BitManipulation/3514_Number_of_Unique_XOR_Triplets_II.py) | Medium | 2-Step Pairwise XOR Sieve & Boolean Array Optimization | O(U^2+P*U) | O(U+P+V) |
 | 3666 | [Minimum Operations to Equalize Binary String](./BitManipulation/3666_Minimum_Operations_to_Equalize_Binary_String.py) | Hard | SortedList BFS Parity Search | O(N log N) | O(N) |
 
 ### [DynamicProgramming](./DynamicProgramming/)
@@ -257,11 +258,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 124
+Total Problems: 125
 
 Easy: 36
 
-Medium: 59
+Medium: 60
 
 Hard: 29  
 
@@ -297,7 +298,7 @@ Last updated: Daily
 | Stack / 1D Simulation | 1081, 2751 |
 | Geometric Sweeping / Running Max | 3027 |
 | Segment Tree / Fenwick / RMQ | 307, 315, 2407, 3183, 3501, 3688 |
-| Bit Manipulation / XOR     | 453, 3513 |
+| Bit Manipulation / XOR     | 453, 3513, 3514 |
 
 ## 📝 Solution Highlights
 
@@ -455,6 +456,8 @@ Last updated: Daily
 **1081. Smallest Subsequence of Distinct Characters**: Bypasses the combinatorial nightmare of evaluating all valid subsequences by utilizing a Monotonic Stack. By pre-calculating the last occurrence index of every character, the algorithm greedily pops lexicographically larger characters off the stack whenever a smaller character is encountered—provided that the popped character is guaranteed to appear again later in the string. This reduces the entire problem to a highly efficient $O(N)$ linear scan, requiring only $O(1)$ auxiliary memory restricted to the 26-character alphabet.
 
 **3513. Number of Unique XOR Triplets I**: Bypasses the catastrophic $O(N^3)$ Time Limit Exceeded (TLE) error of nested triplet simulation by capitalizing on the array's permutation properties. Recognizing that an input containing all integers from $1$ to $n$ can trivially generate $0$ (via $1 \oplus 2 \oplus 3 = 0$) and any original element $y$ (via $x \oplus x \oplus y = y$), the algorithm proves that valid triplets completely saturate the binary vector space up to $n$'s highest bit. This reduces the entire resolution to evaluating the power-of-two ceiling $2^k$ (where $k$ is the bit length of $n$), executing in strictly $O(1)$ constant time with zero auxiliary memory.
+
+**3514. Number of Unique XOR Triplets II**: Marks the **60th Medium Problem Milestone**! Bypasses the catastrophic $O(N^3)$ Time Limit Exceeded (TLE) error of evaluating all three-element combinations by implementing a 2-Step Pairwise XOR Sieve. Capitalizing on the commutative properties of XOR and the constraint bounding $\text{nums}[i] \le 1500$, the algorithm first computes all achievable pairwise XORs into a bounded boolean array of size $2^{\lfloor \log_2(\max) \rfloor + 1} \le 2048$. It then combines these intermediate states with the unique elements of the array in a secondary linear pass, reducing the computational complexity from billions of operations down to an ultra-lean $O(U^2 + P \times U)$ execution time.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
