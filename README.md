@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-157-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-158-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -182,6 +182,7 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 486 | [Predict the Winner](./DynamicProgramming/0486_Predict_the_Winner.py) | Medium | Minimax DP Net-Difference Relation & 1D Space Optimization | O(N^2) | O(N) |
 | 799 | [Champagne Tower](./DynamicProgramming/0799_Champagne_Tower.py) | Medium | Simulation + DP (In-place) | O(R²) | O(R) |
+| 940 | [Distinct Subsequences II](./DynamicProgramming/0940_Distinct_Subsequences_II.py) | Hard | Running Total DP & Subsequence Deduplication | O(N) | O(1) |
 | 1140 | [Stone Game II](./DynamicProgramming/1140_Stone_Game_II.py) | Medium | Minimax DP & Suffix Sum Optimization | O(N³) | O(N²) |
 | 1320 | [Minimum Distance to Type a Word Using Two Fingers](./DynamicProgramming/1320_Min_Distance_Type_Word_Two_Fingers.py) | Hard | Top-Down DP (State Compression) | O(N) | O(N) |
 | 1340 | [Jump Game V](./DynamicProgramming/1340_Jump_Game_V.py) | Hard | Top-Down DP (Memoization) / DAG Traversal | O(N*d) | O(N) |
@@ -290,13 +291,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 157
+Total Problems: 158
 
 Easy: 48
 
 Medium: 72
 
-Hard: 37 
+Hard: 38 
 
 Last updated: Daily  
 
@@ -310,7 +311,7 @@ Last updated: Daily
 | Sliding Window             | 42, 1358, 1461, 1848, 1871, 2958, 3090, 3302, 3471 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1386, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 212, 1022, 1382, 2196 |
-| Dynamic Programming        | 486, 799, 1140, 1320, 1340, 1406, 1563, 1594, 1510, 1872, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
+| Dynamic Programming        | 486, 799, 940, 1140, 1320, 1340, 1406, 1563, 1594, 1510, 1872, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739, 3756 |
 | Simulation / Linear Scan   | 696, 1291, 1582, 1758, 1784, 1878,1967, 1980, 2161, 2996, 3014, 3069, 3379, 3499, 3517, 3633, 3637 |
 | Brute Force / Recursion    | 761, 1545, 3713, 3719 |
@@ -554,6 +555,8 @@ Last updated: Daily
 **1927. Sum Game**: Deconstructs a combinatorial Minimax Game Theory prompt into a pure $O(1)$ space mathematical evaluation. By analyzing the parity of the available moves, the algorithm deduces that an odd number of turns guarantees Player 1 (Alice) the victory via the final unopposed move. For even turns, the algorithm applies the "Pairing Strategy," proving Player 2 (Bob) can strictly force any pair of moves on the same half to sum to $9$. By computing the initial discrepancy against Bob's predictable forced additions (`sum1 - sum2 + (q1 - q2) / 2 * 9`), the solution perfectly predicts the optimal outcome in a single $O(N)$ linear pass.
 
 **1872. Stone Game VIII**: Dismantles a complex merging-simulation game into a pure Mathematical Dynamic Programming model. By recognizing that replacing stones with their sum is mathematically identical to selecting an array's prefix sum, the algorithm evaluates choices in a single backward pass. Leveraging a highly optimized $O(1)$ Minimax state transition (`dp = max(dp, prefix[i] - dp)`), it effectively decides between deferring a turn or aggressively taking a prefix, achieving global optimality in absolute $O(N)$ time with zero auxiliary memory footprint.
+
+**940. Distinct Subsequences II**: Bypasses the catastrophic O(2^N) exponential explosion of traditional subsequence generation by mapping the state space dynamically. The algorithm maintains a strict O(1) memory footprint using a 26-element alphabet array to track the exact volume of subsequences terminating at a given character. By realizing that appending a new character duplicates the entire existing prefix space (`total + 1`), it mathematically prunes recursive overlaps by subtracting historical combinations that already terminated with the current character (`ends_with[char]`), flawlessly resolving the entire string modulo 10^9 + 7 in an optimal O(N) linear sweep.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
