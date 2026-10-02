@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-159-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-160-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -146,6 +146,7 @@ LeetCode-Solutions-Python/
 
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
+| 22 | [Generate Parentheses](./Backtracking/0022_Generate_Parentheses.py) | Medium | DFS Backtracking (Catalan Bound) | O(4^n / \sqrt{n}) | O(n) |
 | 37 | [Sudoku Solver](./Backtracking/0037_Sudoku_Solver.py) | Hard | Backtracking (Hash Set Pruning) | O(9^(Empty)) | O(1) |
 | 401 | [Binary Watch](./Backtracking/0401_Binary_Watch.py) | Easy | Backtracking / Bit Counting | O(C(10, k)) | O(k) |
 | 1415 | [The k-th Lexicographical String of All Happy Strings of Length n](./Backtracking/1415_The_kth_Lexicographical_String_of_All_Happy_Strings.py) | Medium | Combinatorial Math / Decision Tree | O(N) | O(N) |
@@ -292,11 +293,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 159
+Total Problems: 160
 
 Easy: 49
 
-Medium: 72
+Medium: 73
 
 Hard: 38 
 
@@ -560,6 +561,8 @@ Last updated: Daily
 **1872. Stone Game VIII**: Dismantles a complex merging-simulation game into a pure Mathematical Dynamic Programming model. By recognizing that replacing stones with their sum is mathematically identical to selecting an array's prefix sum, the algorithm evaluates choices in a single backward pass. Leveraging a highly optimized $O(1)$ Minimax state transition (`dp = max(dp, prefix[i] - dp)`), it effectively decides between deferring a turn or aggressively taking a prefix, achieving global optimality in absolute $O(N)$ time with zero auxiliary memory footprint.
 
 **940. Distinct Subsequences II**: Bypasses the catastrophic O(2^N) exponential explosion of traditional subsequence generation by mapping the state space dynamically. The algorithm maintains a strict O(1) memory footprint using a 26-element alphabet array to track the exact volume of subsequences terminating at a given character. By realizing that appending a new character duplicates the entire existing prefix space (`total + 1`), it mathematically prunes recursive overlaps by subtracting historical combinations that already terminated with the current character (`ends_with[char]`), flawlessly resolving the entire string modulo 10^9 + 7 in an optimal O(N) linear sweep.
+
+**22. Generate Parentheses**: Showcases classic Depth-First Search (DFS) backtracking to generate combinatorial permutations. By strictly pruning the decision tree—only appending open brackets when available and close brackets when unmatched open brackets exist in the current prefix—the algorithm naturally enforces valid syntax without requiring post-generation validation. The solution operates efficiently at the mathematical limit of the $N$-th Catalan number.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
