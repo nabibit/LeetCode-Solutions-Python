@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-160-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-161-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -109,6 +109,7 @@ LeetCode-Solutions-Python/
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
 | 20 | [Valid Parentheses](./Strings/0020_Valid_Parentheses.py) | Easy | Stack & Hash Map Lookup | O(N) | O(N) |
+| 32 | [Longest Valid Parentheses](./Strings/0032_Longest_Valid_Parentheses.py) | Hard | Bidirectional Dual-Sweep Counters | O(N) | O(1) |
 | 67 | [Add Binary](./Strings/0067_Add_Binary.py) | Easy | Bit Manipulation (Simulation) | O(n + m) | O(max(n,m)) |
 | 696 | [Count Binary Substrings](./Strings/0696_Count_Binary_Substrings.py) | Easy | Linear Scan (Group Counting) | O(n) |	O(1) |
 | 761 | [Special Binary String](./Strings/0761_Special_Binary_String.py) | Hard | Recursion + Sorting | O(n²) | O(n) |
@@ -293,13 +294,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 160
+Total Problems: 161
 
 Easy: 49
 
 Medium: 73
 
-Hard: 38 
+Hard: 39 
 
 Last updated: Daily  
 
@@ -330,7 +331,7 @@ Last updated: Daily
 | Array Simulation | 3653 |
 | Interval Sweeping / Bounded States | 3661 |
 | String Matching / KMP Automaton | 3474 |
-| Stack / 1D Simulation | 20, 1081, 2751 |
+| Stack / 1D Simulation | 20, 32, 1081, 2751 |
 | Geometric Sweeping / Running Max | 3027 |
 | Segment Tree / Fenwick / RMQ | 307, 315, 2213, 2407, 3183, 3501, 3688 |
 | Bit Manipulation / XOR     | 453, 3513, 3514, 3702 |
@@ -563,6 +564,8 @@ Last updated: Daily
 **940. Distinct Subsequences II**: Bypasses the catastrophic O(2^N) exponential explosion of traditional subsequence generation by mapping the state space dynamically. The algorithm maintains a strict O(1) memory footprint using a 26-element alphabet array to track the exact volume of subsequences terminating at a given character. By realizing that appending a new character duplicates the entire existing prefix space (`total + 1`), it mathematically prunes recursive overlaps by subtracting historical combinations that already terminated with the current character (`ends_with[char]`), flawlessly resolving the entire string modulo 10^9 + 7 in an optimal O(N) linear sweep.
 
 **22. Generate Parentheses**: Showcases classic Depth-First Search (DFS) backtracking to generate combinatorial permutations. By strictly pruning the decision tree—only appending open brackets when available and close brackets when unmatched open brackets exist in the current prefix—the algorithm naturally enforces valid syntax without requiring post-generation validation. The solution operates efficiently at the mathematical limit of the $N$-th Catalan number.
+
+**32. Longest Valid Parentheses**: Bypasses the $O(N)$ space overhead of a traditional Last-In-First-Out (LIFO) Stack by implementing a brilliantly optimized Bidirectional Dual-Sweep algorithm. By maintaining running counters for left and right brackets, the algorithm validates perfectly balanced substrings in $O(1)$ auxiliary memory. A forward sweep resolves sequences bounded by excess closing brackets, while a mirrored backward sweep captures sequences truncated by excess opening brackets, resulting in absolute global optimality in strict $O(N)$ time.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
