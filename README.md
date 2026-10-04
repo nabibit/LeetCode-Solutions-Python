@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-161-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-162-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -111,6 +111,7 @@ LeetCode-Solutions-Python/
 | 20 | [Valid Parentheses](./Strings/0020_Valid_Parentheses.py) | Easy | Stack & Hash Map Lookup | O(N) | O(N) |
 | 32 | [Longest Valid Parentheses](./Strings/0032_Longest_Valid_Parentheses.py) | Hard | Bidirectional Dual-Sweep Counters | O(N) | O(1) |
 | 67 | [Add Binary](./Strings/0067_Add_Binary.py) | Easy | Bit Manipulation (Simulation) | O(n + m) | O(max(n,m)) |
+| 678 | [Valid Parenthesis String](./Strings/0678_Valid_Parenthesis_String.py) | Medium | Dynamic Range Bounding (Min/Max Open Tracking) | O(N) | O(1) |
 | 696 | [Count Binary Substrings](./Strings/0696_Count_Binary_Substrings.py) | Easy | Linear Scan (Group Counting) | O(n) |	O(1) |
 | 761 | [Special Binary String](./Strings/0761_Special_Binary_String.py) | Hard | Recursion + Sorting | O(n²) | O(n) |
 | 1081 | [Smallest Subsequence of Distinct Characters](./Strings/1081_Smallest_Subsequence_Distinct.py) | Medium | Monotonic Stack & Last Occurrence Tracker | O(N) | O(1) |
@@ -294,11 +295,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 161
+Total Problems: 162
 
 Easy: 49
 
-Medium: 73
+Medium: 74
 
 Hard: 39 
 
@@ -331,7 +332,7 @@ Last updated: Daily
 | Array Simulation | 3653 |
 | Interval Sweeping / Bounded States | 3661 |
 | String Matching / KMP Automaton | 3474 |
-| Stack / 1D Simulation | 20, 32, 1081, 2751 |
+| Stack / 1D Simulation | 20, 32, 678, 1081, 2751 |
 | Geometric Sweeping / Running Max | 3027 |
 | Segment Tree / Fenwick / RMQ | 307, 315, 2213, 2407, 3183, 3501, 3688 |
 | Bit Manipulation / XOR     | 453, 3513, 3514, 3702 |
@@ -438,6 +439,8 @@ Last updated: Daily
 **3718. Smallest Missing Multiple of K**: Demonstrates how to rapidly search an unsorted array for a mathematical sequence without invoking an O(N log N) sorting penalty. By converting the input array into a Hash Set, the algorithm effectively reduces repetitive sequential multiple checks ($k, 2k, 3k \dots$) into absolute O(1) constant-time evaluations, achieving the minimal missing multiple dynamically in strict linear O(N) time.
 
 **20. Valid Parentheses**: Solves the classic bracket validation problem using a Last-In-First-Out (LIFO) Stack architecture. By mapping closing brackets to their opening counterparts in a Hash Map, the algorithm replaces complex conditional chains with a streamlined $O(1)$ lookup and pop sequence, fully resolving the string in a strict $O(N)$ linear pass.
+
+**678. Valid Parenthesis String**: Resolves the exponential combinatorial explosion of evaluating wildcard `*` variations by implementing an $O(1)$ dynamic range tracker. By establishing a `low` and `high` boundary for potential open brackets, the algorithm evaluates all valid branching paths concurrently in a single linear pass. Capping the `low` bound at zero elegantly simulates treating the wildcard as an empty string, ensuring globally optimal validation without relying on multi-pass arrays or backtracking logic.
 
 ### Complex Logic
 
