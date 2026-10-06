@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-163-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-164-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -115,6 +115,7 @@ LeetCode-Solutions-Python/
 | 696 | [Count Binary Substrings](./Strings/0696_Count_Binary_Substrings.py) | Easy | Linear Scan (Group Counting) | O(n) |	O(1) |
 | 761 | [Special Binary String](./Strings/0761_Special_Binary_String.py) | Hard | Recursion + Sorting | O(n²) | O(n) |
 | 856 | [Score of Parentheses](./Strings/0856_Score_of_Parentheses.py) | Medium | Core Depth Calculation & Bitwise Scaling | O(N) | O(1) |
+| 921 | [Minimum Add to Make Parentheses Valid](./Strings/0921_Minimum_Add_to_Make_Parentheses_Valid.py) | Medium | Greedy Deficit Tracking | O(N) | O(1) |
 | 1081 | [Smallest Subsequence of Distinct Characters](./Strings/1081_Smallest_Subsequence_Distinct.py) | Medium | Monotonic Stack & Last Occurrence Tracker | O(N) | O(1) |
 | 1189 | [Maximum Number of Balloons](./Strings/1189_Maximum_Number_of_Balloons.py) | Easy | Hash Map Frequency Counting | O(N) | O(1) |
 | 1291 | [Sequential Digits](./Strings/1291_Sequential_Digits.py) | Medium | Master String Sliding Window | O(1) | O(1) |
@@ -296,11 +297,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 163
+Total Problems: 164
 
 Easy: 49
 
-Medium: 75
+Medium: 76
 
 Hard: 39 
 
@@ -333,7 +334,7 @@ Last updated: Daily
 | Array Simulation | 3653 |
 | Interval Sweeping / Bounded States | 3661 |
 | String Matching / KMP Automaton | 3474 |
-| Stack / 1D Simulation | 20, 32, 678, 856, 1081, 2751 |
+| Stack / 1D Simulation | 20, 32, 678, 856, 921, 1081, 2751 |
 | Geometric Sweeping / Running Max | 3027 |
 | Segment Tree / Fenwick / RMQ | 307, 315, 2213, 2407, 3183, 3501, 3688 |
 | Bit Manipulation / XOR     | 453, 3513, 3514, 3702 |
@@ -444,6 +445,8 @@ Last updated: Daily
 **678. Valid Parenthesis String**: Resolves the exponential combinatorial explosion of evaluating wildcard `*` variations by implementing an $O(1)$ dynamic range tracker. By establishing a `low` and `high` boundary for potential open brackets, the algorithm evaluates all valid branching paths concurrently in a single linear pass. Capping the `low` bound at zero elegantly simulates treating the wildcard as an empty string, ensuring globally optimal validation without relying on multi-pass arrays or backtracking logic.
 
 **856. Score of Parentheses**: Showcases a brilliant circumvention of the standard Last-In-First-Out (LIFO) Stack parsing approach. By recognizing that the final score is exclusively composed of adjacent `()` core pairs multiplied by $2^{\text{depth}}$, the algorithm flattens the nested structure. It uses an $O(1)$ space depth counter to track nesting layers dynamically, applying lightning-fast bitwise shifts (`1 << depth`) the moment a core pair is identified, resolving the entire string mathematically in a single linear pass.
+
+**921. Minimum Add to Make Parentheses Valid**: Demonstrates a highly optimized greedy approach to string validation, bypassing $O(N)$ stack memory completely. By independently tracking the deficit of required opening brackets and required closing brackets as they appear sequentially, the algorithm successfully evaluates all unresolved structural imbalances in a strict $O(1)$ space environment, completing the evaluation in a single $O(N)$ linear pass.
 
 ### Complex Logic
 
