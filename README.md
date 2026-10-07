@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-164-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-165-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -111,6 +111,7 @@ LeetCode-Solutions-Python/
 | 20 | [Valid Parentheses](./Strings/0020_Valid_Parentheses.py) | Easy | Stack & Hash Map Lookup | O(N) | O(N) |
 | 32 | [Longest Valid Parentheses](./Strings/0032_Longest_Valid_Parentheses.py) | Hard | Bidirectional Dual-Sweep Counters | O(N) | O(1) |
 | 67 | [Add Binary](./Strings/0067_Add_Binary.py) | Easy | Bit Manipulation (Simulation) | O(n + m) | O(max(n,m)) |
+| 301 | [Remove Invalid Parentheses](./Strings/0301_Remove_Invalid_Parentheses.py) | Hard | Level-Order BFS & Hash Set Deduplication | O(2^N) | O(2^N) |
 | 678 | [Valid Parenthesis String](./Strings/0678_Valid_Parenthesis_String.py) | Medium | Dynamic Range Bounding (Min/Max Open Tracking) | O(N) | O(1) |
 | 696 | [Count Binary Substrings](./Strings/0696_Count_Binary_Substrings.py) | Easy | Linear Scan (Group Counting) | O(n) |	O(1) |
 | 761 | [Special Binary String](./Strings/0761_Special_Binary_String.py) | Hard | Recursion + Sorting | O(n²) | O(n) |
@@ -297,13 +298,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 164
+Total Problems: 165
 
 Easy: 49
 
 Medium: 76
 
-Hard: 39 
+Hard: 40
 
 Last updated: Daily  
 
@@ -320,7 +321,7 @@ Last updated: Daily
 | Dynamic Programming        | 486, 799, 940, 1140, 1320, 1340, 1406, 1563, 1594, 1510, 1872, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739, 3756 |
 | Simulation / Linear Scan   | 696, 1291, 1582, 1758, 1784, 1878,1967, 1980, 2161, 2996, 3014, 3069, 3379, 3499, 3517, 3633, 3637 |
-| Brute Force / Recursion    | 761, 1545, 3713, 3719 |
+| Brute Force / Recursion    | 301, 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 2812, 3310, 3532, 3600 |
 | Binary Search on Answer    |  3116, 3296, 3464, 3600 |
 | Backtracking / Decision Tree | 37, 401, 1415 |
@@ -575,6 +576,8 @@ Last updated: Daily
 **22. Generate Parentheses**: Showcases classic Depth-First Search (DFS) backtracking to generate combinatorial permutations. By strictly pruning the decision tree—only appending open brackets when available and close brackets when unmatched open brackets exist in the current prefix—the algorithm naturally enforces valid syntax without requiring post-generation validation. The solution operates efficiently at the mathematical limit of the $N$-th Catalan number.
 
 **32. Longest Valid Parentheses**: Bypasses the $O(N)$ space overhead of a traditional Last-In-First-Out (LIFO) Stack by implementing a brilliantly optimized Bidirectional Dual-Sweep algorithm. By maintaining running counters for left and right brackets, the algorithm validates perfectly balanced substrings in $O(1)$ auxiliary memory. A forward sweep resolves sequences bounded by excess closing brackets, while a mirrored backward sweep captures sequences truncated by excess opening brackets, resulting in absolute global optimality in strict $O(N)$ time.
+
+**301. Remove Invalid Parentheses**: Showcases an incredibly elegant application of Breadth-First Search (BFS) string manipulation. Instead of utilizing standard Depth-First Search (DFS) backtracking to prune invalid states, the algorithm maps "removals" directly to BFS depth layers. By slicing characters and dumping permutations into an active Hash Set pool, it naturally deduplicates states. The moment `filter(is_valid)` yields positive results, the algorithm terminates, guaranteeing that the first layer to produce valid configurations mathematically represents the absolute minimum required removals.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
