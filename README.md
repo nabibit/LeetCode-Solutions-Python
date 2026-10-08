@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-165-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-166-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -117,6 +117,7 @@ LeetCode-Solutions-Python/
 | 761 | [Special Binary String](./Strings/0761_Special_Binary_String.py) | Hard | Recursion + Sorting | O(n²) | O(n) |
 | 856 | [Score of Parentheses](./Strings/0856_Score_of_Parentheses.py) | Medium | Core Depth Calculation & Bitwise Scaling | O(N) | O(1) |
 | 921 | [Minimum Add to Make Parentheses Valid](./Strings/0921_Minimum_Add_to_Make_Parentheses_Valid.py) | Medium | Greedy Deficit Tracking | O(N) | O(1) |
+| 1021 | [Remove Outermost Parentheses](./Strings/1021_Remove_Outermost_Parentheses.py) | Easy | Primitive Block Depth Filtration | O(N) | O(N) |
 | 1081 | [Smallest Subsequence of Distinct Characters](./Strings/1081_Smallest_Subsequence_Distinct.py) | Medium | Monotonic Stack & Last Occurrence Tracker | O(N) | O(1) |
 | 1189 | [Maximum Number of Balloons](./Strings/1189_Maximum_Number_of_Balloons.py) | Easy | Hash Map Frequency Counting | O(N) | O(1) |
 | 1291 | [Sequential Digits](./Strings/1291_Sequential_Digits.py) | Medium | Master String Sliding Window | O(1) | O(1) |
@@ -298,9 +299,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 165
+Total Problems: 166
 
-Easy: 49
+Easy: 50
 
 Medium: 76
 
@@ -320,7 +321,7 @@ Last updated: Daily
 | DFS / Trees                | 212, 1022, 1382, 2196 |
 | Dynamic Programming        | 486, 799, 940, 1140, 1320, 1340, 1406, 1563, 1594, 1510, 1872, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739, 3756 |
-| Simulation / Linear Scan   | 696, 1291, 1582, 1758, 1784, 1878,1967, 1980, 2161, 2996, 3014, 3069, 3379, 3499, 3517, 3633, 3637 |
+| Simulation / Linear Scan   | 696, 1021, 1291, 1582, 1758, 1784, 1878,1967, 1980, 2161, 2996, 3014, 3069, 3379, 3499, 3517, 3633, 3637 |
 | Brute Force / Recursion    | 301, 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 2812, 3310, 3532, 3600 |
 | Binary Search on Answer    |  3116, 3296, 3464, 3600 |
@@ -448,6 +449,8 @@ Last updated: Daily
 **856. Score of Parentheses**: Showcases a brilliant circumvention of the standard Last-In-First-Out (LIFO) Stack parsing approach. By recognizing that the final score is exclusively composed of adjacent `()` core pairs multiplied by $2^{\text{depth}}$, the algorithm flattens the nested structure. It uses an $O(1)$ space depth counter to track nesting layers dynamically, applying lightning-fast bitwise shifts (`1 << depth`) the moment a core pair is identified, resolving the entire string mathematically in a single linear pass.
 
 **921. Minimum Add to Make Parentheses Valid**: Demonstrates a highly optimized greedy approach to string validation, bypassing $O(N)$ stack memory completely. By independently tracking the deficit of required opening brackets and required closing brackets as they appear sequentially, the algorithm successfully evaluates all unresolved structural imbalances in a strict $O(1)$ space environment, completing the evaluation in a single $O(N)$ linear pass.
+
+**1021. Remove Outermost Parentheses**: Demonstrates an elegant $O(N)$ linear filter that bypasses the need for explicit string splitting and reconstruction. By dynamically tracking the depth of the nested parenthesis structure, the algorithm identifies primitive boundaries on the fly. It selectively filters out characters operating strictly at depth `0`, perfectly shedding the outer shell of every contiguous block while appending all internal structures to a mutable array for optimal string concatenation.
 
 ### Complex Logic
 
