@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-166-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-167-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -123,6 +123,7 @@ LeetCode-Solutions-Python/
 | 1291 | [Sequential Digits](./Strings/1291_Sequential_Digits.py) | Medium | Master String Sliding Window | O(1) | O(1) |
 | 1358 | [Number of Substrings Containing All Three Characters](./Strings/1358_Number_of_Substrings_Containing_All_Three.py) | Medium | Sliding Window / Last-Seen Index Tracking | O(N) | O(1) |
 | 1461 | [Check If a String Contains All Binary Codes](./Strings/1461_Check_If_String_Contains_All_Binary_Codes.py) | Medium | Sliding Window Set / Rolling Hash | O(N) | O(N*K) |
+| 1541 | [Minimum Insertions to Balance a Parentheses String](./Strings/1541_Minimum_Insertions_to_Balance.py) | Medium | Asymmetric Greedy Deficit Tracking | O(N) | O(1) |
 | 1545 | [Find Kth Bit in Nth Binary String](./Strings/1545_Find_Kth_Bit_in_Nth_Binary_String.py) | Medium | Divide & Conquer (Recursion) | O(N) | O(N) |
 | 1689 | [Partitioning Into Minimum Number Of Deci-Binary Numbers](./Strings/1689_Partitioning_into_Minimum_number_Of_Deci-Binary_Numbers.py) | Medium | Greedy (Max Digit Search) | O(n) | O(1) |
 | 1758 | [Minimum Changes To Make Alternating Binary String](./Strings/1758_Minimum_Changes_To_Make_Alternating_Binary_String.py) | Easy | Symmetric Pattern Counting | O(n) | O(1) |
@@ -299,11 +300,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 166
+Total Problems: 167
 
 Easy: 50
 
-Medium: 76
+Medium: 77
 
 Hard: 40
 
@@ -336,7 +337,7 @@ Last updated: Daily
 | Array Simulation | 3653 |
 | Interval Sweeping / Bounded States | 3661 |
 | String Matching / KMP Automaton | 3474 |
-| Stack / 1D Simulation | 20, 32, 678, 856, 921, 1081, 2751 |
+| Stack / 1D Simulation | 20, 32, 678, 856, 921, 1081, 1541, 2751 |
 | Geometric Sweeping / Running Max | 3027 |
 | Segment Tree / Fenwick / RMQ | 307, 315, 2213, 2407, 3183, 3501, 3688 |
 | Bit Manipulation / XOR     | 453, 3513, 3514, 3702 |
@@ -451,6 +452,8 @@ Last updated: Daily
 **921. Minimum Add to Make Parentheses Valid**: Demonstrates a highly optimized greedy approach to string validation, bypassing $O(N)$ stack memory completely. By independently tracking the deficit of required opening brackets and required closing brackets as they appear sequentially, the algorithm successfully evaluates all unresolved structural imbalances in a strict $O(1)$ space environment, completing the evaluation in a single $O(N)$ linear pass.
 
 **1021. Remove Outermost Parentheses**: Demonstrates an elegant $O(N)$ linear filter that bypasses the need for explicit string splitting and reconstruction. By dynamically tracking the depth of the nested parenthesis structure, the algorithm identifies primitive boundaries on the fly. It selectively filters out characters operating strictly at depth `0`, perfectly shedding the outer shell of every contiguous block while appending all internal structures to a mutable array for optimal string concatenation.
+
+**1541. Minimum Insertions to Balance a Parentheses String**: Expands on the $O(1)$ space greedy deficit tracking introduced in Problem 921 by enforcing a 1-to-2 asymmetric matching constraint. The algorithm mathematically resolves structural sequence violations mid-sweep by checking the parity of the required closing brackets (`needed_right % 2 != 0`). This perfectly predicts orphaned brackets before new structures are instantiated, achieving optimal insertion calculations in a single $O(N)$ linear pass without generating any modified string variants.
 
 ### Complex Logic
 
