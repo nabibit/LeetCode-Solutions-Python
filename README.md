@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-167-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-168-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -70,6 +70,7 @@ LeetCode-Solutions-Python/
 | 1878 | [Get Biggest Three Rhombus Sums in a Grid](./Arrays/1878_Get_Biggest_Three_Rhombus_Sums.py) | Medium | Boundary Simulation | O(M*N*min(M,N)) | O(U) |
 | 2078 | [Two Furthest Houses With Different Colors](./Arrays/2078_Two_Furthest_Houses_With_Diff_Colors.py) | Easy | Boundary Anchoring (Two Pointers) | O(N) | O(1) |
 | 2144 | [Minimum Cost of Buying Candies With Discount](./Arrays/2144_Min_Cost_Buying_Candies_Discount.py) | Easy | Greedy Descending Sort | O(N log N) | O(1) |
+| 2333 | [Minimum Sum of Squared Difference](./Arrays/2333_Minimum_Sum_of_Squared_Difference.py) | Medium | Pooled Modification Budget & Frequency Bucket Sort | O(N + M) | O(M) |
 | 2515 | [Shortest Distance to Target String in a Circular Array](./Arrays/2515_Shortest_Distance_Target_String_Circular.py) | Easy | Bidirectional Distance Math | O(N) | O(1) |
 | 2574 | [Left and Right Sum Differences](./Arrays/2574_Left_and_Right_Sum_Differences.py) | Easy | Running Prefix & Suffix Sums | O(N) | O(1) |
 | 2161 | [Partition Array According to Given Pivot](./Arrays/2161_Partition_Array_According_to_Pivot.py) | Medium | Stable Partition / 3-Bucket Sweep | O(N) | O(N) |
@@ -300,11 +301,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 167
+Total Problems: 168
 
 Easy: 50
 
-Medium: 77
+Medium: 78
 
 Hard: 40
 
@@ -316,7 +317,7 @@ Last updated: Daily
 
 | Core Category              | Problems |
 |----------------------------|----------|
-| Greedy / Sorting           | 1536, 1689, 1727, 1846, 2144, 2833, 3010, 3016, 3634 |
+| Greedy / Sorting           | 1536, 1689, 1727, 1846, 2144, 2333, 2833, 3010, 3016, 3634 |
 | Sliding Window             | 42, 1358, 1461, 1848, 1871, 2958, 3090, 3302, 3471 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1386, 1404, 1680, 1855, 3666 |
 | DFS / Trees                | 212, 1022, 1382, 2196 |
@@ -454,6 +455,8 @@ Last updated: Daily
 **1021. Remove Outermost Parentheses**: Demonstrates an elegant $O(N)$ linear filter that bypasses the need for explicit string splitting and reconstruction. By dynamically tracking the depth of the nested parenthesis structure, the algorithm identifies primitive boundaries on the fly. It selectively filters out characters operating strictly at depth `0`, perfectly shedding the outer shell of every contiguous block while appending all internal structures to a mutable array for optimal string concatenation.
 
 **1541. Minimum Insertions to Balance a Parentheses String**: Expands on the $O(1)$ space greedy deficit tracking introduced in Problem 921 by enforcing a 1-to-2 asymmetric matching constraint. The algorithm mathematically resolves structural sequence violations mid-sweep by checking the parity of the required closing brackets (`needed_right % 2 != 0`). This perfectly predicts orphaned brackets before new structures are instantiated, achieving optimal insertion calculations in a single $O(N)$ linear pass without generating any modified string variants.
+
+**2333. Minimum Sum of Squared Difference**: Bypasses the catastrophic Time Limit Exceeded (TLE) error of executing $K$ iterative Max-Heap pops by leveraging an $O(N + \max(D))$ Frequency Bucket Sort. Recognizing that $\pm 1$ operations dynamically pool together into a shared budget, the algorithm maps all target absolute differences into frequency buckets. It cascades elements downward from the maximum difference layer-by-layer, flattening the highest disparities in massive contiguous blocks to aggressively minimize the squared penalty in mathematically strict linear time.
 
 ### Complex Logic
 
