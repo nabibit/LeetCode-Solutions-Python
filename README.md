@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-168-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-169-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -77,6 +77,7 @@ LeetCode-Solutions-Python/
 | 2615 | [Sum of Distances](./Arrays/2615_Sum_of_Distances.py) | Medium | Hash Map + Prefix Sums | O(N) | O(N) |
 | 2657 | [Find the Prefix Common Array of Two Arrays](./Arrays/2657_Find_the_Prefix_Common_Array.py) | Medium | Shared Frequency Array | O(N) | O(N) |
 | 2751 | [Robot Collisions](./Arrays/2751_Robot_Collisions.py) | Hard | Sorting + Stack Simulation | O(N log N) | O(N) |
+| 2778 | [Sum of Squares of Special Elements](./Arrays/2778_Sum_of_Squares_of_Special_Elements.py) | Easy | 1-Based Indexing & Modulo Divisor Check | O(N) | O(1) |
 | 2958 | [Length of Longest Subarray With at Most K Frequency](./Arrays/2958_Length_of_Longest_Subarray_With_at_Most_K_Frequency.py) | Medium | Sliding Window & Frequency Map | O(N) | O(N) |
 | 2996 | [Smallest Missing Integer Greater Than Sequential Prefix Sum](./Arrays/2996_Smallest_Missing_Integer_Greater_Than_Sequential_Prefix_Sum.py) | Easy | Greedy Prefix Break & Hash Set Lookup | O(N) | O(N) |
 | 3010 | [Divide an Array Into Subarrays With Minimum Cost I](./Arrays/3010_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_I.py) | Easy | Greedy + Sorting | O(n log n) | O(n) |
@@ -301,9 +302,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 168
+Total Problems: 169
 
-Easy: 50
+Easy: 51
 
 Medium: 78
 
@@ -328,7 +329,7 @@ Last updated: Daily
 | Graphs    | 1391, 1559, 2812, 3310, 3532, 3600 |
 | Binary Search on Answer    |  3116, 3296, 3464, 3600 |
 | Backtracking / Decision Tree | 37, 401, 1415 |
-| Math / Modular Arithmetic  | 628, 877, 1464, 1622, 1927, 1979, 2029, 2033, 3300, 3312, 3345, 3348, 3518, 3536, 3558, 3622, 3658, 3754, 3783, 3867 |
+| Math / Modular Arithmetic  | 628, 877, 1464, 1622, 1927, 1979, 2029, 2033, 2778, 3300, 3312, 3345, 3348, 3518, 3536, 3558, 3622, 3658, 3754, 3783, 3867 |
 | Matrix / 2D Traversal      | 1260, 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
@@ -457,6 +458,8 @@ Last updated: Daily
 **1541. Minimum Insertions to Balance a Parentheses String**: Expands on the $O(1)$ space greedy deficit tracking introduced in Problem 921 by enforcing a 1-to-2 asymmetric matching constraint. The algorithm mathematically resolves structural sequence violations mid-sweep by checking the parity of the required closing brackets (`needed_right % 2 != 0`). This perfectly predicts orphaned brackets before new structures are instantiated, achieving optimal insertion calculations in a single $O(N)$ linear pass without generating any modified string variants.
 
 **2333. Minimum Sum of Squared Difference**: Bypasses the catastrophic Time Limit Exceeded (TLE) error of executing $K$ iterative Max-Heap pops by leveraging an $O(N + \max(D))$ Frequency Bucket Sort. Recognizing that $\pm 1$ operations dynamically pool together into a shared budget, the algorithm maps all target absolute differences into frequency buckets. It cascades elements downward from the maximum difference layer-by-layer, flattening the highest disparities in massive contiguous blocks to aggressively minimize the squared penalty in mathematically strict linear time.
+
+**2778. Sum of Squares of Special Elements**: Demonstrates absolute syntactic efficiency by chaining a 1-based index `enumerate(nums, 1)` directly into a modulo divisor check (`n % i == 0`). By wrapping the squaring arithmetic inside a Python generator expression, the algorithm evaluates the total sum in real-time without allocating a secondary array in memory, securing a strict $O(1)$ auxiliary space footprint.
 
 ### Complex Logic
 
