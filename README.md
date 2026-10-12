@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-169-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-170-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -182,6 +182,7 @@ LeetCode-Solutions-Python/
 | 1386 | [Cinema Seat Allocation](./BitManipulation/1386_Cinema_Seat_Allocation.py) | Medium | Hash Map & Bitmask Overlap Deduction | O(M) | O(M) |
 | 1404 | [Number of Steps to Reduce a Number in Binary Representation to One](./BitManipulation/1404_Number_of_Steps_to_Reduce_a_Number_in_Binary_Representation_to_One.py) | Medium | Right-to-Left Carry Tracking | O(N) | O(1) |
 | 1680 | [Concatenation of Consecutive Binary Numbers](./BitManipulation/1680_Concatenation_of_Consecutive_Binary_Numbers.py) | Medium | Bitwise Shift & Modulo | O(N) | O(1) |
+| 2897 | [Apply Operations on Array to Maximize Sum of Squares](./BitManipulation/2897_Maximize_Sum_of_Squares.py) | Hard | Bit Frequency Census & Greedy Reconstruction | O(N) | O(1) |
 | 3513 | [Number of Unique XOR Triplets I](./BitManipulation/3513_Number_of_Unique_XOR_Triplets_I.py) | Medium | O(1) Bit-Length Vector Span | O(1) | O(1) |
 | 3514 | [Number of Unique XOR Triplets II](./BitManipulation/3514_Number_of_Unique_XOR_Triplets_II.py) | Medium | 2-Step Pairwise XOR Sieve & Boolean Array Optimization | O(U^2+P*U) | O(U+P+V) |
 | 3666 | [Minimum Operations to Equalize Binary String](./BitManipulation/3666_Minimum_Operations_to_Equalize_Binary_String.py) | Hard | SortedList BFS Parity Search | O(N log N) | O(N) |
@@ -302,13 +303,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 169
+Total Problems: 170
 
 Easy: 51
 
 Medium: 78
 
-Hard: 40
+Hard: 41
 
 Last updated: Daily  
 
@@ -320,7 +321,7 @@ Last updated: Daily
 |----------------------------|----------|
 | Greedy / Sorting           | 1536, 1689, 1727, 1846, 2144, 2333, 2833, 3010, 3016, 3634 |
 | Sliding Window             | 42, 1358, 1461, 1848, 1871, 2958, 3090, 3302, 3471 |
-| Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1386, 1404, 1680, 1855, 3666 |
+| Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1386, 1404, 1680, 1855, 2897, 3666 |
 | DFS / Trees                | 212, 1022, 1382, 2196 |
 | Dynamic Programming        | 486, 799, 940, 1140, 1320, 1340, 1406, 1563, 1594, 1510, 1872, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739, 3756 |
@@ -590,6 +591,8 @@ Last updated: Daily
 **32. Longest Valid Parentheses**: Bypasses the $O(N)$ space overhead of a traditional Last-In-First-Out (LIFO) Stack by implementing a brilliantly optimized Bidirectional Dual-Sweep algorithm. By maintaining running counters for left and right brackets, the algorithm validates perfectly balanced substrings in $O(1)$ auxiliary memory. A forward sweep resolves sequences bounded by excess closing brackets, while a mirrored backward sweep captures sequences truncated by excess opening brackets, resulting in absolute global optimality in strict $O(N)$ time.
 
 **301. Remove Invalid Parentheses**: Showcases an incredibly elegant application of Breadth-First Search (BFS) string manipulation. Instead of utilizing standard Depth-First Search (DFS) backtracking to prune invalid states, the algorithm maps "removals" directly to BFS depth layers. By slicing characters and dumping permutations into an active Hash Set pool, it naturally deduplicates states. The moment `filter(is_valid)` yields positive results, the algorithm terminates, guaranteeing that the first layer to produce valid configurations mathematically represents the absolute minimum required removals.
+
+**2897. Apply Operations on Array to Maximize Sum of Squares**: Bypasses the catastrophic exponential trap of simulating iterative bitwise combinations by recognizing the mathematical translation of the AND/OR operation pair: it functionally extracts and relocates active bits. The algorithm reduces the entire array into a 32-element positional frequency census. It then greedily synthesizes the $K$ largest possible integers layer-by-layer, exploiting the quadratic proof $(a+b)^2 > a^2 + b^2$ to maximize the sum of squares in strict $O(N)$ execution time and an absolute $O(1)$ spatial footprint.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
