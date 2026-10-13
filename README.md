@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-170-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-171-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -99,6 +99,7 @@ LeetCode-Solutions-Python/
 | 3718 | [Smallest Missing Multiple of K](./Arrays/3718_Smallest_Missing_Multiple_of_K.py) | Easy | Hash Set & Linear Step Traversal | O(N) | O(N) |
 | 3719 | [Longest Balanced Subarray I](./Arrays/3719_Longest_Balanced_Subarray_I.py) | Medium | Brute Force (All Subarrays)| O(n²) | O(n) |
 | 3721 | [Longest Balanced Subarray II](./Arrays/3721_Longest_Balanced_Subarray_II.py) | Hard | Segment Tree + Prefix Sums | O(n log n) | O(n) |
+| 3727 | [Maximum Alternating Sum of Squares](./Arrays/3727_Maximum_Alternating_Sum_of_Squares.py) | Medium | Greedy Absolute Sorting | O(N \log N) | O(1) |
 | 3731 | [Find Missing Elements](./Arrays/3731_Find_Missing_Elements.py) | Easy | Hash Set Range Sweep | O(N+R) | O(N) |
 | 3737 | [Count Subarrays With Majority Element I](./Arrays/3737_Count_Subarrays_With_Majority_Element_I.py) | Medium | +1/-1 Transformation & Rolling Prefix Balance | O(N) | O(N) |
 | 3739 | [Count Subarrays With Majority Element II](./Arrays/3739_Count_Subarrays_With_Majority_Element_II.py) | Hard | +1/-1 Transformation & Rolling Prefix Balance | O(N) | O(N) |
@@ -303,11 +304,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 170
+Total Problems: 171
 
 Easy: 51
 
-Medium: 78
+Medium: 79
 
 Hard: 41
 
@@ -319,7 +320,7 @@ Last updated: Daily
 
 | Core Category              | Problems |
 |----------------------------|----------|
-| Greedy / Sorting           | 1536, 1689, 1727, 1846, 2144, 2333, 2833, 3010, 3016, 3634 |
+| Greedy / Sorting           | 1536, 1689, 1727, 1846, 2144, 2333, 2833, 3010, 3016, 3634, 3727 |
 | Sliding Window             | 42, 1358, 1461, 1848, 1871, 2958, 3090, 3302, 3471 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1386, 1404, 1680, 1855, 2897, 3666 |
 | DFS / Trees                | 212, 1022, 1382, 2196 |
@@ -461,6 +462,8 @@ Last updated: Daily
 **2333. Minimum Sum of Squared Difference**: Bypasses the catastrophic Time Limit Exceeded (TLE) error of executing $K$ iterative Max-Heap pops by leveraging an $O(N + \max(D))$ Frequency Bucket Sort. Recognizing that $\pm 1$ operations dynamically pool together into a shared budget, the algorithm maps all target absolute differences into frequency buckets. It cascades elements downward from the maximum difference layer-by-layer, flattening the highest disparities in massive contiguous blocks to aggressively minimize the squared penalty in mathematically strict linear time.
 
 **2778. Sum of Squares of Special Elements**: Demonstrates absolute syntactic efficiency by chaining a 1-based index `enumerate(nums, 1)` directly into a modulo divisor check (`n % i == 0`). By wrapping the squaring arithmetic inside a Python generator expression, the algorithm evaluates the total sum in real-time without allocating a secondary array in memory, securing a strict $O(1)$ auxiliary space footprint.
+
+**3727. Maximum Alternating Sum of Squares**: Demonstrates a mathematically optimal Greedy partition implementation. By recognizing that the squaring operation natively eliminates negative signs, the algorithm evaluates magnitudes strictly using absolute values (`key=abs`). Instead of interleaving values, it mathematically bounds the exact number of subtractive (odd) indices to `N // 2`. Sorting the array ascending isolates the absolute weakest magnitudes, allowing the algorithm to seamlessly subtract the `N // 2` smallest squares and add all remaining maximum squares, achieving absolute global optimality in $O(N \log N)$ execution time.
 
 ### Complex Logic
 
