@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-171-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-172-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -256,6 +256,7 @@ LeetCode-Solutions-Python/
 | 3536 | [Maximum Product of Two Digits](./Math/3536_Maximum_Product_of_Two_Digits.py) | Easy | Top-Two Digit Extraction & Modulo Arithmetic | O(d) | O(1) |
 | 3622 | [Check Divisibility by Digit Sum and Product](./Math/3622_Check_Divisibility_by_Digit_Sum_and_Product.py) | Easy | In-Place Digit Extraction & Modulo Math | O(\log_{10} N) | O(1) |
 | 3658 | [GCD of Odd and Even Sums](./Math/3658_GCD_of_Odd_and_Even_Sums.py) | Easy | Mathematical Simplification | O(1) | O(1) |
+| 3723 | [Maximize Sum of Squares of Digits](./Math/3723_Maximize_Sum_of_Squares_of_Digits.py) | Medium | Extreme Point Convexity & String Repetition | O(N) | O(N) |
 | 3754 | [Concatenate Non-Zero Digits and Multiply by Sum I](./Math/3754_Concatenate_Non_Zero_Digits_and_Multiply_by_Sum_I.py) | Easy | String Filtering & Digit Sum Math | O(D) | O(D) |
 | 3783 | [Mirror Distance of an Integer](./Math/3783_Mirror_Distance_of_an_Integer.py) | Easy | String Slicing / Digit Extraction | O(D) | O(D) |
 | 3867 | [Sum of GCD of Formed Pairs](./Math/3867_Sum_of_GCD_of_Formed_Pairs.py) | Medium | In-Place Prefix Computation & Two Pointers | O(N log N) | O(1) |
@@ -304,11 +305,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 171
+Total Problems: 172
 
 Easy: 51
 
-Medium: 79
+Medium: 80
 
 Hard: 41
 
@@ -331,7 +332,7 @@ Last updated: Daily
 | Graphs    | 1391, 1559, 2812, 3310, 3532, 3600 |
 | Binary Search on Answer    |  3116, 3296, 3464, 3600 |
 | Backtracking / Decision Tree | 37, 401, 1415 |
-| Math / Modular Arithmetic  | 628, 877, 1464, 1622, 1927, 1979, 2029, 2033, 2778, 3300, 3312, 3345, 3348, 3518, 3536, 3558, 3622, 3658, 3754, 3783, 3867 |
+| Math / Modular Arithmetic  | 628, 877, 1464, 1622, 1927, 1979, 2029, 2033, 2778, 3300, 3312, 3345, 3348, 3518, 3536, 3558, 3622, 3658, 3723, 3754, 3783, 3867 |
 | Matrix / 2D Traversal      | 1260, 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
@@ -464,6 +465,8 @@ Last updated: Daily
 **2778. Sum of Squares of Special Elements**: Demonstrates absolute syntactic efficiency by chaining a 1-based index `enumerate(nums, 1)` directly into a modulo divisor check (`n % i == 0`). By wrapping the squaring arithmetic inside a Python generator expression, the algorithm evaluates the total sum in real-time without allocating a secondary array in memory, securing a strict $O(1)$ auxiliary space footprint.
 
 **3727. Maximum Alternating Sum of Squares**: Demonstrates a mathematically optimal Greedy partition implementation. By recognizing that the squaring operation natively eliminates negative signs, the algorithm evaluates magnitudes strictly using absolute values (`key=abs`). Instead of interleaving values, it mathematically bounds the exact number of subtractive (odd) indices to `N // 2`. Sorting the array ascending isolates the absolute weakest magnitudes, allowing the algorithm to seamlessly subtract the `N // 2` smallest squares and add all remaining maximum squares, achieving absolute global optimality in $O(N \log N)$ execution time.
+
+**3723. Maximize Sum of Squares of Digits**: Showcases how mathematical convexity bypasses iterative generation and backtracking arrays entirely. Recognizing that maximizing a sum of squares ($x^2$) over a fixed total requires pushing variables to their absolute upper and lower boundaries (extreme points), the algorithm bypasses subset evaluation. By aggressively allocating `9`s via integer division and concatenating the exact remainder and trailing zeros, it synthesizes both the maximum possible score and the lexicographically largest permutation instantaneously using $O(1)$ auxiliary math.
 
 ### Complex Logic
 
