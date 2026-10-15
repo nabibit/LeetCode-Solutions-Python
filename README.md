@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-172-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-173-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -78,6 +78,7 @@ LeetCode-Solutions-Python/
 | 2657 | [Find the Prefix Common Array of Two Arrays](./Arrays/2657_Find_the_Prefix_Common_Array.py) | Medium | Shared Frequency Array | O(N) | O(N) |
 | 2751 | [Robot Collisions](./Arrays/2751_Robot_Collisions.py) | Hard | Sorting + Stack Simulation | O(N log N) | O(N) |
 | 2778 | [Sum of Squares of Special Elements](./Arrays/2778_Sum_of_Squares_of_Special_Elements.py) | Easy | 1-Based Indexing & Modulo Divisor Check | O(N) | O(1) |
+| 2913 | [Subarrays Distinct Element Sum of Squares I](./Arrays/2913_Subarrays_Distinct_Element_Sum_of_Squares_I.py) | Easy | Running Hash Set Subarray Expansion | O(N^2) | O(N) |
 | 2958 | [Length of Longest Subarray With at Most K Frequency](./Arrays/2958_Length_of_Longest_Subarray_With_at_Most_K_Frequency.py) | Medium | Sliding Window & Frequency Map | O(N) | O(N) |
 | 2996 | [Smallest Missing Integer Greater Than Sequential Prefix Sum](./Arrays/2996_Smallest_Missing_Integer_Greater_Than_Sequential_Prefix_Sum.py) | Easy | Greedy Prefix Break & Hash Set Lookup | O(N) | O(N) |
 | 3010 | [Divide an Array Into Subarrays With Minimum Cost I](./Arrays/3010_Divide_an_Array_Into_Subbarrays_With_Minimum_Cost_I.py) | Easy | Greedy + Sorting | O(n log n) | O(n) |
@@ -305,9 +306,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 172
+Total Problems: 173
 
-Easy: 51
+Easy: 52
 
 Medium: 80
 
@@ -336,7 +337,7 @@ Last updated: Daily
 | Matrix / 2D Traversal      | 1260, 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
-| Hash Map / Index Tracking | 36, 1189, 2615, 2657, 3020, 3488, 3718, 3731, 3740, 3741, 3761 |
+| Hash Map / Index Tracking | 36, 1189, 2615, 2657, 2913, 3020, 3488, 3718, 3731, 3740, 3741, 3761 |
 | Union-Find / Disjoint Set | 1722 |
 | Square Root Decomposition / Chunking | 3655 |
 | Array Simulation | 3653 |
@@ -467,6 +468,8 @@ Last updated: Daily
 **3727. Maximum Alternating Sum of Squares**: Demonstrates a mathematically optimal Greedy partition implementation. By recognizing that the squaring operation natively eliminates negative signs, the algorithm evaluates magnitudes strictly using absolute values (`key=abs`). Instead of interleaving values, it mathematically bounds the exact number of subtractive (odd) indices to `N // 2`. Sorting the array ascending isolates the absolute weakest magnitudes, allowing the algorithm to seamlessly subtract the `N // 2` smallest squares and add all remaining maximum squares, achieving absolute global optimality in $O(N \log N)$ execution time.
 
 **3723. Maximize Sum of Squares of Digits**: Showcases how mathematical convexity bypasses iterative generation and backtracking arrays entirely. Recognizing that maximizing a sum of squares ($x^2$) over a fixed total requires pushing variables to their absolute upper and lower boundaries (extreme points), the algorithm bypasses subset evaluation. By aggressively allocating `9`s via integer division and concatenating the exact remainder and trailing zeros, it synthesizes both the maximum possible score and the lexicographically largest permutation instantaneously using $O(1)$ auxiliary math.
+
+**2913. Subarrays Distinct Element Sum of Squares I**: Bypasses the $O(N^3)$ brute-force subarray regeneration penalty by leveraging an $O(N^2)$ running Hash Set. By anchoring the left pointer and continuously expanding the right pointer in a nested configuration, the algorithm maintains a dynamic state of unique elements. It instantly extracts the distinct count length and accumulates the squared score iteratively, maintaining strict algorithmic purity and an $O(N)$ auxiliary memory footprint.
 
 ### Complex Logic
 
