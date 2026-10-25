@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-173-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-174-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -268,6 +268,7 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 36 | [Valid Sudoku](./Matrix/0036_Valid_Sudoku.py) | Medium | Matrix Traversal / Hash Set Validation | O(1) | O(1) |
 | 212 | [Word Search II](./Matrix/0212_Word_Search_II.py) | Hard | Trie (Prefix Tree) + DFS Backtracking | O(M*N*3^L) | O(W) |
+| 1254 | [Number of Closed Islands](./Matrix/1254_Number_of_Closed_Islands.py) | Medium | Two-Phase Boundary-Exclusion DFS | O(M \times N) | O(M \times N) |
 | 1260 | [Shift 2D Grid](./Matrix/1260_Shift_2D_Grid.py) | Easy | 1D Flattening & Inverse Modulo Math | O(M*N) | O(M*N) |
 | 1727 | [Largest Submatrix With Rearrangements](./Matrix/1727_Largest_Submatrix_With_Rearrangements.py) | Medium | Histogram Heights + Greedy Sorting | O(M * N log N) | O(1) |
 | 1886 | [Determine Whether Matrix Can Be Obtained By Rotation](./Matrix/1886_Determine_Whether_Matrix_Can_Be_Obtained_By_Rotation.py) | Easy | In-Place Transpose + Reverse | O(N²) | O(1) |
@@ -306,11 +307,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 173
+Total Problems: 174
 
 Easy: 52
 
-Medium: 80
+Medium: 81
 
 Hard: 41
 
@@ -334,7 +335,7 @@ Last updated: Daily
 | Binary Search on Answer    |  3116, 3296, 3464, 3600 |
 | Backtracking / Decision Tree | 37, 401, 1415 |
 | Math / Modular Arithmetic  | 628, 877, 1464, 1622, 1927, 1979, 2029, 2033, 2778, 3300, 3312, 3345, 3348, 3518, 3536, 3558, 3622, 3658, 3723, 3754, 3783, 3867 |
-| Matrix / 2D Traversal      | 1260, 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
+| Matrix / 2D Traversal      | 1254, 1260, 1582, 1594, 1727, 1878, 1886, 2906, 2946, 3070, 3212, 3546, 3548, 3567, 3643 |
 | String Manipulation / Parity | 2451, 2839, 2840 |
 | Arrays / Circular Traversal | 2515 |
 | Hash Map / Index Tracking | 36, 1189, 2615, 2657, 2913, 3020, 3488, 3718, 3731, 3740, 3741, 3761 |
@@ -470,6 +471,8 @@ Last updated: Daily
 **3723. Maximize Sum of Squares of Digits**: Showcases how mathematical convexity bypasses iterative generation and backtracking arrays entirely. Recognizing that maximizing a sum of squares ($x^2$) over a fixed total requires pushing variables to their absolute upper and lower boundaries (extreme points), the algorithm bypasses subset evaluation. By aggressively allocating `9`s via integer division and concatenating the exact remainder and trailing zeros, it synthesizes both the maximum possible score and the lexicographically largest permutation instantaneously using $O(1)$ auxiliary math.
 
 **2913. Subarrays Distinct Element Sum of Squares I**: Bypasses the $O(N^3)$ brute-force subarray regeneration penalty by leveraging an $O(N^2)$ running Hash Set. By anchoring the left pointer and continuously expanding the right pointer in a nested configuration, the algorithm maintains a dynamic state of unique elements. It instantly extracts the distinct count length and accumulates the squared score iteratively, maintaining strict algorithmic purity and an $O(N)$ auxiliary memory footprint.
+
+**1254. Number of Closed Islands**: Demonstrates a brilliant two-phase boundary-exclusion DFS architecture. Instead of evaluating whether a dynamically discovered component eventually touches a matrix border, the algorithm completely inverts the logic. It first executes a perimeter sweep, aggressively flood-filling and mutating any landmass touching the boundaries into water. The subsequent interior matrix scan is then mathematically guaranteed to exclusively discover strictly enclosed islands, counting and sinking them dynamically to achieve an optimal $O(M \times N)$ execution time without requiring complex auxiliary state trackers.
 
 ### Complex Logic
 
