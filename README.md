@@ -268,7 +268,7 @@ LeetCode-Solutions-Python/
 |---|---------|------------|----------|------|-------|
 | 36 | [Valid Sudoku](./Matrix/0036_Valid_Sudoku.py) | Medium | Matrix Traversal / Hash Set Validation | O(1) | O(1) |
 | 212 | [Word Search II](./Matrix/0212_Word_Search_II.py) | Hard | Trie (Prefix Tree) + DFS Backtracking | O(M*N*3^L) | O(W) |
-| 1254 | [Number of Closed Islands](./Matrix/1254_Number_of_Closed_Islands.py) | Medium | Two-Phase Boundary-Exclusion DFS | O(M \times N) | O(M \times N) |
+| 1254 | [Number of Closed Islands](./Matrix/1254_Number_of_Closed_Islands.py) | Medium | Two-Phase Boundary-Exclusion BFS | O(M \times N) | O(M \times N) |
 | 1260 | [Shift 2D Grid](./Matrix/1260_Shift_2D_Grid.py) | Easy | 1D Flattening & Inverse Modulo Math | O(M*N) | O(M*N) |
 | 1727 | [Largest Submatrix With Rearrangements](./Matrix/1727_Largest_Submatrix_With_Rearrangements.py) | Medium | Histogram Heights + Greedy Sorting | O(M * N log N) | O(1) |
 | 1886 | [Determine Whether Matrix Can Be Obtained By Rotation](./Matrix/1886_Determine_Whether_Matrix_Can_Be_Obtained_By_Rotation.py) | Easy | In-Place Transpose + Reverse | O(N²) | O(1) |
@@ -472,7 +472,7 @@ Last updated: Daily
 
 **2913. Subarrays Distinct Element Sum of Squares I**: Bypasses the $O(N^3)$ brute-force subarray regeneration penalty by leveraging an $O(N^2)$ running Hash Set. By anchoring the left pointer and continuously expanding the right pointer in a nested configuration, the algorithm maintains a dynamic state of unique elements. It instantly extracts the distinct count length and accumulates the squared score iteratively, maintaining strict algorithmic purity and an $O(N)$ auxiliary memory footprint.
 
-**1254. Number of Closed Islands**: Demonstrates a brilliant two-phase boundary-exclusion DFS architecture. Instead of evaluating whether a dynamically discovered component eventually touches a matrix border, the algorithm completely inverts the logic. It first executes a perimeter sweep, aggressively flood-filling and mutating any landmass touching the boundaries into water. The subsequent interior matrix scan is then mathematically guaranteed to exclusively discover strictly enclosed islands, counting and sinking them dynamically to achieve an optimal $O(M \times N)$ execution time without requiring complex auxiliary state trackers.
+**1254. Number of Closed Islands**: Demonstrates a robust, CI/CD-safe boundary-exclusion architecture. Recognizing that standard recursive DFS flood-fills are prone to `RecursionError` crashes in continuous integration pipelines on massive, snaking grids, the algorithm flattens the call stack entirely. It deploys an iterative Breadth-First Search (BFS) via `collections.deque` to execute a perimeter sweep, aggressively sinking any landmass touching the matrix boundaries. The subsequent interior scan is mathematically guaranteed to exclusively discover strictly enclosed islands, counting and mutating them safely in $O(M \times N)$ execution time.
 
 ### Complex Logic
 

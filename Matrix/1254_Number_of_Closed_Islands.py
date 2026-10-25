@@ -2,10 +2,11 @@
 # Difficulty: Medium
 # Link: https://leetcode.com/problems/number-of-closed-islands/
 
-# Time Complexity: O(M * N) - We visit every cell in the grid a constant number of times. The DFS flood-fills ensure no cell is processed more than once.
-# Space Complexity: O(M * N) - In the worst-case scenario (e.g., a massive snake-like island covering the grid), the recursion call stack could reach O(M * N) depth.
+# Time Complexity: O(M * N) - We visit every cell in the grid a constant number of times. 
+# Space Complexity: O(M * N) - The BFS queue will store at most a fraction of the grid cells simultaneously, safely avoiding Python's call stack recursion limits.
 
 from typing import List
+from collections import deque
 
 class Solution:
     def closedIsland(self, grid: List[List[int]]) -> int:
@@ -14,20 +15,21 @@ class Solution:
             
         rows, cols = len(grid), len(grid[0])
         
-        # Helper function to sink an island (turn 0 to 1)
-        def sink_island(r: int, c: int):
-            # Base cases: out of bounds or already water
-            if r < 0 or c < 0 or r >= rows or c >= cols or grid[r][c] == 1:
-                return
-                
-            # Mark the current land cell as water
-            grid[r][c] = 1
+        # Helper function to sink an island iteratively (CI/CD safe)
+        def sink_island(start_r: int, start_c: int):
+            queue = deque([(start_r, start_c)])
+            grid[start_r][start_c] = 1 # Mark as water immediately to prevent requeueing
             
-            # DFS in all 4 directions
-            sink_island(r + 1, c)
-            sink_island(r - 1, c)
-            sink_island(r, c + 1)
-            sink_island(r, c - 1)
+            while queue:
+                r, c = queue.popleft()
+                
+                # Check all 4 adjacent directions
+                for dr, dc in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+                    nr, nc = r + dr, c + dc
+                    # If it's valid land, sink it and add to the queue
+                    if 0 <= nr < rows and 0 <= nc < cols and grid[nr][nc] == 0:
+                        grid[nr][nc] = 1
+                        queue.append((nr, nc))
             
         # Step 1: Perimeter Sweep
         # Sink all islands connected to the top and bottom borders
@@ -70,7 +72,6 @@ if __name__ == "__main__":
     ]
     print(f"Test 1: {sol.closedIsland(grid1)}") 
     # Expected: 2 
-    # (Two enclosed islands of 0s. The 0s on the right edge are sunk in Phase 1).
     
     # Test 2: Island touching corner
     grid2 = [
@@ -80,4 +81,3 @@ if __name__ == "__main__":
     ]
     print(f"Test 2: {sol.closedIsland(grid2)}") 
     # Expected: 1
-    # (The middle '0' at row 1 col 2 is completely surrounded)
