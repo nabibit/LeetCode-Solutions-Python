@@ -1,28 +1,25 @@
-name: Run LeetCode Tests
+name: Python Tests
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push]
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    # Fix: Downgrade from ubuntu-latest/ubuntu-26.04 to a version that supports Python 3.8 - 3.11
+    runs-on: ubuntu-24.04 
     strategy:
       matrix:
-        python-version: [3.8, 3.9, '3.10', '3.11']
+        python-version: ['3.8', '3.9', '3.10', '3.11']
 
     steps:
-    - uses: actions/checkout@v3
+    # Update to v4 to fix the Node.js 20 deprecation warning shown in your logs
+    - uses: actions/checkout@v4 
+    
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
+      # Update to v5 for the latest Node/runner compatibility
+      uses: actions/setup-python@v5 
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Display Python version
-      run: python -c "import sys; print(sys.version)"
-    - name: Run all solution tests
+        
+    - name: Run Tests
       run: |
-        # Find all Python files and execute them
-        # (each file has its own test cases under if __name__ == "__main__")
-        find . -name "*.py" -not -path "./.github/*" -exec python {} \;
+        python -m unittest discover
