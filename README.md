@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-174-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-175-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -135,6 +135,7 @@ LeetCode-Solutions-Python/
 | 1888 | [Minimum Number of Flips to Make the Binary String Alternating](./Strings/1888_Minimum_Number_of_Flips_to_Make_the_Binary_String_Alternating.py) | Medium | Sliding Window (Virtual Doubling) | O(N) | O(1) |
 | 1967 | [Number of Strings That Appear as Substrings in Word](./Strings/1967_Num_Strings_Appear_as_Substrings.py) | Easy | Built-in Substring Search | O(P*N) | O(1) |
 | 1980 | [Find Unique Binary String](./Strings/1980_Find_Unique_Binary_String.py) | Medium | Cantor's Diagonalization | O(N) | O(N) |
+| 2243 | [Calculate Digit Sum of a String](./Strings/2243_Calculate_Digit_Sum_of_a_String.py) | Easy | String Chunking & Digit Summation | O(N) | O(N) |
 | 2452 | [Words Within Two Edits of Dictionary](./Strings/2452_Words_Within_Two_Edits.py) | Medium | Hamming Distance / Early Exit | O(Q*D*L) | O(1) |
 | 2573 | [Find the String with LCP](./Strings/2573_Find_the_String_with_LCP.py) | Hard | Greedy Assignment / DP Validation | O(N²) | O(N) |
 | 2833 | [Furthest Point From Origin](./Strings/2833_Furthest_Point_From_Origin.py) | Easy | Greedy / Counting | O(N) | O(1) |
@@ -307,9 +308,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 174
+Total Problems: 175
 
-Easy: 52
+Easy: 53
 
 Medium: 81
 
@@ -329,7 +330,7 @@ Last updated: Daily
 | DFS / Trees                | 212, 1022, 1382, 2196 |
 | Dynamic Programming        | 486, 799, 940, 1140, 1320, 1340, 1406, 1563, 1594, 1510, 1872, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739, 3756 |
-| Simulation / Linear Scan   | 696, 1021, 1291, 1582, 1758, 1784, 1878,1967, 1980, 2161, 2996, 3014, 3069, 3379, 3499, 3517, 3633, 3637 |
+| Simulation / Linear Scan   | 696, 1021, 1291, 1582, 1758, 1784, 1878, 2243, 3014, 3069, 3379, 3499, 3517, 3633, 3637 |
 | Brute Force / Recursion    | 301, 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 2812, 3310, 3532, 3600 |
 | Binary Search on Answer    |  3116, 3296, 3464, 3600 |
@@ -473,6 +474,8 @@ Last updated: Daily
 **2913. Subarrays Distinct Element Sum of Squares I**: Bypasses the $O(N^3)$ brute-force subarray regeneration penalty by leveraging an $O(N^2)$ running Hash Set. By anchoring the left pointer and continuously expanding the right pointer in a nested configuration, the algorithm maintains a dynamic state of unique elements. It instantly extracts the distinct count length and accumulates the squared score iteratively, maintaining strict algorithmic purity and an $O(N)$ auxiliary memory footprint.
 
 **1254. Number of Closed Islands**: Demonstrates a robust, CI/CD-safe boundary-exclusion architecture. Recognizing that standard recursive DFS flood-fills are prone to `RecursionError` crashes in continuous integration pipelines on massive, snaking grids, the algorithm flattens the call stack entirely. It deploys an iterative Breadth-First Search (BFS) via `collections.deque` to execute a perimeter sweep, aggressively sinking any landmass touching the matrix boundaries. The subsequent interior scan is mathematically guaranteed to exclusively discover strictly enclosed islands, counting and mutating them safely in $O(M \times N)$ execution time.
+
+**2243. Calculate Digit Sum of a String**: This is a really satisfying string simulation. Instead of over-engineering it with tricky math or recursion, I just went with a clean iterative chunking approach. By slicing the string into manageable blocks of size `k` and using a quick Python generator expression to tally up the digits on the fly, the string just naturally collapses round by round. It’s super readable, totally avoids nasty recursion limits, and keeps the memory footprint bounded strictly to the new string being built.
 
 ### Complex Logic
 
