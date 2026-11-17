@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-175-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-176-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -208,6 +208,7 @@ LeetCode-Solutions-Python/
 | 1871 | [Jump Game VII](./DynamicProgramming/1871_Jump_Game_VII.py) | Medium | 1D DP + Sliding Window Count | O(N) | O(N) |
 | 1872 | [Stone Game VIII](./DynamicProgramming/1872_Stone_Game_VIII.py) | Hard | In-Place Prefix Sums & O(1) Minimax DP | O(N) | O(1) |
 | 2463 | [Minimum Total Distance Traveled](./DynamicProgramming/2463_Min_Total_Distance_Traveled.py) | Hard | Top-Down DP (Capacity Batching) | O(R² * F) | O(R * F) |
+| 2911 | [Minimum Changes to Make K Semi-palindromes](./DynamicProgramming/2911_Min_Changes_K_Semi_Palindromes.py) | Hard | Substring Cost Precomputation & State Partition DP | O(N^3) | O(N^2) |
 | 2946 | [Matrix Similarity After Cyclic Shifts](./Matrix/2946_Matrix_Similarity_After_Cyclic_Shifts.py) | Easy | Modular Arithmetic + Slice Comparison | O(M*N) | O(N) |
 | 3129 | [Find All Possible Stable Binary Arrays I](./DynamicProgramming/3129_Find_All_Possible_Stable_Binary_Arrays_I.py) | Medium | DP with Invalid State Subtraction | O(Z * O) | O(Z * O) |
 | 3130 | [Find All Possible Stable Binary Arrays II](./DynamicProgramming/3130_Find_All_Possible_Stable_Binary_Arrays_II.py) | Hard | DP with Invalid State Subtraction | O(Z * O) | O(Z * O) |
@@ -308,13 +309,13 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 175
+Total Problems: 176
 
 Easy: 53
 
 Medium: 81
 
-Hard: 41
+Hard: 42
 
 Last updated: Daily  
 
@@ -328,7 +329,7 @@ Last updated: Daily
 | Sliding Window             | 42, 1358, 1461, 1848, 1871, 2958, 3090, 3302, 3471 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1386, 1404, 1680, 1855, 2897, 3666 |
 | DFS / Trees                | 212, 1022, 1382, 2196 |
-| Dynamic Programming        | 486, 799, 940, 1140, 1320, 1340, 1406, 1563, 1594, 1510, 1872, 2463, 2573, 2574, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
+| Dynamic Programming        | 486, 799, 940, 1140, 1320, 1340, 1406, 1563, 1594, 1510, 1872, 2463, 2573, 2574, 2911, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739, 3756 |
 | Simulation / Linear Scan   | 696, 1021, 1291, 1582, 1758, 1784, 1878, 2243, 3014, 3069, 3379, 3499, 3517, 3633, 3637 |
 | Brute Force / Recursion    | 301, 761, 1545, 3713, 3719 |
@@ -608,6 +609,8 @@ Last updated: Daily
 **301. Remove Invalid Parentheses**: Showcases an incredibly elegant application of Breadth-First Search (BFS) string manipulation. Instead of utilizing standard Depth-First Search (DFS) backtracking to prune invalid states, the algorithm maps "removals" directly to BFS depth layers. By slicing characters and dumping permutations into an active Hash Set pool, it naturally deduplicates states. The moment `filter(is_valid)` yields positive results, the algorithm terminates, guaranteeing that the first layer to produce valid configurations mathematically represents the absolute minimum required removals.
 
 **2897. Apply Operations on Array to Maximize Sum of Squares**: Bypasses the catastrophic exponential trap of simulating iterative bitwise combinations by recognizing the mathematical translation of the AND/OR operation pair: it functionally extracts and relocates active bits. The algorithm reduces the entire array into a 32-element positional frequency census. It then greedily synthesizes the $K$ largest possible integers layer-by-layer, exploiting the quadratic proof $(a+b)^2 > a^2 + b^2$ to maximize the sum of squares in strict $O(N)$ execution time and an absolute $O(1)$ spatial footprint.
+
+**2911. Minimum Changes to Make K Semi-palindromes**: This is an exercise in decoupling complex algorithmic requirements to bypass exponential Time Limit Exceeded (TLE) traps. Instead of evaluating divisor validation and step-based palindrome mutations during the active string partitioning phase, I isolated the mathematical evaluation entirely. By precomputing a 2D `cost` matrix for every possible valid substring in $O(N^3)$ time, the actual $K$-partition logic flawlessly simplifies into a standard $O(N^2 \cdot K)$ state-space Dynamic Programming sweep. Breaking the problem into these two distinct monolithic phases keeps the code exceptionally readable and strictly guarantees global optimality.
 
 ### Tree Operations
 **1382. Balance a Binary Search Tree**: Demonstrates a brilliant two-step approach to restructuring trees. Instead of complex pointer rotations, it harvests nodes via an O(n) In-Order Traversal to get a sorted array, then uses Divide-and-Conquer to mathematically rebuild a perfectly balanced BST from the middle out.
