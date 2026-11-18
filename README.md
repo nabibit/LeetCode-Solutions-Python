@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-176-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-177-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -141,6 +141,7 @@ LeetCode-Solutions-Python/
 | 2833 | [Furthest Point From Origin](./Strings/2833_Furthest_Point_From_Origin.py) | Easy | Greedy / Counting | O(N) | O(1) |
 | 2839 | [Check if Strings Can be Made Equal With Operations I](./Strings/2839_Check_if_Strings_Can_be_Made_Equal.py) | Easy | Parity Grouping + Sorting | O(1) | O(1) |
 | 2840 | [Check if Strings Can be Made Equal With Operations II](./Strings/2840_Check_if_Strings_Can_be_Made_Equal_II.py) | Medium | Parity Grouping + Frequency Map | O(N) | O(1) |
+| 2914 | [Minimum Number of Changes to Make Binary String Beautiful](./Strings/2914_Min_Changes_Binary_String_Beautiful.py) | Medium | Greedy Pairwise Comparison | O(N) | O(1) |
 | 3014 | [Minimum Number of Pushes to Type Word I](./Strings/3014_Minimum_Number_of_Pushes_to_Type_Word_I.py) | Easy | Greedy Tier Allocation & String Length | O(1) | O(1) |
 | 3016 | [Minimum Number of Pushes to Type Word II](./Strings/3016_Minimum_Number_of_Pushes_to_Type_Word_II.py) | Medium | Greedy Frequency Tier Allocation & 26-Array Sieve | O(N) | O(1) |
 | 3090 | [Maximum Length Substring With Two Occurrences](./Strings/3090_Maximum_Length_Substring_With_Two_Occurrences.py) | Easy | Sliding Window Frequency Bounding | O(N) | O(1) |
@@ -309,11 +310,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 176
+Total Problems: 177
 
 Easy: 53
 
-Medium: 81
+Medium: 82
 
 Hard: 42
 
@@ -331,7 +332,7 @@ Last updated: Daily
 | DFS / Trees                | 212, 1022, 1382, 2196 |
 | Dynamic Programming        | 486, 799, 940, 1140, 1320, 1340, 1406, 1563, 1594, 1510, 1872, 2463, 2573, 2574, 2911, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739, 3756 |
-| Simulation / Linear Scan   | 696, 1021, 1291, 1582, 1758, 1784, 1878, 2243, 3014, 3069, 3379, 3499, 3517, 3633, 3637 |
+| Simulation / Linear Scan   | 696, 1021, 1291, 1582, 1758, 1784, 1878, 2243, 2914, 3014, 3069, 3379, 3499, 3517, 3633, 3637 |
 | Brute Force / Recursion    | 301, 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 2812, 3310, 3532, 3600 |
 | Binary Search on Answer    |  3116, 3296, 3464, 3600 |
@@ -477,6 +478,8 @@ Last updated: Daily
 **1254. Number of Closed Islands**: Demonstrates a robust, CI/CD-safe boundary-exclusion architecture. Recognizing that standard recursive DFS flood-fills are prone to `RecursionError` crashes in continuous integration pipelines on massive, snaking grids, the algorithm flattens the call stack entirely. It deploys an iterative Breadth-First Search (BFS) via `collections.deque` to execute a perimeter sweep, aggressively sinking any landmass touching the matrix boundaries. The subsequent interior scan is mathematically guaranteed to exclusively discover strictly enclosed islands, counting and mutating them safely in $O(M \times N)$ execution time.
 
 **2243. Calculate Digit Sum of a String**: This is a really satisfying string simulation. Instead of over-engineering it with tricky math or recursion, I just went with a clean iterative chunking approach. By slicing the string into manageable blocks of size `k` and using a quick Python generator expression to tally up the digits on the fly, the string just naturally collapses round by round. It’s super readable, totally avoids nasty recursion limits, and keeps the memory footprint bounded strictly to the new string being built.
+
+**2914. Minimum Number of Changes to Make Binary String Beautiful**: This one tries to bait into overthinking partition boundaries, when really it's just a clean greedy observation. Because any valid even-length block of identical characters can always be broken down into adjacent pairs of length 2, I just stepped through the string two characters at a time. Whenever a pair doesn't match, it costs exactly one flip to fix. No DP, no extra arrays—just a straight $O(N)$ linear sweep with $O(1)$ space.
 
 ### Complex Logic
 
