@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-177-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-178-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -72,6 +72,7 @@ LeetCode-Solutions-Python/
 | 2144 | [Minimum Cost of Buying Candies With Discount](./Arrays/2144_Min_Cost_Buying_Candies_Discount.py) | Easy | Greedy Descending Sort | O(N log N) | O(1) |
 | 2333 | [Minimum Sum of Squared Difference](./Arrays/2333_Minimum_Sum_of_Squared_Difference.py) | Medium | Pooled Modification Budget & Frequency Bucket Sort | O(N + M) | O(M) |
 | 2515 | [Shortest Distance to Target String in a Circular Array](./Arrays/2515_Shortest_Distance_Target_String_Circular.py) | Easy | Bidirectional Distance Math | O(N) | O(1) |
+| 2567 | [Minimum Score by Changing Two Elements](./Arrays/2567_Minimum_Score_by_Changing_Two_Elements.py) | Medium | Greedy Boundary Trimming & Sorting | O(N log N) | O(1) |
 | 2574 | [Left and Right Sum Differences](./Arrays/2574_Left_and_Right_Sum_Differences.py) | Easy | Running Prefix & Suffix Sums | O(N) | O(1) |
 | 2161 | [Partition Array According to Given Pivot](./Arrays/2161_Partition_Array_According_to_Pivot.py) | Medium | Stable Partition / 3-Bucket Sweep | O(N) | O(N) |
 | 2615 | [Sum of Distances](./Arrays/2615_Sum_of_Distances.py) | Medium | Hash Map + Prefix Sums | O(N) | O(N) |
@@ -310,11 +311,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 177
+Total Problems: 178
 
 Easy: 53
 
-Medium: 82
+Medium: 83
 
 Hard: 42
 
@@ -326,7 +327,7 @@ Last updated: Daily
 
 | Core Category              | Problems |
 |----------------------------|----------|
-| Greedy / Sorting           | 1536, 1689, 1727, 1846, 2144, 2333, 2833, 3010, 3016, 3634, 3727 |
+| Greedy / Sorting           | 1536, 1689, 1727, 1846, 2144, 2333, 2567, 2833, 3010, 3016, 3634, 3727 |
 | Sliding Window             | 42, 1358, 1461, 1848, 1871, 2958, 3090, 3302, 3471 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1386, 1404, 1680, 1855, 2897, 3666 |
 | DFS / Trees                | 212, 1022, 1382, 2196 |
@@ -480,6 +481,8 @@ Last updated: Daily
 **2243. Calculate Digit Sum of a String**: This is a really satisfying string simulation. Instead of over-engineering it with tricky math or recursion, I just went with a clean iterative chunking approach. By slicing the string into manageable blocks of size `k` and using a quick Python generator expression to tally up the digits on the fly, the string just naturally collapses round by round. It’s super readable, totally avoids nasty recursion limits, and keeps the memory footprint bounded strictly to the new string being built.
 
 **2914. Minimum Number of Changes to Make Binary String Beautiful**: This one tries to bait into overthinking partition boundaries, when really it's just a clean greedy observation. Because any valid even-length block of identical characters can always be broken down into adjacent pairs of length 2, I just stepped through the string two characters at a time. Whenever a pair doesn't match, it costs exactly one flip to fix. No DP, no extra arrays—just a straight $O(N)$ linear sweep with $O(1)$ space.
+
+**2567. Minimum Score by Changing Two Elements**: The trick here is realizing the "low score" is basically a red herring—since we can change two elements to whatever we want, we can always force duplicates and drop the low score to `0`. After sorting, it just comes down to checking the three possible ways to trim two elements off the extreme ends of the array, giving us a super clean $O(N \log N)$ greedy solution in just a few lines.
 
 ### Complex Logic
 
