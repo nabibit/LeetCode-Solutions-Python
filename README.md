@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-178-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-179-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -231,6 +231,7 @@ LeetCode-Solutions-Python/
 | 1382 | [Balance a Binary Search Tree](./Trees/1382_Balance_a_Binary_Search_Tree.py) | Medium | In-Order Traversal + Divide & Conquer | O(n) | O(n) |
 | 2213 | [Longest Substring of One Repeating Character](./Trees/2213_Longest_Substring_of_One_Repeating_Character.py) | Hard | Segment Tree Boundary Merging | O(N+K\log N) | O(N) |
 | 2196 | [Create Binary Tree From Descriptions](./Trees/2196_Create_Binary_Tree_From_Descriptions.py) | Medium | Hash Map + Set (Root Identification) | O(N) | O(N) |
+| 3331 | [Find Subtree Sizes After Changes](./Trees/3331_Find_Subtree_Sizes_After_Changes.py) | Medium | Single-Pass Iterative DFS & Ancestor Tracking | O(N) | O(N) |
 | 3558 | [Number of Ways to Assign Edge Weights I](./Trees/3558_Num_Ways_Assign_Edge_Weights_I.py) | Medium | BFS Depth Traversal + Combinatorics | O(N) | O(N) |
 
 ### [Graphs](./Graphs/)
@@ -311,11 +312,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 178
+Total Problems: 179
 
 Easy: 53
 
-Medium: 83
+Medium: 84
 
 Hard: 42
 
@@ -330,7 +331,7 @@ Last updated: Daily
 | Greedy / Sorting           | 1536, 1689, 1727, 1846, 2144, 2333, 2567, 2833, 3010, 3016, 3634, 3727 |
 | Sliding Window             | 42, 1358, 1461, 1848, 1871, 2958, 3090, 3302, 3471 |
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1386, 1404, 1680, 1855, 2897, 3666 |
-| DFS / Trees                | 212, 1022, 1382, 2196 |
+| DFS / Trees                | 212, 1022, 1382, 2196, 3331 |
 | Dynamic Programming        | 486, 799, 940, 1140, 1320, 1340, 1406, 1563, 1594, 1510, 1872, 2463, 2573, 2574, 2911, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
 | Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739, 3756 |
 | Simulation / Linear Scan   | 696, 1021, 1291, 1582, 1758, 1784, 1878, 2243, 2914, 3014, 3069, 3379, 3499, 3517, 3633, 3637 |
@@ -624,6 +625,8 @@ Last updated: Daily
 **3741. Minimum Distance Between Three Equal Elements II**: Optimized the triplet distance formula $abs(i - j) + abs(j - k) + abs(k - i)$ by recognizing that for sorted indices $i < j < k$, the expression simplifies to $2(k - i)$. This transformation allows the problem to be solved in a single linear pass using a Hash Map to track the index of the element from two occurrences prior, reducing the search space from $O(N^3)$ to $O(N)$.
 
 **3501. Maximize Active Section with Trade II**: Elevates the greedy "1-Refund Illusion" from its predecessor by executing it over $Q$ arbitrary, independent range queries. To bypass the catastrophic $O(Q \times N)$ execution bottleneck of repeated block evaluation, it pre-parses the string into distinct positional blocks and evaluates all possible merge gains into an underlying array. By layering a Sparse Table over this array, it resolves any continuous Range Maximum Query (RMQ) in strictly $O(1)$ constant time. Paired with dual binary searches to isolate truncated boundary edges, the algorithm mathematically enforces the "two-block minimum" constraint, processing massive query arrays flawlessly in $O(\log M)$ time per query.
+
+**3331. Find Subtree Sizes After Changes**: Instead of doing a two-pass approach that physically rebuilds the tree after re-parenting, I handled everything in a single $O(N)$ post-order traversal. Because any new parent is still guaranteed to be an ancestor in the original tree, I tracked the closest seen ancestor per character on the way down and bubbled each node's finished subtree size straight up to its target parent on the way back. Implemented iteratively with an explicit stack so it stays completely safe from Python's recursion limit on deep trees.
 
 ### Graph Operations
 **3600. Maximize Spanning Tree Stability with Upgrades**: Combines Binary Search on the Answer with Kruskal's Algorithm. Instead of building a complex dynamic tree, it efficiently validates a target "stability" score by constructing a Spanning Tree using a Disjoint Set Union (DSU) and optimally budgeting edge upgrades.
