@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-179-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-180-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -136,6 +136,7 @@ LeetCode-Solutions-Python/
 | 1888 | [Minimum Number of Flips to Make the Binary String Alternating](./Strings/1888_Minimum_Number_of_Flips_to_Make_the_Binary_String_Alternating.py) | Medium | Sliding Window (Virtual Doubling) | O(N) | O(1) |
 | 1967 | [Number of Strings That Appear as Substrings in Word](./Strings/1967_Num_Strings_Appear_as_Substrings.py) | Easy | Built-in Substring Search | O(P*N) | O(1) |
 | 1980 | [Find Unique Binary String](./Strings/1980_Find_Unique_Binary_String.py) | Medium | Cantor's Diagonalization | O(N) | O(N) |
+| 2124 | [Check if All A's Appears Before All B's](./Strings/2124_Check_if_All_As_Appears_Before_All_Bs.py) | Easy | Substring Pattern Check | O(N) | O(1) |
 | 2243 | [Calculate Digit Sum of a String](./Strings/2243_Calculate_Digit_Sum_of_a_String.py) | Easy | String Chunking & Digit Summation | O(N) | O(N) |
 | 2452 | [Words Within Two Edits of Dictionary](./Strings/2452_Words_Within_Two_Edits.py) | Medium | Hamming Distance / Early Exit | O(Q*D*L) | O(1) |
 | 2573 | [Find the String with LCP](./Strings/2573_Find_the_String_with_LCP.py) | Hard | Greedy Assignment / DP Validation | O(N²) | O(N) |
@@ -312,9 +313,9 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 179
+Total Problems: 180
 
-Easy: 53
+Easy: 54
 
 Medium: 84
 
@@ -484,6 +485,8 @@ Last updated: Daily
 **2914. Minimum Number of Changes to Make Binary String Beautiful**: This one tries to bait into overthinking partition boundaries, when really it's just a clean greedy observation. Because any valid even-length block of identical characters can always be broken down into adjacent pairs of length 2, I just stepped through the string two characters at a time. Whenever a pair doesn't match, it costs exactly one flip to fix. No DP, no extra arrays—just a straight $O(N)$ linear sweep with $O(1)$ space.
 
 **2567. Minimum Score by Changing Two Elements**: The trick here is realizing the "low score" is basically a red herring—since we can change two elements to whatever we want, we can always force duplicates and drop the low score to `0`. After sorting, it just comes down to checking the three possible ways to trim two elements off the extreme ends of the array, giving us a super clean $O(N \log N)$ greedy solution in just a few lines.
+
+**2124. Check if All A's Appears Before All B's**: Instead of tracking a boolean flag for whether we've seen a `'b'` yet, it's much cleaner to just look for the one pattern that breaks the rule: `"ba"`. Using Python's built-in `"ba" not in s` runs the scan at C speed in $O(N)$ time and $O(1)$ space with zero boilerplate.
 
 ### Complex Logic
 
