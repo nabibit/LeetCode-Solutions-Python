@@ -1,6 +1,6 @@
 # LeetCode Solutions in Python
 
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-180-yellow)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-181-yellow)
 ![Python](https://img.shields.io/badge/Python-3.8+-yellow)
 ![Daily Commits](https://img.shields.io/badge/Daily%20Commits-Yes-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-orange)
@@ -61,6 +61,7 @@ LeetCode-Solutions-Python/
 | # | Problem | Difficulty | Approach | Time | Space |
 |---|---------|------------|----------|------|-------|
 | 42 | [Trapping Rain Water](./Arrays/0042_Trapping_Rain_Water.py) | Hard | Two Pointers (Min-Max bounds) | O(N) | O(1) |
+| 1352 | [Product of the Last K Numbers](./Arrays/1352_Product_of_the_Last_K_Numbers.py) | Medium | Prefix Products with Zero-Reset | O(1) | O(N) |
 | 1464 | [Maximum Product of Two Elements in an Array](./Arrays/1464_Maximum_Product_of_Two_Elements.py) | Easy | Dual-Champion Tracking & O(N) Linear Scan | O(N) | O(1) |
 | 1536 | [Minimum Swaps to Arrange a Binary Grid](./Arrays/1536_Minimum_Swaps_to_Arrange_a_Binary_Grid.py) | Medium | Greedy (Pop/Insert Simulation) | O(N²) | O(N) |
 | 1582 | [Special Positions in a Binary Matrix](./Arrays/1582_Special_Positions_in_a_Binary_Matrix.py) | Easy | Matrix Precomputation | O(M * N) | O(M + N) |
@@ -313,11 +314,11 @@ if __name__ == "__main__":
 ```
 
 ## 📈 Progress Tracker
-Total Problems: 180
+Total Problems: 181
 
 Easy: 54
 
-Medium: 84
+Medium: 85
 
 Hard: 42
 
@@ -334,7 +335,7 @@ Last updated: Daily
 | Bit Manipulation           | 67, 190, 401, 693, 762, 868, 1009, 1356, 1386, 1404, 1680, 1855, 2897, 3666 |
 | DFS / Trees                | 212, 1022, 1382, 2196, 3331 |
 | Dynamic Programming        | 486, 799, 940, 1140, 1320, 1340, 1406, 1563, 1594, 1510, 1872, 2463, 2573, 2574, 2911, 3129, 3130, 3225, 3418, 3640, 3700, 3751, 3753 |
-| Prefix / Range Queries     | 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739, 3756 |
+| Prefix / Range Queries     | 1352, 2906, 3070, 3212, 3546, 3635, 3660, 3714, 3721, 3737, 3739, 3756 |
 | Simulation / Linear Scan   | 696, 1021, 1291, 1582, 1758, 1784, 1878, 2243, 2914, 3014, 3069, 3379, 3499, 3517, 3633, 3637 |
 | Brute Force / Recursion    | 301, 761, 1545, 3713, 3719 |
 | Graphs    | 1391, 1559, 2812, 3310, 3532, 3600 |
@@ -487,6 +488,8 @@ Last updated: Daily
 **2567. Minimum Score by Changing Two Elements**: The trick here is realizing the "low score" is basically a red herring—since we can change two elements to whatever we want, we can always force duplicates and drop the low score to `0`. After sorting, it just comes down to checking the three possible ways to trim two elements off the extreme ends of the array, giving us a super clean $O(N \log N)$ greedy solution in just a few lines.
 
 **2124. Check if All A's Appears Before All B's**: Instead of tracking a boolean flag for whether we've seen a `'b'` yet, it's much cleaner to just look for the one pattern that breaks the rule: `"ba"`. Using Python's built-in `"ba" not in s` runs the scan at C speed in $O(N)$ time and $O(1)$ space with zero boilerplate.
+
+**1352. Product of the Last K Numbers**: A really clean design problem where prefix products do all the heavy lifting to keep both `add` and `getProduct` strictly $O(1)$. The only edge case is `0` breaking division, which I handled by simply resetting the prefix array back to `[1]` whenever a zero arrives. From there, any query `k` that reaches past the current array length immediately returns `0` without needing any extra zero-index tracking.
 
 ### Complex Logic
 
